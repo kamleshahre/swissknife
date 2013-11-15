@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ScappleDocument Version="1.1" ID="C85313E6-8E75-43A8-A5E2-C5B37300A374">
+    <Notes>
+        <Note ID="1" FontSize="23.0" Position="265.0,301.0" Width="146.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.477193 0.557066 0.76433</Border>
+                <Fill>0.840969 0.866828 0.925903</Fill>
+            </Appearance>
+            <String>Festivalitis</String>
+            <ConnectedNoteIDs>2-4, 7, 24, 27-28, 35</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,12</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="2" FontSize="14.0" Position="459.0,367.0" Width="168.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.331867 0.609932 0.356197</Border>
+                <Fill>0.790123 0.882327 0.80198</Fill>
+            </Appearance>
+            <String>podia volgen (lineup)</String>
+            <ConnectedNoteIDs>1, 7, 18-19</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,21</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="3" FontSize="12.0" Position="392.0,215.0" Width="65.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.331867 0.609932 0.356197</Border>
+                <Fill>0.790123 0.882327 0.80198</Fill>
+            </Appearance>
+            <String>twitter wall</String>
+            <ConnectedNoteIDs>1, 4, 16</ConnectedNoteIDs>
+        </Note>
+        <Note ID="4" FontSize="16.0" Position="527.0,237.0" Width="119.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.331867 0.609932 0.356197</Border>
+                <Fill>0.790123 0.882327 0.80198</Fill>
+            </Appearance>
+            <String>photo uploads</String>
+            <ConnectedNoteIDs>1, 3, 12-15</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,13</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="7" FontSize="16.0" Position="426.0,487.0" Width="168.0">
+            <Appearance>
+                <Border Weight="1">0.290055 0.1523 0.182215</Border>
+                <Fill>0.940019 0.892907 0.779716</Fill>
+            </Appearance>
+            <String>location platform</String>
+            <ConnectedNoteIDs>1-2, 8-11, 28, 33-34</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,17</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="8" FontSize="12.0" Position="506.0,567.0" Width="31.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.290055 0.1523 0.182215</Border>
+                <Fill>0.940019 0.892907 0.779716</Fill>
+            </Appearance>
+            <String>chat</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="9" FontSize="15.0" Position="626.0,515.0" Width="86.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.290055 0.1523 0.182215</Border>
+                <Fill>0.940019 0.892907 0.779716</Fill>
+            </Appearance>
+            <String>friend list</String>
+            <ConnectedNoteIDs>7, 17, 20</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,11</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="10" FontSize="12.0" Position="356.0,569.0" Width="91.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.290055 0.1523 0.182215</Border>
+                <Fill>0.940019 0.892907 0.779716</Fill>
+            </Appearance>
+            <String>where are you?</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="11" FontSize="12.0" Position="287.0,403.0" Width="86.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.290055 0.1523 0.182215</Border>
+                <Fill>0.940019 0.892907 0.779716</Fill>
+            </Appearance>
+            <String>maps &amp; kaart?</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="12" FontSize="12.0" Position="526.0,131.0" Width="31.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>tags</String>
+            <ConnectedNoteIDs>4</ConnectedNoteIDs>
+        </Note>
+        <Note ID="13" FontSize="12.0" Position="576.0,153.0" Width="64.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>comments</String>
+            <ConnectedNoteIDs>4</ConnectedNoteIDs>
+        </Note>
+        <Note ID="14" FontSize="12.0" Position="643.0,180.0" Width="59.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>metadata</String>
+            <ConnectedNoteIDs>4</ConnectedNoteIDs>
+        </Note>
+        <Note ID="15" FontSize="12.0" Position="672.0,222.0" Width="98.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>privacy settings?</String>
+            <ConnectedNoteIDs>4, 17</ConnectedNoteIDs>
+        </Note>
+        <Note ID="16" FontSize="12.0" Position="375.0,150.0" Width="80.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>always public</String>
+            <ConnectedNoteIDs>3</ConnectedNoteIDs>
+        </Note>
+        <Note ID="17" FontSize="12.0" Position="753.0,180.0" Width="85.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>photo to friend</String>
+            <ConnectedNoteIDs>9, 15</ConnectedNoteIDs>
+        </Note>
+        <Note ID="18" FontSize="12.0" Position="655.0,365.0" Width="79.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>notifications?</String>
+            <ConnectedNoteIDs>2</ConnectedNoteIDs>
+        </Note>
+        <Note ID="19" FontSize="12.0" Position="651.0,336.0" Width="69.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>like artists?</String>
+            <ConnectedNoteIDs>2</ConnectedNoteIDs>
+        </Note>
+        <Note ID="20" FontSize="14.0" Position="578.0,564.0" Width="106.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Fill>0.700721 0.700721 0.700721</Fill>
+            </Appearance>
+            <String>user support</String>
+            <ConnectedNoteIDs>9</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,12</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="24" FontSize="13.0" Position="94.0,304.0" Width="103.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>tickets? (= offline)</String>
+            <ConnectedNoteIDs>1</ConnectedNoteIDs>
+        </Note>
+        <Note ID="26" FontSize="15.0" Position="57.0,85.0" Width="250.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>OPTIONAL FEATURES = PINK</String>
+            <Formatting>
+                <FormatRange Bold="Yes">0,24</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="27" FontSize="13.0" Position="68.0,335.0" Width="112.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>expenses (= offline)</String>
+            <ConnectedNoteIDs>1</ConnectedNoteIDs>
+        </Note>
+        <Note ID="28" FontSize="13.0" Position="26.0,406.0" Width="170.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>carpooling? openbaar vervoer?</String>
+            <ConnectedNoteIDs>1, 7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="29" FontSize="12.0" Position="273.0,332.0" Width="138.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.477193 0.557066 0.76433</Border>
+                <Fill>0.840969 0.866828 0.925903</Fill>
+            </Appearance>
+            <String>now featuring a fake festival!</String>
+            <Formatting>
+                <FormatRange Italic="Yes">0,30</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="30" FontSize="12.0" Position="606.0,119.0" Width="245.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>user account required for functionality</String>
+            <Formatting>
+                <FormatRange Bold="Yes" Italic="Yes">0,39</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="31" FontSize="12.0" Position="300.0,611.0" Width="245.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>user account required for functionality</String>
+            <Formatting>
+                <FormatRange Bold="Yes" Italic="Yes">0,39</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="32" FontSize="7.0" Position="162.0,106.0" Width="96.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>*may or may not be developed
+depending on time constraints</String>
+        </Note>
+        <Note ID="33" FontSize="12.0" Position="202.0,485.0" Width="66.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>quiet places</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="34" FontSize="12.0" Position="214.0,513.0" Width="48.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+                <Border Weight="1">0.747881 0.366532 0.542813</Border>
+                <Fill>0.918452 0.807302 0.863467</Fill>
+            </Appearance>
+            <String>parking?</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="35" FontSize="12.0" Position="222.0,222.0" Width="68.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>page history</String>
+            <ConnectedNoteIDs>1</ConnectedNoteIDs>
+        </Note>
+    </Notes>
+    <BackgroundShapes>
+        <Shape ID="21" Sticky="No" Position="498.0,113.0" Width="354.0" Height="191.511719">
+            <Appearance>
+                <Border Weight="1"></Border>
+                <Fill>0.902657 0.902657 0.902657</Fill>
+            </Appearance>
+        </Shape>
+        <Shape ID="22" Sticky="No" Position="293.0,471.0" Width="432.0" Height="167.503906">
+            <Appearance>
+                <Border Weight="1"></Border>
+                <Fill>0.902657 0.902657 0.902657</Fill>
+            </Appearance>
+        </Shape>
+    </BackgroundShapes>
+    <NoteStyles>
+        <Style Name="Blue Bubble" ID="2B4D30C1-321A-41D9-B8BC-4888C067A88E" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.477193 0.557066 0.76433</BorderColor>
+            <FillColor>0.840969 0.866828 0.925903</FillColor>
+        </Style>
+        <Style Name="Brown Bubble" ID="DC8ACAB2-6A46-4940-8389-4543978670FF" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.290055 0.1523 0.182215</BorderColor>
+            <FillColor>0.940019 0.892907 0.779716</FillColor>
+        </Style>
+        <Style Name="Green Bubble" ID="316475CE-4F95-4E51-AC52-937981B5EC49" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.331867 0.609932 0.356197</BorderColor>
+            <FillColor>0.790123 0.882327 0.80198</FillColor>
+        </Style>
+        <Style Name="Pink Bubble" ID="A3D51087-0D85-4603-8CE6-C3CBB16E8141" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.747881 0.366532 0.542813</BorderColor>
+            <FillColor>0.918452 0.807302 0.863467</FillColor>
+        </Style>
+        <Style Name="Red Text" ID="9285E173-EBE9-4716-89B0-E7B74066185D" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
+            <TextColor>1.0 0.0 0.0</TextColor>
+        </Style>
+        <Style Name="Title Text" ID="D9B9D0F9-527B-41A8-AA77-82FEAE49292A" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
+            <FontSize>28.0</FontSize>
+            <IsBold>Yes</IsBold>
+        </Style>
+        <Style Name="Yellow Bubble" ID="E507351B-42E6-4F73-B6DA-2CE749C13041" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.756763 0.785592 0.373258</BorderColor>
+            <FillColor>0.906773 0.910625 0.634363</FillColor>
+        </Style>
+    </NoteStyles>
+    <UISettings>
+        <BackgroundColor>1.0 1.0 1.0</BackgroundColor>
+        <DefaultFont>Gill Sans</DefaultFont>
+        <DefaultTextColor>0.0 0.0 0.0</DefaultTextColor>
+    </UISettings>
+    <PrintSettings PaperSize="595.0,842.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="iso-a4" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScappleDocument>
