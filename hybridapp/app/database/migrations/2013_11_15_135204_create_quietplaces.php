@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTickets extends Migration {
+class CreateQuietplaces extends Migration {
 
     /**
      * Run the migrations.
@@ -11,16 +11,16 @@ class CreateTickets extends Migration {
      */
     public function up()
     {
-        Schema::create('tickets', function($table) {
+        Schema::create('quietplaces', function($table) {
             // auto incremental id (PK)
             $table->increments('id');
-            $table->text('body');
+            $table->text('description')->nullable();
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
             //foreign key
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('location_id')->references('id')->on('locations');
         });
     }
 
@@ -31,7 +31,7 @@ class CreateTickets extends Migration {
      */
     public function down()
     {
-        Schema::drop('tickets');
+        Schema::drop('quietplaces');
     }
 
 }
