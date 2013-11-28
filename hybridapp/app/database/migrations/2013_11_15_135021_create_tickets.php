@@ -19,6 +19,8 @@ class CreateTickets extends Migration {
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
+
+            $table->integer('user_id')->unsigned;
             //foreign key
             $table->foreign('user_id')->references('id')->on('users');
         });

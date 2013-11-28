@@ -18,7 +18,7 @@ class CreateUsers extends Migration {
             $table->string('password', 32);
             $table->string('salt', 22);
             $table->text('privatekey',255);
-            $table->text('privatekey',255);
+            $table->text('publickey',255);
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME

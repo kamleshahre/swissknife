@@ -19,6 +19,8 @@ class CreateQuietplaces extends Migration {
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
+
+            $table->integer('location_id')->unsigned();
             //foreign key
             $table->foreign('location_id')->references('id')->on('locations');
         });

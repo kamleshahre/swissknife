@@ -12,16 +12,13 @@ class CreateLikes extends Migration {
     public function up()
     {
         Schema::create('likes', function($table) {
-            // auto incremental id (PK)
-            $table->increments('id');
+            $table->integer('user_id')->unsigned();
             //foreign key
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->integer('artist_id')->unsigned();
             //foreign key
             $table->foreign('artist_id')->references('id')->on('artists');
-            // created_at | updated_at DATETIME
-            $table->timestamps();
-            // deleted_at DATETIME
-            $table->softDeletes();
         });
     }
 

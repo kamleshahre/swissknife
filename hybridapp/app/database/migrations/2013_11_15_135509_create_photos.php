@@ -15,14 +15,17 @@ class CreatePhotos extends Migration {
             // auto incremental id (PK)
             $table->increments('id');
             $table->string('url',255);
-            //foreign key
-            $table->foreign('user_id')->references('id')->on('users');
-            //foreign key
-            $table->foreign('stage_id')->references('id')->on('stages');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
+
+            $table->integer('user_id')->unsigned();
+            $table->integer('stage_id')->unsigned();
+            //foreign key
+            $table->foreign('user_id')->references('id')->on('users');
+            //foreign key
+            $table->foreign('stage_id')->references('id')->on('stages');
         });
     }
 

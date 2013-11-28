@@ -14,14 +14,17 @@ class CreateLineups extends Migration {
             // auto incremental id (PK)
             $table->increments('id');
             $table->datetime('start');
-            //foreign key
-            $table->foreign('stage_id')->references('id')->on('stages');
-            //foreign key
-            $table->foreign('artist_id')->references('id')->on('artists');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
+
+            $table->integer('stage_id')->unsigned();
+            $table->integer('artist_id')->unsigned();
+            //foreign key
+            $table->foreign('stage_id')->references('id')->on('stages');
+            //foreign key
+            $table->foreign('artist_id')->references('id')->on('artists');
         });
     }
 
