@@ -13,8 +13,8 @@ class CreateStages extends Migration {
     {
         Schema::create('stages', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->text('body');
+            $table->increments('stage_id');
+            $table->text('stage_body');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -22,7 +22,7 @@ class CreateStages extends Migration {
 
             $table->integer('location_id')->unsigned();
             //foreign key
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('location_id')->on('locations');
         });
     }
 

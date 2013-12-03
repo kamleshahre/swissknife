@@ -25,4 +25,19 @@ class Lineup extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function artist()
+    {
+        return $this->belongsTo('Artist');
+    }
+
+    public function stage()
+    {
+        return $this->belongsTo('Stage');
+    }
+
+    public function notifications()
+    {
+        return $this->belongsToMany('Notification');
+    }
 }

@@ -13,9 +13,9 @@ class CreateLocations extends Migration {
     {
         Schema::create('locations', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->double('lat');
-            $table->double('long');
+            $table->increments('location_id');
+            $table->double('location_lat');
+            $table->double('location_long');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME

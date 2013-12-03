@@ -2,13 +2,13 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Parkingspots extends Eloquent{
+class Comment extends Eloquent{
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'parkingspots';
+    protected $table = 'comments';
 
 
     /**
@@ -17,8 +17,7 @@ class Parkingspots extends Eloquent{
      * @var array
      */
     protected $fillable = [
-        'places',
-        'available',
+        'body',
     ];
 
     protected $hidden = [
@@ -26,4 +25,24 @@ class Parkingspots extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
+
+    public function photo()
+    {
+        return $this->belongsTo('Photo');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo('Comment','comment_parrent');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('Comment');
+    }
 }

@@ -26,4 +26,9 @@ class Role extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany('User', 'users_has_roles');
+    }
 }

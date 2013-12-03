@@ -26,4 +26,19 @@ class Location extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function parkingspot()
+    {
+        return $this->belongsTo('Parkingspot');
+    }
+
+    public function quiteplace()
+    {
+        return $this->belongsTo('Quiteplace');
+    }
+
+    public function stage()
+    {
+        return $this->belongsTo('Stage');
+    }
 }

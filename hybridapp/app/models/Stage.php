@@ -26,4 +26,19 @@ class Stage extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function location()
+    {
+        return $this->hasOne('Location');
+    }
+
+    public function lineups()
+    {
+        return $this->hasMany('Lineup');
+    }
+
+    public function photos()
+    {
+        return $this->hasMany('Photo');
+    }
 }

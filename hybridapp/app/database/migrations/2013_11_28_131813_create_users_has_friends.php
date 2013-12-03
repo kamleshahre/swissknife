@@ -15,9 +15,9 @@ class CreateUsersHasFriends extends Migration {
 		Schema::create('users_has_friends',function($table)
 		{
             $table->integer('user_id')->unsigned();
-            $table->integer('friend_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('friend_id')->references('id')->on('users');
+            $table->integer('user_friend_id')->unsigned();
+            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_friend_id')->references('user_id')->on('users');
 		});
 	}
 

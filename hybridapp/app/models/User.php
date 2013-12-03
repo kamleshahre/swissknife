@@ -35,6 +35,57 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     ];
 
     /**
+ * Get Roles from Users
+ *
+ */
+    public function roles()
+    {
+        return $this->belongsToMany('Role', 'users_has_roles');
+    }
+
+    /**
+     * Get Likes (Artists) from Users
+     *
+     */
+    public function likes()
+    {
+        return $this->belongsToMany('Artist', 'likes');
+    }
+
+    /**
+     * Get Friends from Users
+     *
+     */
+    public function friends()
+    {
+        return $this->belongsToMany('User', 'users_has_friends','user_id','user_friend_id');
+    }
+
+    /**
+     * Get Comments
+     */
+    public function comments()
+    {
+        return $this->hasMany('Comment');
+    }
+
+    /**
+     * Get Notifications
+     */
+    public function notifications()
+    {
+        return $this->hasMany('Notification');
+    }
+
+    /**
+     * Get Ticket
+     */
+    public function ticket()
+    {
+        return $this->belongsTo('Ticket');
+    }
+
+    /**
      * Get the unique identifier for the user.
      *
      * @return mixed

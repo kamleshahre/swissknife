@@ -13,8 +13,8 @@ class CreateComments extends Migration {
 	{
         Schema::create('comments', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->text('body');
+            $table->increments('comment_id');
+            $table->text('comment_body');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -24,11 +24,11 @@ class CreateComments extends Migration {
             $table->integer('user_id')->unsigned();
             $table->integer('comment_parrent')->unsigned();
             //foreign key
-            $table->foreign('photo_id')->references('id')->on('photos');
+            $table->foreign('photo_id')->references('photo_id')->on('photos');
             //foreign key
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users');
             //foreign key
-            $table->foreign('comment_parrent')->references('id')->on('comments');
+            $table->foreign('comment_parrent')->references('comment_id')->on('comments');
         });
 	}
 

@@ -25,4 +25,9 @@ class Quietplace extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function location()
+    {
+        return $this->hasOne('Location');
+    }
 }

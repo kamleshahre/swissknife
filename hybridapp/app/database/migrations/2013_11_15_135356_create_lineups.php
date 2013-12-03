@@ -12,8 +12,8 @@ class CreateLineups extends Migration {
     {
         Schema::create('lineups', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->datetime('start');
+            $table->increments('lineup_id');
+            $table->datetime('lineup_start');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -22,9 +22,9 @@ class CreateLineups extends Migration {
             $table->integer('stage_id')->unsigned();
             $table->integer('artist_id')->unsigned();
             //foreign key
-            $table->foreign('stage_id')->references('id')->on('stages');
+            $table->foreign('stage_id')->references('stage_id')->on('stages');
             //foreign key
-            $table->foreign('artist_id')->references('id')->on('artists');
+            $table->foreign('artist_id')->references('artist_id')->on('artists');
         });
     }
 

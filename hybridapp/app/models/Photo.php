@@ -2,13 +2,13 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Artist extends Eloquent{
+class Photo extends Eloquent{
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'artists';
+    protected $table = 'photos';
 
 
     /**
@@ -17,7 +17,6 @@ class Artist extends Eloquent{
      * @var array
      */
     protected $fillable = [
-        'name',
         'url',
     ];
 
@@ -27,20 +26,23 @@ class Artist extends Eloquent{
         'deleted_at',
     ];
 
-    /**
-     * Get Likes (Users) from Artists
-     *
-     */
-    public function likes()
+    public function user()
     {
-        return $this->belongsToMany('User', 'likes');
+        return $this->belongsTo('User');
     }
 
-    /**
-     * Get Comments
-     */
-    public function linups()
+    public function stage()
     {
-        return $this->hasMany('Lineup');
+        return $this->belongsTo('Stage');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('Comment');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany('Tag', 'photos_has_tags');
     }
 }

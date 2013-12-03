@@ -13,8 +13,8 @@ class CreateQuietplaces extends Migration {
     {
         Schema::create('quietplaces', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->text('description')->nullable();
+            $table->increments('quietplace_id');
+            $table->text('quietplace_description')->nullable();
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -22,7 +22,7 @@ class CreateQuietplaces extends Migration {
 
             $table->integer('location_id')->unsigned();
             //foreign key
-            $table->foreign('location_id')->references('id')->on('locations');
+            $table->foreign('location_id')->references('location_id')->on('locations');
         });
     }
 

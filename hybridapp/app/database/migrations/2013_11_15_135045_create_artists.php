@@ -13,9 +13,9 @@ class CreateArtists extends Migration {
     {
         Schema::create('artists', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->string('name',255);
-            $table->string('url',255);
+            $table->increments('artist_id');
+            $table->string('artist_name',255);
+            $table->string('artist_url',255);
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME

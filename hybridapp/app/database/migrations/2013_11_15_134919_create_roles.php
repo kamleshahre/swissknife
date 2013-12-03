@@ -14,10 +14,10 @@ class CreateRoles extends Migration {
 	{
         Schema::create('roles', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
+            $table->increments('role_id');
             // varchar 32
-            $table->string('title', 45);
-            $table->text('description')->nullable();
+            $table->string('role_title', 45);
+            $table->text('role_description')->nullable();
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME

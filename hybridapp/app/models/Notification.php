@@ -25,4 +25,14 @@ class Notification extends Eloquent{
         'updated_at',
         'deleted_at',
     ];
+
+    public function lineup()
+    {
+        return $this->hasOne('Lineup');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('User');
+    }
 }

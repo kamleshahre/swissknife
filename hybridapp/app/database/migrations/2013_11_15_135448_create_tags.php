@@ -13,8 +13,8 @@ class CreateTags extends Migration {
     {
         Schema::create('tags', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->string('name',255);
+            $table->increments('tag_id');
+            $table->string('tag_name',255);
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME

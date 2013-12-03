@@ -13,8 +13,8 @@ class CreatePhotos extends Migration {
     {
         Schema::create('photos', function($table) {
             // auto incremental id (PK)
-            $table->increments('id');
-            $table->string('url',255);
+            $table->increments('photo_id');
+            $table->string('photo_url',255);
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -23,9 +23,9 @@ class CreatePhotos extends Migration {
             $table->integer('user_id')->unsigned();
             $table->integer('stage_id')->unsigned();
             //foreign key
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users');
             //foreign key
-            $table->foreign('stage_id')->references('id')->on('stages');
+            $table->foreign('stage_id')->references('stage_id')->on('stages');
         });
     }
 
