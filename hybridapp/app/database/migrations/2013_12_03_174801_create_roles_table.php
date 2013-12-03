@@ -2,16 +2,15 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRoles extends Migration {
+class CreateRolesTable extends Migration {
 
-
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('roles', function($table) {
             // auto incremental id (PK)
             $table->increments('role_id');
@@ -23,16 +22,16 @@ class CreateRoles extends Migration {
             // deleted_at DATETIME
             $table->softDeletes();
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         Schema::drop('roles');
-	}
+    }
 
 }

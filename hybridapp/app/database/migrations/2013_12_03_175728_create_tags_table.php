@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArtists extends Migration {
+class CreateTagsTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,11 +11,10 @@ class CreateArtists extends Migration {
      */
     public function up()
     {
-        Schema::create('artists', function($table) {
+        Schema::create('tags', function($table) {
             // auto incremental id (PK)
-            $table->increments('artist_id');
-            $table->string('artist_name',255);
-            $table->string('artist_url',255);
+            $table->increments('tag_id');
+            $table->string('tag_name',255);
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -30,7 +29,7 @@ class CreateArtists extends Migration {
      */
     public function down()
     {
-        Schema::drop('artists');
+        Schema::drop('tags');
     }
 
 }

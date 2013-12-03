@@ -2,15 +2,15 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateComments extends Migration {
+class CreateCommentsTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('comments', function($table) {
             // auto incremental id (PK)
             $table->increments('comment_id');
@@ -22,7 +22,7 @@ class CreateComments extends Migration {
 
             $table->integer('photo_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->integer('comment_parrent')->unsigned();
+            $table->integer('comment_parrent')->unsigned()->nullable();
             //foreign key
             $table->foreign('photo_id')->references('photo_id')->on('photos');
             //foreign key
@@ -30,16 +30,16 @@ class CreateComments extends Migration {
             //foreign key
             $table->foreign('comment_parrent')->references('comment_id')->on('comments');
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         Schema::drop('notifications');
-	}
+    }
 
 }

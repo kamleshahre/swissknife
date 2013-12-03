@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLikes extends Migration {
+class CreateUsersHasFriendsTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,14 +11,12 @@ class CreateLikes extends Migration {
      */
     public function up()
     {
-        Schema::create('likes', function($table) {
+        Schema::create('users_has_friends',function($table)
+        {
             $table->integer('user_id')->unsigned();
-            //foreign key
+            $table->integer('user_friend_id')->unsigned();
             $table->foreign('user_id')->references('user_id')->on('users');
-
-            $table->integer('artist_id')->unsigned();
-            //foreign key
-            $table->foreign('artist_id')->references('artist_id')->on('artists');
+            $table->foreign('user_friend_id')->references('user_id')->on('users');
         });
     }
 
@@ -29,7 +27,7 @@ class CreateLikes extends Migration {
      */
     public function down()
     {
-        Schema::drop('likes');
+        Schema::drop('users_has_friends');
     }
 
 }

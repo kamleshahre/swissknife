@@ -2,15 +2,15 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhotosHasTags extends Migration {
+class CreatePhotosHasTagsTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create('photos_has_tags', function($table)
         {
             $table->integer('photo_id')->unsigned();
@@ -18,16 +18,16 @@ class CreatePhotosHasTags extends Migration {
             $table->foreign('photo_id')->references('photo_id')->on('photos');
             $table->foreign('tag_id')->references('tag_id')->on('tags');
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		//
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
 
 }

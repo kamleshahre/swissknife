@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLineups extends Migration {
+class CreateLineupsTable extends Migration {
+
     /**
      * Run the migrations.
      *

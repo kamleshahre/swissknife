@@ -16,13 +16,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * @var array
      */
     protected $hidden = [
-        'password',
         'created_at',
         'updated_at',
         'deleted_at',
-        'privatekey',
-        'publickey',
-        'salt',
+        'user_privatekey',
+        'user_publickey',
     ];
 
     /**

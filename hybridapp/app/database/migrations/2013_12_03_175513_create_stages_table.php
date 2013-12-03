@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTags extends Migration {
+class CreateStagesTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,14 +11,18 @@ class CreateTags extends Migration {
      */
     public function up()
     {
-        Schema::create('tags', function($table) {
+        Schema::create('stages', function($table) {
             // auto incremental id (PK)
-            $table->increments('tag_id');
-            $table->string('tag_name',255);
+            $table->increments('stage_id');
+            $table->text('stage_body');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
+
+            $table->integer('location_id')->unsigned();
+            //foreign key
+            $table->foreign('location_id')->references('location_id')->on('locations');
         });
     }
 
@@ -29,7 +33,7 @@ class CreateTags extends Migration {
      */
     public function down()
     {
-        Schema::drop('tags');
+        Schema::drop('comments');
     }
 
 }

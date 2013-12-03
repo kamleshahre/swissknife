@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuietplaces extends Migration {
+class CreateLocationsTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,18 +11,15 @@ class CreateQuietplaces extends Migration {
      */
     public function up()
     {
-        Schema::create('quietplaces', function($table) {
+        Schema::create('locations', function($table) {
             // auto incremental id (PK)
-            $table->increments('quietplace_id');
-            $table->text('quietplace_description')->nullable();
+            $table->increments('location_id');
+            $table->double('location_lat');
+            $table->double('location_long');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
             $table->softDeletes();
-
-            $table->integer('location_id')->unsigned();
-            //foreign key
-            $table->foreign('location_id')->references('location_id')->on('locations');
         });
     }
 
@@ -33,7 +30,7 @@ class CreateQuietplaces extends Migration {
      */
     public function down()
     {
-        Schema::drop('quietplaces');
+        Schema::drop('locations');
     }
 
 }

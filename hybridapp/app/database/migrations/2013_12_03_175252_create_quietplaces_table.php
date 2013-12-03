@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParkingspots extends Migration {
+class CreateQuietplacesTable extends Migration {
 
     /**
      * Run the migrations.
@@ -11,11 +11,10 @@ class CreateParkingspots extends Migration {
      */
     public function up()
     {
-        Schema::create('parkingspots', function($table) {
+        Schema::create('quietplaces', function($table) {
             // auto incremental id (PK)
-            $table->increments('parkingspot_id');
-            $table->integer('parkingspot_places');
-            $table->integer('parkingspot_available');
+            $table->increments('quietplace_id');
+            $table->text('quietplace_description')->nullable();
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
@@ -34,7 +33,7 @@ class CreateParkingspots extends Migration {
      */
     public function down()
     {
-        Schema::drop('parkingspots');
+        Schema::drop('quietplaces');
     }
 
 }
