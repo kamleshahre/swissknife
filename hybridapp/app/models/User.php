@@ -19,23 +19,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'created_at',
         'updated_at',
         'deleted_at',
-        'user_privatekey',
-        'user_publickey',
     ];
 
+
     /**
-     * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).
+     * Get Roles from Users
      *
-     * @var array
      */
-    protected $fillable = [
-        'mail'
-    ];
-
-    /**
- * Get Roles from Users
- *
- */
     public function roles()
     {
         return $this->belongsToMany('Role', 'users_has_roles');
@@ -56,7 +46,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      */
     public function friends()
     {
-        return $this->belongsToMany('User', 'users_has_friends','user_id','user_friend_id');
+        return $this->belongsToMany('User', 'users_has_friends', 'user_id', 'user_friend_id');
     }
 
     /**
@@ -122,7 +112,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
          * Zie: http://laravel.com/docs/eloquent#model-events
          */
         self::creating(function ($user) {
-            $user->password = Hash::make($user->password);
+            $user->user_password = Hash::make($user->user_password);
         });
     }
 

@@ -13,10 +13,12 @@ class CreateUsersHasFriendsTable extends Migration {
     {
         Schema::create('users_has_friends',function($table)
         {
-            $table->integer('user_id')->unsigned();
+            $table->increments('id');
             $table->integer('user_friend_id')->unsigned();
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->integer('user_id')->unsigned();
+
             $table->foreign('user_friend_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 

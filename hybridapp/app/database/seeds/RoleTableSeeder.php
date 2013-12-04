@@ -10,8 +10,17 @@ class RoleTableSeeder extends Seeder {
 	public function run()
 	{
         Role::create(array(
+            'role_title' => 'Super Admin',
+            'role_description' => 'The Big Boss'
+        ));
+
+        Role::create(array(
             'role_title' => 'Admin',
             'role_description' => 'The Boss'
+        ));
+
+        Role::create(array(
+            'role_title' => 'User'
         ));
 	}
 
