@@ -1539,7 +1539,7 @@
 /Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/scripts/controllers \
 /Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/scripts/services \
 /Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/scripts/controllers/MainCtrl.js \
-/Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/scripts/services/WeatherSrvc.js \
+/Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/scripts/services/KnifeSrvc.js \
 /Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/spec/helper.js \
 /Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/spec/index.js \
 /Users/nicoverbruggen/Repositories/festival_hybridapp/SwissKnifeApp/platforms/android/assets/www/spec/lib \

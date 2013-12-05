@@ -28,7 +28,7 @@ var app = angular
     // OTHERWISE, REDIRECT TO ROOT
     // $routeProvider.otherwise({redirectTo: '/'});
 }]
-).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.WeatherSrvc',function($rootScope, $timeout, $location, WeatherSrvc){
+).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.KnifeSrvc',function($rootScope, $timeout, $location, KnifeSrvc){
     // APP INIT
     $rootScope.appInitialized = false;
     // SET /app PATH

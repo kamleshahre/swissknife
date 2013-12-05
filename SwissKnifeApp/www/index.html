@@ -12,6 +12,7 @@
     <script src="components/modernizr/modernizr.js"></script>
 </head>
 <body>
+    <div id="wrap">
     <!-- CONTENT -->
     <div class="navbar navbar-inverse">
         <div class="container">
@@ -21,19 +22,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SwissKnifeApp v1</a>
+                <a class="navbar-brand" href="#app" ng-class="{ active: isRouteActive('/app')}">SKA</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{ active: isRouteActive('/')}"><a href="#">Home</a></li>
+                    <li ng-class="{ active: isRouteActive('/app')}"><a href="#app">Home</a></li>
+                    <li ng-class="{ active: isRouteActive('/login')}"><a href="#login">Log In</a></li>
+                    <li ng-class="{ active: isRouteActive('/register')}"><a href="#register">Registration</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div id="view" class="container">
         <div ng-view></div>
     </div>
+    <div id='push'></div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">App created by Nico Verbruggen &amp; Bjorn Van Acker. Plugs into the Swiss Knife API.</p>
+      </div>
+    </div>
     <!-- SCRIPTS -->
+
     <!-- jQUERY JS -->
     <script src="components/jquery/jquery.js"></script>
     <!-- Bootstrap JS -->
@@ -52,6 +63,8 @@
 
     <!-- Application JS -->
     <script src="scripts/controllers/MainCtrl.js"></script>
-    <script src="scripts/services/WeatherSrvc.js"></script>
+    <script src="scripts/controllers/LoginCtrl.js"></script>
+    <script src="scripts/controllers/RegisterCtrl.js"></script>
+    <script src="scripts/services/KnifeSrvc.js"></script>
 </body>
 </html>
