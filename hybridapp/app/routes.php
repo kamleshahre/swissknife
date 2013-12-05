@@ -23,21 +23,28 @@ Route::get('/', function()
 Route::group(array('prefix' => 'API'), function()
 {
     ///User routes
-    Route::post('/user/login','UserController@auth');
-
+    Route::resource('/user','UserController',array('only' => array('index', 'show')));
     ///Photo routes
-
     Route::resource('/photo','PhotoController',array('only' => array('index', 'show')));
     Route::get('/photo/user/{id}','PhotoController@showuser');
     Route::get('/photo/stage/{id}','PhotoController@showstage');
     Route::get('/photo/tag/{id}','PhotoController@showtag');
-
     ///Tag routes
     Route::resource('/tag','TagController',array('only' => array('index', 'show')));
-
     ///Location routes
     Route::resource('/location','LocationController',array('only' => array('index', 'show')));
-
     ///Parkingspot routes
     Route::resource('/parkingspot','ParkingspotController',array('only' => array('index', 'show')));
+    ///Stage routes
+    Route::resource('/stage','StageController',array('only' => array('index', 'show')));
+    ///Lineup routes
+    Route::resource('/lineup','LineupController',array('only' => array('index', 'show')));
+    ///Artist routes
+    Route::resource('/artist','ArtistController',array('only' => array('index', 'show')));
+    ///Notification routes
+    Route::resource('/notification','NotificationController',array('only' => array('index', 'show')));
+    ///Comment routes
+    Route::resource('/comment','CommentController',array('only' => array('index', 'show')));
+    ///Ticket routes
+    Route::resource('/ticket','TicketController',array('only' => array('index', 'show')));
 });

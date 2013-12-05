@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends \BaseController {
+class TicketController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,15 +9,9 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-        $users = User::all();
-        return Response::json($users)->setCallback(Input::get('callback'));
+        $tickets = Ticket::all();
+        return Response::json($tickets)->setCallback(Input::get('callback'));
 	}
-
-    public function auth()
-    {
-        //View::make('user.index', array('mail' => $_POST['mail'],'password' => $_POST['password']));
-        return $_POST['mail'].' '.$_POST['password'];
-    }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -47,8 +41,8 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $user = User::find($id);
-        return Response::json($user)->setCallback(Input::get('callback'));
+        $ticket = Ticket::find($id);
+        return Response::json($ticket)->setCallback(Input::get('callback'));
 	}
 
 	/**
