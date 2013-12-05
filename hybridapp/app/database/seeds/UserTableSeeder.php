@@ -10,7 +10,7 @@ class UserTableSeeder extends Seeder {
     public function run()
     {
         $mail = 'bjornvanacker8@hotmail.com';
-        $password = Hash::make('bjva1990');
+        $password = 'bjva1990';
         $privatekey = str_shuffle (Hash::make('bjva1990'.$mail));
         $publickey = str_shuffle (Hash::make('bjva1990'.$mail));
 
@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder {
         $userOne->roles()->attach(3);
 
         $mail = 'nicoverbruggen@gmail.com';
-        $password = Hash::make('nicoverbr');
+        $password = 'nicoverbr';
         $privatekey = str_shuffle (Hash::make('nicoverbr'.$mail));
         $publickey = str_shuffle (Hash::make('nicoverbr'.$mail));
 

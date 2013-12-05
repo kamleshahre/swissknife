@@ -14,7 +14,8 @@ class CreateStagesTable extends Migration {
         Schema::create('stages', function($table) {
             // auto incremental id (PK)
             $table->increments('stage_id');
-            $table->text('stage_body');
+            $table->text('stage_name');
+            $table->text('stage_description');
             // created_at | updated_at DATETIME
             $table->timestamps();
             // deleted_at DATETIME
