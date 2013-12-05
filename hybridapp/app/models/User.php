@@ -9,6 +9,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * @var string
      */
     protected $table = 'users';
+    protected $primaryKey = 'user_id';
 
     /**
      * De attributen die niet in de Array- of JSON-versie van het model komen.
@@ -55,6 +56,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function comments()
     {
         return $this->hasMany('Comment');
+    }
+
+    /**
+     * Get Photos
+     */
+    public function photos()
+    {
+        return $this->hasMany('Photo');
     }
 
     /**

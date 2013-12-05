@@ -13,11 +13,11 @@ class TagTableSeeder extends Seeder {
             'tag_name' => 'Metal',
         ));
 
-        Role::create(array(
+        Tag::create(array(
             'tag_name' => 'Rock',
         ));
 
-        Role::create(array(
+        Tag::create(array(
             'tag_name' => 'Classic'
         ));
 	}

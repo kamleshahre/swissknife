@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('StageTableSeeder');
         $this->call('LineupTableSeeder');
         $this->call('NotificationTableSeeder');
+        $this->call('TagTableSeeder');
         $this->call('PhotoTableSeeder');
         $this->call('CommentTableSeeder');
 	}

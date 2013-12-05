@@ -9,7 +9,7 @@ class Lineup extends Eloquent{
      * @var string
      */
     protected $table = 'lineups';
-
+    protected $primaryKey = 'lineup_id';
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

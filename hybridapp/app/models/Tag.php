@@ -9,7 +9,7 @@ class Tag extends Eloquent{
      * @var string
      */
     protected $table = 'tags';
-
+    protected $primaryKey = 'tag_id';
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

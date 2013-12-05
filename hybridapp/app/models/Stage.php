@@ -9,7 +9,7 @@ class Stage extends Eloquent{
      * @var string
      */
     protected $table = 'stages';
-
+    protected $primaryKey = 'stage_id';
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

@@ -9,7 +9,7 @@ class Parkingspot extends Eloquent{
      * @var string
      */
     protected $table = 'parkingspots';
-
+    protected $primaryKey = 'parkingspot_id';
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

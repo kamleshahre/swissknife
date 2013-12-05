@@ -9,7 +9,7 @@ class Location extends Eloquent{
      * @var string
      */
     protected $table = 'locations';
-
+    protected $primaryKey = 'location_id';
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

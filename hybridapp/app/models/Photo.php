@@ -9,7 +9,7 @@ class Photo extends Eloquent{
      * @var string
      */
     protected $table = 'photos';
-
+    protected $primaryKey = 'photo_id';
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).
@@ -28,12 +28,12 @@ class Photo extends Eloquent{
 
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->hasOne('User');
     }
 
     public function stage()
     {
-        return $this->belongsTo('Stage');
+        return $this->hasOne('Stage');
     }
 
     public function comments()
