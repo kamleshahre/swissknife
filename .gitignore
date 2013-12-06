@@ -5,7 +5,8 @@ composer.lock
 .DS_Store
 Thumbs.db
 /hybridapp/.idea
-/SwissKnifeApp/.idea
-/SwissKnifeApp/platforms
-/SwissKnifeApp/merges
-/SwissKnifeApp/.cordova
+/SwissKnifeApp/.idea/
+/SwissKnifeApp/platforms/ios
+/SwissKnifeApp/platforms/android
+/SwissKnifeApp/merges/
+/SwissKnifeApp/.cordova/

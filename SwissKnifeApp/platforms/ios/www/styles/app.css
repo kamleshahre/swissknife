@@ -1,45 +1,98 @@
+/* Web fonts */
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Exo 2 Light'), local('Exo2-Light'), url(Exo2Light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo 2'), local('Exo2-Regular'), url(Exo2Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Exo 2 Bold'), local('Exo2-Bold'), url(Exo2Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Exo 2 Italic'), local('Exo2-Italic'), url(Exo2Italic.woff) format('woff');
+}
+
+.btn-wide{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
 .navbar {
   border-radius: 0 !important; }
 
-/* Sticky footer styles
-      -------------------------------------------------- */
+.btn-btmnav{
+    width:25%;
+    float: left;
+}
 
-      html,
-      body {
-        height: 100%;
-        /* The html and body elements cannot have any padding or margin. */
-      }
+.btn-btmnav.active{
+    background-color: #FFF;
+    color: #333;
+}
 
-      /* Wrapper for page content to push down footer */
-      #wrap {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -40px;
-      }
-      
-      #view{
-          padding-left: 5%;
-          padding-right: 5%;
-          width: 90%;
-      }
+#view{
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+}
 
-      /* Set the fixed height of the footer here */
-      #push,
-      #footer {
-        height: 40px;
-      }
-      #footer {
-        background-color: #f5f5f5;
-      }
-      
-      #footer{
-          padding-top: 9px;
-      }
-      
-      .usernamecheck{
-          margin-top: 10px;
-      }
+.special-nav-bottom{
+    height: 55px;
+}
+
+.special-nav-bottom ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.special-nav-bottom ul li{
+    float: left;
+    width: 20%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.special-nav-bottom ul li.active a{
+    color: #0064cd;
+}
+
+.special-nav-bottom ul li a {
+    text-align: center;
+    width:100%;
+    color: #777;
+    margin: 0;
+}
+
+.special-nav-bottom ul li a:hover{
+    text-decoration: none;
+}
+
+.special-nav-bottom ul li a p{
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.small-caps{
+    text-transform: uppercase;
+    font-size: 0.75em;
+}
+
+body { padding-bottom: 55px; padding-top: 70px; }
