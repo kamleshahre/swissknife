@@ -1,0 +1,27 @@
+{
+  "name": "SwissKnifeApp",
+  "version": "0.1.0",
+  "authors": [
+    "Nico Verbruggen <nico.verb@gmail.com>"
+  ],
+  "description": "The app for all your festival needs.",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-cookies": "1.2.0-rc.3",
+    "angular-local-storage": "*",
+    "angular-resource": "1.2.0-rc.3",
+    "angular-route": "1.2.0-rc.3",
+    "angular": "~1.2.3",
+    "font-awesome": "4.0.1",
+    "bootstrap": "~3.0.2",
+    "modernizr": "2.6.2"
+  }
+}

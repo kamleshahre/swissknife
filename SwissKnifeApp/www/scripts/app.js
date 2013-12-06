@@ -23,7 +23,7 @@ var app = angular
     // DELETE REQUESTED WITH
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     // /
-    $routeProvider.when('/', {templateUrl:'views/login.html', controller:'swissKnifeApp.controllers.LoginCtrl'});
+    $routeProvider.when('/', {templateUrl:'views/welcome.html'});
     // /login
     $routeProvider.when('/login', {templateUrl:'views/login.html', controller:'swissKnifeApp.controllers.LoginCtrl'});
     // /app
@@ -37,6 +37,13 @@ var app = angular
     $routeProvider.when('/register', {
             templateUrl:'views/register.html',
             controller:'swissKnifeApp.controllers.RegisterCtrl',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/map', {
+            templateUrl:'views/map.html',
+            controller:'swissKnifeApp.controllers.MapCtrl',
             resolve: {
                 //
             }

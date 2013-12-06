@@ -1,6 +1,6 @@
 /**
  * Created by nicoverbruggen on 05/12/13.
- * Main controller of app.
+ * Map controller of app.
  */
 
 (function(){
@@ -9,6 +9,6 @@
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.MainCtrl',['$scope', function($scope){
+    controllers.controller('swissKnifeApp.controllers.MapCtrl',['$scope', function($scope){
     }]);
 })();
