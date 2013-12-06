@@ -25,6 +25,10 @@
   src: local('Exo 2 Italic'), local('Exo2-Italic'), url(Exo2Italic.woff) format('woff');
 }
 
+html, body, h1, h2, h3, h4, h5, h6{
+  font-family: 'Roboto', 'Helvetica Neue', 'Exo 2', 'Arial' !important;
+}
+
 .btn-wide{
     width: 50%;
     margin-left: auto;
@@ -92,7 +96,6 @@
 
 .small-caps{
     text-transform: uppercase;
-    font-size: 0.75em;
 }
 
 body { padding-bottom: 55px; padding-top: 70px; }

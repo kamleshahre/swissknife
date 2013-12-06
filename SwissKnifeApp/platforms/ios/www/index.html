@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="swissKnifeApp" xmlns:ng="http://angularjs.org">
 <head>
-    <title></title>
+    <title>Swiss Knife App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- This meta tag makes the app webapp compatible with iOS -> if you pin to homescreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
@@ -57,10 +61,10 @@
     <nav class="navbar navbar-default navbar-fixed-bottom special-nav-bottom" role="navigation" ng-controller="swissKnifeApp.controllers.HeaderCtrl">
           <ul>
               <li ng-class="{ active: isRouteActive('/')}"><a href="#"><p><i class="fa fa-home fa-2x"></i><br/><span class="small small-caps">Home</span></p></a></li>
-              <li ng-class="{ active: isRouteActive('/1')}"><a href="#1"><p><i class="fa fa-clock-o fa-2x"></i><br/><span class="small small-caps">Lineup</span></p></a></li>
-              <li ng-class="{ active: isRouteActive('/2')}"><a href="#2"><p><i class="fa fa-map-marker fa-2x"></i><br/><span class="small small-caps">Map</span></p></a></li>
-              <li ng-class="{ active: isRouteActive('/3')}"><a href="#3"><p><i class="fa fa-user fa-2x"></i><br/><span class="small small-caps">Friends</span></p></a></li>
-              <li ng-class="{ active: isRouteActive('/4')}"><a href="#4"><p><i class="fa fa-cog fa-2x"></i><br/><span class="small small-caps">Settings</span></p></a></li>
+              <li ng-class="{ active: isRouteActive('/lineup')}"><a href="#lineup"><p><i class="fa fa-clock-o fa-2x"></i><br/><span class="small small-caps">Lineup</span></p></a></li>
+              <li ng-class="{ active: isRouteActive('/map')}"><a href="#map"><p><i class="fa fa-map-marker fa-2x"></i><br/><span class="small small-caps">Map</span></p></a></li>
+              <li ng-class="{ active: isRouteActive('/friends')}"><a href="#friends"><p><i class="fa fa-user fa-2x"></i><br/><span class="small small-caps">Friends</span></p></a></li>
+              <li ng-class="{ active: isRouteActive('/settings')}"><a href="#settings"><p><i class="fa fa-cog fa-2x"></i><br/><span class="small small-caps">Settings</span></p></a></li>
           </ul>
     </nav>
     <!-- SCRIPTS -->
@@ -81,7 +85,6 @@
 
     <!-- Application JS -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/ddfix.js"></script>
 
     <!-- Application JS -->
     <script src="scripts/controllers/HeaderCtrl.js"></script>
