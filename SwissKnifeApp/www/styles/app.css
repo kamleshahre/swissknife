@@ -1,3 +1,34 @@
+/* Web fonts */
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Exo 2 Light'), local('Exo2-Light'), url(Exo2Light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo 2'), local('Exo2-Regular'), url(Exo2Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Exo 2 Bold'), local('Exo2-Bold'), url(Exo2Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Exo 2 Italic'), local('Exo2-Italic'), url(Exo2Italic.woff) format('woff');
+}
+
+html, body, h1, h2, h3, h4, h5, h6, *{
+  font-family: 'Exo 2' !important;
+}
+
 .navbar {
   border-radius: 0 !important; }
 
@@ -38,8 +69,4 @@
       
       #footer{
           padding-top: 9px;
-      }
-      
-      .usernamecheck{
-          margin-top: 10px;
       }
