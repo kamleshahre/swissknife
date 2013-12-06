@@ -22,9 +22,32 @@ var app = angular
     $httpProvider.defaults.useXDomain = true;
     // DELETE REQUESTED WITH
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    // MAIN VIEW
-    $routeProvider.when('/', {templateUrl:'views/main.html', controller:'swissKnifeApp.controllers.MainCtrl'});
-    $routeProvider.when('/app', {templateUrl:'views/main.html', controller:'swissKnifeApp.controllers.MainCtrl'});
+    // /
+    $routeProvider.when('/', {templateUrl:'views/welcome.html'});
+    // /login
+    $routeProvider.when('/login', {templateUrl:'views/login.html', controller:'swissKnifeApp.controllers.LoginCtrl'});
+    // /app
+    $routeProvider.when('/app', {
+            templateUrl:'views/main.html',
+            controller:'swissKnifeApp.controllers.MainCtrl',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/register', {
+            templateUrl:'views/register.html',
+            controller:'swissKnifeApp.controllers.RegisterCtrl',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/map', {
+            templateUrl:'views/map.html',
+            controller:'swissKnifeApp.controllers.MapCtrl',
+            resolve: {
+                //
+            }
+    });
     // OTHERWISE, REDIRECT TO ROOT
     // $routeProvider.otherwise({redirectTo: '/'});
 }]
@@ -32,16 +55,16 @@ var app = angular
     // APP INIT
     $rootScope.appInitialized = false;
     // SET /app PATH
-    $rootScope.$on('$routeChangeStart', function(event, next, current){
-        if(!$rootScope.appInitialized)
+    /*$rootScope.$on('$routeChangeStart', function(event, next, current){
+        if(!$rootScope.appInitialized) // + check if logged in!
         {
-            $location.path('/app');
+            $location.path('/');
         }
         else if($rootScope.appInitialized && $location.path() === '/app')
         {
             $location.path('/');
         }
-    });
+    });*/
 }]);
 
 /*
@@ -56,3 +79,10 @@ var appCtrl = app.controller('AppCtrl', ['$scope', '$location', 'appInitialized'
         $location.path('/');
     }
 }]);
+
+/* Extra tricks */
+
+function goBack()
+  {
+  window.history.back();
+  }

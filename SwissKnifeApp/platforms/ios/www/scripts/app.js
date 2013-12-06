@@ -79,3 +79,10 @@ var appCtrl = app.controller('AppCtrl', ['$scope', '$location', 'appInitialized'
         $location.path('/');
     }
 }]);
+
+/* Extra tricks */
+
+function goBack()
+  {
+  window.history.back();
+  }

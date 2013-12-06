@@ -56,7 +56,9 @@ html, body, h1, h2, h3, h4, h5, h6{
 }
 
 .special-nav-bottom{
-    height: 55px;
+    height: 57px;
+    border-top: 1px solid #DDD;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .special-nav-bottom ul{
@@ -74,13 +76,29 @@ html, body, h1, h2, h3, h4, h5, h6{
 }
 
 .special-nav-bottom ul li.active a{
-    color: #0064cd;
+    color: #c8324c;
+}
+
+.navbar-brand{
+    color: #c8324c !important;
+}
+
+.navbar-brand:hover{
+    color: #333 !important;
+}
+
+.navbar-toggle{
+    border-color: #c8324c !important;
+}
+
+.icon-bar{
+    background-color: #c8324c !important;
 }
 
 .special-nav-bottom ul li a {
     text-align: center;
     width:100%;
-    color: #777;
+    color: #999;
     margin: 0;
 }
 
@@ -95,7 +113,38 @@ html, body, h1, h2, h3, h4, h5, h6{
 }
 
 .small-caps{
-    text-transform: uppercase;
+    
 }
 
 body { padding-bottom: 55px; padding-top: 70px; }
+
+#jumbologo{
+    float: left;
+    max-width: 120px;
+    padding: auto;
+    clear: both;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+/* =============================
+* MEDIA QUERIES
+* ============================== */
+
+@media screen and (max-width: 480px){
+    #jumbologo{
+        display: block;
+        float: none;
+        width: 120px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px){
+}
+
+@media screen and (min-width: 961px){
+}

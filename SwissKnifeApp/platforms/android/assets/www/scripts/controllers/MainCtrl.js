@@ -9,6 +9,6 @@
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.MainCtrl',['$scope', '$routeParams', 'weatherApp.services.KnifeSrvc', 'knife', function($scope, $routeParams, KnifeSrvc, knife){
+    controllers.controller('swissKnifeApp.controllers.MainCtrl',['$scope', function($scope){
     }]);
 })();
