@@ -73,6 +73,12 @@ var app = angular
                 //
             }
     });
+    $routeProvider.when('/find/friends', {
+            templateUrl:'views/friends.html',
+            resolve: {
+                //
+            }
+    });
     $routeProvider.when('/photo', {
             templateUrl:'views/photo.html',
             resolve: {

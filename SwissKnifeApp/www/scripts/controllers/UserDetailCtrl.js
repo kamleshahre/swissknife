@@ -8,7 +8,7 @@
             // Loads the username of the user
             $scope.username = $routeParams.friendUsername;
             // Set friends (get this information from JSON later)
-            $scope.friends = ['bjorvack', 'janeroe', 'johndoe', 'nicoverbruggen'];
+            $scope.friends = ['nedstark', 'dany', 'robbstark', 'jaimelannister', 'tyrion'];
             // Check if friend is a valid friend.
             if ($.inArray($scope.username, $scope.friends, 0) === -1){
                 // If user doesn't exist, set username to unknown

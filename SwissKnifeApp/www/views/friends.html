@@ -5,14 +5,16 @@
     <hr>
         <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h2>Your Friends <button class="btn btn-default">+ Find A Friend</button></h2>
+        <h2>Your Friends <a href="#find/friends" class="btn btn-default">+ Find A Friend</a></h2>
         <div class="list-group">
-            <div class="sample" ng-init="users=[{'username':'johndoe', 'name':'John Doe'},
-                                                {'username':'janeroe', 'name':'Jane Roe'},
-                                                {'username':'bjorvack', 'name':'Bjorn Van Acker'},
-                                                {'username':'nicoverbruggen', 'name':'Nico Verbruggen'}
+            <div class="sample" ng-init="users=[
+                                                {'username':'nedstark', 'name':'Eddard Stark'},
+                                                {'username':'dany', 'name':'Daenerys Targaryen'},
+                                                {'username':'robbstark', 'name':'Robb Stark'},
+                                                {'username':'jaimelannister', 'name':'Jaime Lannister'},
+                                                {'username':'tyrion', 'name':'Tyrion Lannister'}
                                                ]"></div>
-            <input type="text" class="form-control" placeholder="Search friends" ng-model="searchFriend">
+            <input type="text" class="form-control" id="input" placeholder="Search friends" ng-model="searchFriend">
             <a ng-repeat="person in users | filter:searchFriend | orderBy:'name'" href="#friends/{{person.username}}" class="list-group-item"><strong>{{person.name}}</strong> ({{person.username}})</a>
         </div>
         <br/>
@@ -28,3 +30,5 @@
         </div>
     </div>
 </div>
+<!-- FIXES SHOULD LOAD LAST -->
+<script src="scripts/fixes.js"></script>
