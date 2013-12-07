@@ -2,7 +2,7 @@
     'use strict';
     var controllers = angular.module('swissKnifeApp.controllers');
 
-    controllers.controller('swissKnifeApp.controllers.HeaderCtrl',['$scope', '$location', '$rootScope',
+    controllers.controller('swissKnifeApp.controllers.NavCtrl',['$scope', '$location', '$rootScope',
         function($scope, $location, $rootScope){
             $rootScope.isRouteActive = function(route) {
                 if(route === '/')

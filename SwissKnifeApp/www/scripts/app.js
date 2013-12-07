@@ -48,6 +48,42 @@ var app = angular
                 //
             }
     });
+    $routeProvider.when('/about', {
+            templateUrl:'views/about.html',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/lineup', {
+            templateUrl:'views/lineup.html',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/friends', {
+            templateUrl:'views/friends.html',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/photo', {
+            templateUrl:'views/photo.html',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/tickets', {
+            templateUrl:'views/tickets.html',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/twitterwall', {
+            templateUrl:'views/twitter.html',
+            resolve: {
+                //
+            }
+    });
     // OTHERWISE, REDIRECT TO ROOT
     // $routeProvider.otherwise({redirectTo: '/'});
 }]

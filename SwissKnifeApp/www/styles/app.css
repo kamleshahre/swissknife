@@ -1,4 +1,6 @@
-/* Web fonts */
+/* =============================
+* WEB FONTS
+* ============================== */
 
 @font-face {
   font-family: 'Exo 2';
@@ -25,8 +27,105 @@
   src: local('Exo 2 Italic'), local('Exo2-Italic'), url(Exo2Italic.woff) format('woff');
 }
 
+/* =============================
+* MAIN TYPO
+* ============================== */
+
 html, body, h1, h2, h3, h4, h5, h6{
-  font-family: 'Roboto', 'Helvetica Neue', 'Exo 2', 'Arial' !important;
+  font-family: 'Helvetica Neue', 'Roboto', 'Helvetica', 'Exo 2', 'Arial' !important;
+}
+
+h1, h2, h3{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+p.tweet{
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+}
+
+span.sender{
+    font-weight: bold;
+}
+
+/* =============================
+* MAIN VIEW
+* ============================== */
+
+#view{
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+}
+
+/* =============================
+* CLEARFIX
+* ============================== */
+
+.clearfix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+
+/* =============================
+* BOOTSTRAP OVERRIDES
+* ============================== */
+
+p.subhead{
+    font-size: 1.4em;
+    color: #888;
+}
+
+.table td{
+    font-size: 1.2em;
+}
+
+table.table{
+    margin-bottom: 0;
+}
+
+.td-hour{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.list-group-item-icon{
+    height: auto;
+    float: left;
+    clear: both;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+.panel-body h3{
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.panel-body p.description{
+    margin-bottom: 15px;
+}
+
+.list-group{
+    margin-bottom: 0;
 }
 
 .btn-wide{
@@ -47,12 +146,6 @@ html, body, h1, h2, h3, h4, h5, h6{
 .btn-btmnav.active{
     background-color: #FFF;
     color: #333;
-}
-
-#view{
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 90%;
 }
 
 .special-nav-bottom{
@@ -97,7 +190,7 @@ html, body, h1, h2, h3, h4, h5, h6{
 
 .special-nav-bottom ul li a {
     text-align: center;
-    width:100%;
+    width: 100%;
     color: #999;
     margin: 0;
 }
@@ -112,11 +205,8 @@ html, body, h1, h2, h3, h4, h5, h6{
     margin-right: auto;
 }
 
-.small-caps{
-    
-}
-
 body { padding-bottom: 55px; padding-top: 70px; }
+
 
 #jumbologo{
     float: left;
@@ -125,6 +215,22 @@ body { padding-bottom: 55px; padding-top: 70px; }
     clear: both;
     margin-right: 40px;
     margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+/* =============================
+* MAP STYLES
+* ============================== */
+
+#view.hasmap{
+    
+}
+
+.map{
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    background-color: #666;
 }
 
 /* =============================
@@ -137,6 +243,11 @@ body { padding-bottom: 55px; padding-top: 70px; }
         float: none;
         width: 120px;
         margin: auto;
+    }
+    #view{
+        padding-left: 3%;
+        padding-right: 3%;
+        width: 94%;
     }
 }
 

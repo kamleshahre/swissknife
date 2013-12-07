@@ -41,7 +41,7 @@
           <a class="navbar-brand" href="#">SwissKnifeApp</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="swissKnifeApp.controllers.HeaderCtrl">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="swissKnifeApp.controllers.NavCtrl">
           <ul class="nav navbar-nav">
             <li ng-class="{ active: isRouteActive('/')}"><a href="#">Home</a></li>
             <li class="dropdown">
@@ -63,17 +63,17 @@
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
-    <div id="view" class="container">
+    <div id="view" class="container" ng-controller="swissKnifeApp.controllers.NavCtrl" ng-class="{ hasmap: isRouteActive('/map')}">
         <div ng-view></div>
     </div>
     </div>
-    <nav class="navbar navbar-default navbar-fixed-bottom special-nav-bottom" role="navigation" ng-controller="swissKnifeApp.controllers.HeaderCtrl">
+    <nav class="navbar navbar-default navbar-fixed-bottom special-nav-bottom" role="navigation" ng-controller="swissKnifeApp.controllers.NavCtrl">
           <ul>
               <li ng-class="{ active: isRouteActive('/')}"><a href="#"><p><i class="fa fa-home fa-2x"></i><br/><span class="small small-caps">Home</span></p></a></li>
               <li ng-class="{ active: isRouteActive('/lineup')}"><a href="#lineup"><p><i class="fa fa-clock-o fa-2x"></i><br/><span class="small small-caps">Lineup</span></p></a></li>
-              <li ng-class="{ active: isRouteActive('/map')}"><a href="#map"><p><i class="fa fa-map-marker fa-2x"></i><br/><span class="small small-caps">Map</span></p></a></li>
+              <li ng-class="{ active: isRouteActive('/photo')}"><a href="#photo"><p><i class="fa fa-camera-retro fa-2x"></i><br/><span class="small small-caps">Photos</span></p></a></li>
               <li ng-class="{ active: isRouteActive('/friends')}"><a href="#friends"><p><i class="fa fa-user fa-2x"></i><br/><span class="small small-caps">Friends</span></p></a></li>
-              <li ng-class="{ active: isRouteActive('/settings')}"><a href="#settings"><p><i class="fa fa-cog fa-2x"></i><br/><span class="small small-caps">Settings</span></p></a></li>
+              <li ng-class="{ active: isRouteActive('/map')}"><a href="#map"><p><i class="fa fa-map-marker fa-2x"></i><br/><span class="small small-caps">Map</span></p></a></li>
           </ul>
     </nav>
     <!-- SCRIPTS -->
@@ -93,7 +93,7 @@
     <script src="scripts/app.js"></script>
 
     <!-- Application JS -->
-    <script src="scripts/controllers/HeaderCtrl.js"></script>
+    <script src="scripts/controllers/NavCtrl.js"></script>
     <script src="scripts/controllers/MainCtrl.js"></script>
     <script src="scripts/controllers/LoginCtrl.js"></script>
     <script src="scripts/controllers/RegisterCtrl.js"></script>
