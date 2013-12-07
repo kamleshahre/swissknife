@@ -66,6 +66,13 @@ var app = angular
                 //
             }
     });
+    $routeProvider.when('/friends/:friendUsername', {
+            templateUrl:'views/friend_detail.html',
+            controller: 'swissKnifeApp.controllers.UserDetailCtrl',
+            resolve: {
+                //
+            }
+    });
     $routeProvider.when('/photo', {
             templateUrl:'views/photo.html',
             resolve: {
