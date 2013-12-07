@@ -1,12 +1,23 @@
+# Generated files
+
 /bootstrap/compiled.php
 /vendor
 composer.phar
 composer.lock
+/hybridapp/.idea
+
+# Default OS hidden files
+
 .DS_Store
 Thumbs.db
-/hybridapp/.idea
+
+# Ignore all Cordova builds, merges, plugins etc.
+# Everyone should build their own versions for their own devices
+# and their own OS versions!
+
 /SwissKnifeApp/.idea/
 /SwissKnifeApp/platforms/ios
 /SwissKnifeApp/platforms/android
 /SwissKnifeApp/merges/
+/SwissKnifeApp/plugins/
 /SwissKnifeApp/.cordova/
