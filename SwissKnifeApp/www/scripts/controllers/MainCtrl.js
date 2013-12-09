@@ -1,29 +1,14 @@
 /**
- * Lineup Controller
- * Created on Dec 9 2013 by Nico Verbruggen
+ * Created by nicoverbruggen on 05/12/13.
+ * Main controller of app.
  */
 
 (function(){
-    
+    // USE STRICT
     'use strict';
-    
-    // LineupCtrl is an angular controller
+    // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
-    
-    // Defining the controller
-    controllers.controller('swissKnifeApp.controllers.LineupCtrl',['$scope', function($scope){
-            
-            // Get data from provider
-            
-            
-            
-            // Define stages
-            
-            $scope.stages = [];
-            
-            // Parse data from each stage
-            
-            // Display stage information using View
-            
+    // SET MAIN CONTROLLER
+    controllers.controller('swissKnifeApp.controllers.MainCtrl',['$scope', function($scope){
     }]);
 })();

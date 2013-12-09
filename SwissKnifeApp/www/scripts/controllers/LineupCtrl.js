@@ -1,14 +1,39 @@
 /**
- * Created by nicoverbruggen on 05/12/13.
- * Main controller of app.
+ * Lineup Controller
+ * Created on Dec 9 2013 by Nico Verbruggen
  */
 
 (function(){
-    // USE STRICT
+    
     'use strict';
-    // SET UP CONTROLLERS AS ANGULAR MODULE
+    
+    // LineupCtrl is an angular controller
     var controllers = angular.module('swissKnifeApp.controllers');
-    // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.MainCtrl',['$scope', function($scope){
+    
+    // Defining the controller
+    controllers.controller('swissKnifeApp.controllers.LineupCtrl',['$scope', function($scope){
+            
+            // Get data from provider
+            
+            
+            
+            // Define stages
+            
+            $scope.stages = [
+                {"id" : 0, "name" : "Stage #1", "schedule" : [
+                        {"hour":"15:00", "artist":"Muse"},
+                        {"hour":"16:00", "artist":"Foo Fighters"},
+                        {"hour":"17:00", "artist":"John Mayer"}
+                ]},
+                {"id" : 1, "name" : "Stage #2", "schedule" : [
+                        {"hour":"17:00", "artist":"John Mayer"},
+                        {"hour":"18:00", "artist":"Katy Perry"}
+                ]}
+            ];
+            
+            // Parse data from each stage
+            
+            // Display stage information using View
+            
     }]);
 })();

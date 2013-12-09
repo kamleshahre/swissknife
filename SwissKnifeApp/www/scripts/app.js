@@ -56,6 +56,7 @@ var app = angular
     });
     $routeProvider.when('/lineup', {
             templateUrl:'views/lineup.html',
+            controller: 'swissKnifeApp.controllers.LineupCtrl',
             resolve: {
                 //
             }
@@ -102,6 +103,7 @@ var app = angular
 }]
 ).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.KnifeSrvc',function($rootScope, $timeout, $location, KnifeSrvc){
     // APP INIT
+    
     $rootScope.pageInitialized = true;
     // SET /app PATH
     /*$rootScope.$on('$routeChangeStart', function(event, next, current){
