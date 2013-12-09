@@ -45,6 +45,18 @@ class LineupController extends \BaseController {
         return Response::json($lineup)->setCallback(Input::get('callback'));
 	}
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function showstage($id)
+    {
+        $lineups = Stage::find($id)->lineups()->with('Artist')->get();
+        return Response::json($lineups)->setCallback(Input::get('callback'));
+    }
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
