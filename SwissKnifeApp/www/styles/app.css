@@ -81,6 +81,23 @@ span.sender{
 * BOOTSTRAP OVERRIDES
 * ============================== */
 
+.twitteritem img{
+    float: left;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #FFF;
+    box-shadow: 1px 1px 3px #333;
+    margin-right: 15px;
+}
+
+.twitteritem{
+    min-height: 75px;
+}
+
+.twittertext{
+    font-size: 1.1em;
+}
+
 p.subhead{
     font-size: 1.4em;
     color: #888;
