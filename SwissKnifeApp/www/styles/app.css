@@ -81,6 +81,14 @@ span.sender{
 * BOOTSTRAP OVERRIDES
 * ============================== */
 
+.avatarsh{
+    box-shadow: 1px 1px 3px #333;
+}
+
+img.photodetail{
+    width: 100%;
+}
+
 .twitteritem img{
     float: left;
     width: 50px;

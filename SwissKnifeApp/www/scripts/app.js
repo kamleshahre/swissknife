@@ -80,9 +80,9 @@ var app = angular
                 //
             }
     });
-    $routeProvider.when('/photos', {
-            templateUrl:'views/photo.html',
-            controller: 'swissKnifeApp.controllers.PhotoFeedCtrl',
+    $routeProvider.when('/photo/:photoOwner/:photoID', {
+            templateUrl:'views/photo_detail.html',
+            controller: 'swissKnifeApp.controllers.PhotoDetailCtrl',
             resolve: {
                 //
             }
@@ -102,6 +102,12 @@ var app = angular
             }
     });
     $routeProvider.when('/twitterwall', {
+            templateUrl:'views/twitter.html',
+            resolve: {
+                //
+            }
+    });
+    $routeProvider.when('/twitter', {
             templateUrl:'views/twitter.html',
             resolve: {
                 //

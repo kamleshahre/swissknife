@@ -1,11 +1,19 @@
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#friends">Friends</a></li>
+  <li class="active">{{ username }}</li>
+</ol>
 <div class='row'>
-    
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <p><a class="btn btn-default" href="#friends">&larr; Back to friends</a></p>
     <hr>
     <h1><i class="fa fa-user"></i> {{ username }}</h1>
     <hr>
     <h2>User profile</h2>
     {{data.status}}
+    <hr/>
+    <ul class="pager">
+        <li class="previous"><a href="#friends">&larr; Back to Friends</a></li>
+    </ul>
     </div>
+    
 </div>
