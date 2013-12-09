@@ -42,6 +42,7 @@ Route::group(array('prefix' => 'API'), function()
     Route::resource('/stage','StageController',array('only' => array('index', 'show')));
     ///Lineup routes
     Route::resource('/lineup','LineupController',array('only' => array('index', 'show')));
+    Route::get('/lineup/stage/{id}','LineupController@showstage');
     ///Artist routes
     Route::resource('/artist','ArtistController',array('only' => array('index', 'show')));
     ///Notification routes

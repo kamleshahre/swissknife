@@ -1,6 +1,22 @@
+<script src="bower_components/jquery-qrcode/jquery.qrcode.min.js"></script>
 <div class='row'>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h1><i class="fa fa-money"></i> Tickets</h1>
     <hr>
+    <div class='row virtual_ticket'>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    <h1>{{ticket.event}}</h1>
+    <h2>Registered to {{ticket.username}}</h2>
+    <p>Unique ID: <span id="ticketID">{{ticket.ticket_id}}</span></p>
+    <p>Email: {{ticket.email}}</p>
+    <p>Price paid: {{ticket.price}}</p>
     </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <div id="qrcode"></div>
+        </div>
+    </div>
+    
 </div>
+<script>
+$('#qrcode').qrcode($("#ticketID").html());
+</script>

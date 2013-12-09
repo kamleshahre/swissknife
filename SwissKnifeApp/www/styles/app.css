@@ -229,6 +229,38 @@ body { padding-bottom: 70px; }
     text-align: center;
 }
 
+.virtual_ticket{
+    padding: 25px;
+    border: 1px solid #666;
+}
+
+#qrcode{
+    float: right;
+}
+
+#qrcode canvas{
+    height: 150px;
+}
+
+/* =============================
+* SWIPE
+* ============================== */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
 /* =============================
 * MAP STYLES
 * ============================== */
@@ -259,6 +291,16 @@ body { padding-bottom: 70px; }
         padding-left: 3%;
         padding-right: 3%;
         width: 94%;
+    }
+    .virtual_ticket{
+        border: none;
+    }
+    #qrcode{
+        padding-top: 15px;
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

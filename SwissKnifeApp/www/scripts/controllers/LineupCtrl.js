@@ -21,13 +21,13 @@
             
             $scope.stages = [
                 {"id" : 0, "name" : "Stage #1", "schedule" : [
-                        {"hour":"15:00", "artist":"Muse"},
-                        {"hour":"16:00", "artist":"Foo Fighters"},
-                        {"hour":"17:00", "artist":"John Mayer"}
+                        {"hour":"15:00", "artist":"Muse", "link":"http://muse.mu"},
+                        {"hour":"16:00", "artist":"Foo Fighters", "link":"http://www.foofighters.com/be/home"},
+                        {"hour":"17:00", "artist":"John Mayer", "link":"http://johnmayer.com"}
                 ]},
                 {"id" : 1, "name" : "Stage #2", "schedule" : [
-                        {"hour":"17:00", "artist":"John Mayer"},
-                        {"hour":"18:00", "artist":"Katy Perry"}
+                        {"hour":"17:00", "artist":"John Mayer", "link":"http://johnmayer.com"},
+                        {"hour":"18:00", "artist":"Katy Perry", "link":"http://www.katyperry.com"}
                 ]}
             ];
             

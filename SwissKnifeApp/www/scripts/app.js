@@ -82,18 +82,21 @@ var app = angular
     });
     $routeProvider.when('/photos', {
             templateUrl:'views/photo.html',
+            controller: 'swissKnifeApp.controllers.PhotoFeedCtrl',
             resolve: {
                 //
             }
     });
     $routeProvider.when('/photo', {
             templateUrl:'views/photo.html',
+            controller: 'swissKnifeApp.controllers.PhotoFeedCtrl',
             resolve: {
                 //
             }
     });
     $routeProvider.when('/tickets', {
             templateUrl:'views/tickets.html',
+            controller: 'swissKnifeApp.controllers.TicketCtrl',
             resolve: {
                 //
             }
@@ -132,9 +135,11 @@ Does things.
  */
 
 var appCtrl = app.controller('AppCtrl', ['$scope', '$location', 'pageInitialized', function($scope, $location, appInitialized){
-    if(appInitialized){
+    
+        if(appInitialized){
         $location.path('/');
     }
+    
 }]);
 
 /* Extra tricks */
