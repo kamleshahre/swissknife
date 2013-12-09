@@ -80,6 +80,12 @@ var app = angular
                 //
             }
     });
+    $routeProvider.when('/photos', {
+            templateUrl:'views/photo.html',
+            resolve: {
+                //
+            }
+    });
     $routeProvider.when('/photo', {
             templateUrl:'views/photo.html',
             resolve: {

@@ -2,7 +2,9 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h1><i class="fa fa-clock-o"></i> Lineup</h1>
         <hr>
-        <div class="panel panel-default" ng-repeat="stage in stages">
+        <input type="text" class="form-control" id="input" placeholder="Search lineup" ng-model="searchLineup">
+        <hr>
+        <div class="panel panel-default" ng-repeat="stage in stages | filter:searchLineup">
             <div class="panel-heading">
                 <h2 class="panel-title">{{ stage.name }}</h2>
             </div>
@@ -16,7 +18,7 @@
                 Artist
                 </th>
                 </tr>
-                <tr ng-repeat="artist in stage.schedule">
+                <tr ng-repeat="artist in stage.schedule | filter:searchLineup">
                     <td class="td-hour">{{artist.hour}}</td>
                     <td>{{artist.artist}}</td>
                 </tr>
