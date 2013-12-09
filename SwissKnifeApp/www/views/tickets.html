@@ -6,10 +6,13 @@
     <div class='row virtual_ticket'>
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
     <h1>{{ticket.event}}</h1>
+    <hr/>
     <h2>Registered to {{ticket.username}}</h2>
-    <p>Unique ID: <span id="ticketID">{{ticket.ticket_id}}</span></p>
-    <p>Email: {{ticket.email}}</p>
-    <p>Price paid: {{ticket.price}}</p>
+    <hr/>
+    <p><strong>Unique SHA</strong>: <span id="ticketID">{{ticket.ticket_id}}</span></p>
+    <p><strong>Email:</strong> {{ticket.email}}</p>
+    <p><strong>Price paid</strong>: {{ticket.price}}</p>
+    <hr/>
     </div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div id="qrcode"></div>

@@ -5,28 +5,33 @@
     <hr>
         <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <h2>Your Friends <a href="#find/friends" class="btn btn-default">+ Find A Friend</a></h2>
-        <div class="list-group">
-            <div class="sample" ng-init="users=[
-                                                {'username':'nedstark', 'name':'Eddard Stark'},
-                                                {'username':'dany', 'name':'Daenerys Targaryen'},
-                                                {'username':'robbstark', 'name':'Robb Stark'},
-                                                {'username':'jaimelannister', 'name':'Jaime Lannister'},
-                                                {'username':'tyrion', 'name':'Tyrion Lannister'}
-                                               ]"></div>
-            <input type="text" class="form-control" id="input" placeholder="Search friends" ng-model="searchFriend">
-            <a ng-repeat="person in users | filter:searchFriend | orderBy:'name'" href="#friends/{{person.username}}" class="list-group-item"><strong>{{person.name}}</strong> ({{person.username}})</a>
-        </div>
-        <br/>
-        </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <h2>Friend Activity</h2>
-                <div class="list-group">
-                    <a href="#friends/johndoe/photo" class="list-group-item"><strong>John Doe</strong> has uploaded a new picture: "Me and me girlfriend enjoying #epic!"</a>
-                    <a href="#friends/johndoe/photo#comments" class="list-group-item"><strong>Jane Roe</strong> has liked <strong>John Doe's picture</strong>: "Me and me girlfriend enjoying #epic!"</a>
-                    <a href="#twitterwall" class="list-group-item"><strong>John Doe</strong> has tweeted: "#epic is really amazing! I like it!"</a>
-                </div>
+            <h2>Your Friends <a href="#find/friends" class="btn btn-default">+ Find A Friend</a></h2>
+            <hr/>
+                <input type="text" class="form-control" id="input" placeholder="Search friends" ng-model="searchFriend">
+            <hr/>
+            <div class="list-group">
+                <div class="sample" ng-init="users=[
+                                                    {'username':'nedstark', 'name':'Eddard Stark'},
+                                                    {'username':'dany', 'name':'Daenerys Targaryen'},
+                                                    {'username':'robbstark', 'name':'Robb Stark'},
+                                                    {'username':'jaimelannister', 'name':'Jaime Lannister'},
+                                                    {'username':'tyrion', 'name':'Tyrion Lannister'}
+                                                   ]"></div>
+                <a ng-repeat="person in users | filter:searchFriend | orderBy:'name'" href="#friends/{{person.username}}" class="list-group-item"><strong>{{person.name}}</strong> ({{person.username}})</a>
             </div>
+            <br/>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h2>Friend Activity</h2>
+            <hr/>
+                <div class="list-group">
+                    <a href="#friends/varys" class="list-group-item"><strong>You</strong> have shared a new picture: "Varys' new profile picture: The Spider..."</a>
+                    <a href="#friends/jaimelannister" class="list-group-item"><strong>Jaime Lannister</strong> has liked a photo of <strong>Tywin Lannister</strong>.</a>
+                    <a href="#friends/robbstark" class="list-group-item"><strong>Robb Stark</strong> has shared a photo: I love wolves! Too soon guys?"</a>
+                    <a href="#friends/tyrion" class="list-group-item"><strong>Tyrion Lannister</strong> has tweeted: "#epic is really amazing! I like it!"</a>
+                    <a href="#friends/littlefinger" class="list-group-item"><strong>Littlefinger</strong> (friends with <strong>Eddard Stark</strong>) has uploaded a new picture: "Sansa looks just like her mother."</a>
+                </div>
+        </div>
         </div>
     </div>
 </div>
