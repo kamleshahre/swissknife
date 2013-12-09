@@ -22,6 +22,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'deleted_at',
     ];
 
+    /**
+     * Get ecrypt password, private- and public key
+     *
+     */
+    public function clear()
+    {
+        $this->user_password = "";
+        $this->user_privatekey = "";
+        $this->user_publickey = "";
+        return $this;
+    }
 
     /**
      * Get Roles from Users

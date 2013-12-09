@@ -24,6 +24,7 @@ Route::group(array('prefix' => 'API'), function()
 {
     ///User routes
     Route::resource('/user','UserController',array('only' => array('index', 'show')));
+    Route::get('/user/{id}/friends/','UserController@showfriends');
     ///Photo routes
     Route::resource('/photo','PhotoController',array('only' => array('index', 'show')));
     Route::get('/photo/user/{id}','PhotoController@showuser');
@@ -31,6 +32,7 @@ Route::group(array('prefix' => 'API'), function()
     Route::get('/photo/tag/{id}','PhotoController@showtag');
     ///Tag routes
     Route::resource('/tag','TagController',array('only' => array('index', 'show')));
+    Route::get('/tag/photo/{id}','TagController@showphoto');
     ///Location routes
     Route::resource('/location','LocationController',array('only' => array('index', 'show')));
     ///Parkingspot routes

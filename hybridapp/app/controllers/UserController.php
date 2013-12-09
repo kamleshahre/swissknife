@@ -10,6 +10,10 @@ class UserController extends \BaseController {
 	public function index()
 	{
         $users = User::all();
+        for($i = 0; $i<count($users); $i++)
+        {
+            $users[$i]->clear();
+        }
         return Response::json($users)->setCallback(Input::get('callback'));
 	}
 
@@ -50,6 +54,22 @@ class UserController extends \BaseController {
         $user = User::find($id);
         return Response::json($user)->setCallback(Input::get('callback'));
 	}
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function showfriends($id)
+    {
+        $friends = User::find($id)->friends;
+        for($i = 0; $i<count($friends); $i++)
+        {
+            $friends[$i]->clear();
+        }
+        return Response::json($friends)->setCallback(Input::get('callback'));
+    }
 
 	/**
 	 * Show the form for editing the specified resource.
