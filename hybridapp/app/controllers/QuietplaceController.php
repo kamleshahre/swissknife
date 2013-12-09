@@ -1,6 +1,6 @@
 <?php
 
-class ParkingspotController extends \BaseController {
+class QuietplaceController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,8 +9,8 @@ class ParkingspotController extends \BaseController {
 	 */
 	public function index()
 	{
-        $parkings = Parkingspot::with('Location')->get();
-        return Response::json($parkings)->setCallback(Input::get('callback'));
+        $quietplaces = Quietplace::with('Location')->get();
+        return Response::json($quietplaces)->setCallback(Input::get('callback'));
 	}
 
 	/**
@@ -41,8 +41,8 @@ class ParkingspotController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $parking = Parkingspot::find($id)->with('Location')->get();
-        return Response::json($parking)->setCallback(Input::get('callback'));
+        $quietplace = Quietplace::find($id)->with('Location')->get();
+        return Response::json($quietplace)->setCallback(Input::get('callback'));
 	}
 
 	/**

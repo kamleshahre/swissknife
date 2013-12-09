@@ -28,12 +28,12 @@ class Photo extends Eloquent{
 
     public function user()
     {
-        return $this->hasOne('User');
+        return $this->belongsTo('User');
     }
 
     public function stage()
     {
-        return $this->hasOne('Stage');
+        return $this->belongsTo('Stage');
     }
 
     public function comments()

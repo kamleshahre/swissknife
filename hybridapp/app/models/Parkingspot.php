@@ -29,6 +29,6 @@ class Parkingspot extends Eloquent{
 
     public function location()
     {
-        return $this->hasOne('Location');
+        return $this->belongsTo('Location');
     }
 }

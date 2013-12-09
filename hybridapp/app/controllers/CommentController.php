@@ -41,8 +41,8 @@ class CommentController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $comment = Comment::find($id);
-        return Response::json(comment)->setCallback(Input::get('callback'));
+        $comment = Comment::find($id)->with('User')->get();
+        return Response::json($comment)->setCallback(Input::get('callback'));
 	}
 
 	/**

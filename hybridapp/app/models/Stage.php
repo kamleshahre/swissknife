@@ -29,12 +29,12 @@ class Stage extends Eloquent{
 
     public function location()
     {
-        return $this->hasOne('Location');
+        return $this->belongsTo('Location');
     }
 
     public function lineups()
     {
-        return $this->hasMany('Lineup');
+        return $this->belongsTo('Lineup');
     }
 
     public function photos()

@@ -38,6 +38,8 @@ Route::group(array('prefix' => 'API'), function()
     Route::resource('/location','LocationController',array('only' => array('index', 'show')));
     ///Parkingspot routes
     Route::resource('/parkingspot','ParkingspotController',array('only' => array('index', 'show')));
+    ///Parkingspot routes
+    Route::resource('/quietplace','QuietplaceController',array('only' => array('index', 'show')));
     ///Stage routes
     Route::resource('/stage','StageController',array('only' => array('index', 'show')));
     ///Lineup routes

@@ -28,6 +28,6 @@ class Tag extends Eloquent{
 
     public function photos()
     {
-        return $this->belongsToMany('Photo', 'photos_has_tags');
+        return $this->belongsToMany('Photo', 'photos_has_tags','photo_id','tag_id');
     }
 }

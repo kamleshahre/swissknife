@@ -9,7 +9,7 @@ class StageController extends \BaseController {
 	 */
 	public function index()
 	{
-        $stages = Stage::all();
+        $stages = Stage::with('Location')->get();
         return Response::json($stages)->setCallback(Input::get('callback'));
 	}
 
@@ -41,7 +41,7 @@ class StageController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $stage = Stage::find($id);
+        $stage = Stage::find($id)->with('Location')->get();
         return Response::json($stage)->setCallback(Input::get('callback'));
 	}
 
