@@ -1,0 +1,335 @@
+/* =============================
+* WEB FONTS
+* ============================== */
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Exo 2 Light'), local('Exo2-Light'), url(Exo2Light.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo 2'), local('Exo2-Regular'), url(Exo2Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Exo 2 Bold'), local('Exo2-Bold'), url(Exo2Bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Exo 2 Italic'), local('Exo2-Italic'), url(Exo2Italic.woff) format('woff');
+}
+
+/* =============================
+* MAIN TYPO
+* ============================== */
+
+html, body, h1, h2, h3, h4, h5, h6{
+  font-family: 'Helvetica Neue', 'Roboto', 'Helvetica', 'Exo 2', 'Arial' !important;
+}
+
+h1, h2, h3{
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+p.tweet{
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+}
+
+span.sender{
+    font-weight: bold;
+}
+
+/* =============================
+* MAIN VIEW
+* ============================== */
+
+#view{
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+}
+
+/* =============================
+* CLEARFIX
+* ============================== */
+
+.clearfix:after{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+
+/* =============================
+* BOOTSTRAP OVERRIDES
+* ============================== */
+
+.twitteritem img{
+    float: left;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #FFF;
+    box-shadow: 1px 1px 3px #333;
+    margin-right: 15px;
+}
+
+.twitteritem{
+    min-height: 75px;
+}
+
+.twittertext{
+    font-size: 1.1em;
+}
+
+p.subhead{
+    font-size: 1.4em;
+    color: #888;
+}
+
+.table td{
+    font-size: 1.2em;
+}
+
+table.table{
+    margin-bottom: 0;
+}
+
+.td-hour{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.list-group-item-icon{
+    height: auto;
+    float: left;
+    clear: both;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+.panel-body h3{
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.panel-body p.description{
+    margin-bottom: 15px;
+}
+
+.list-group{
+    margin-bottom: 0;
+}
+
+.btn-wide{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.navbar {
+  border-radius: 0 !important; }
+
+.btn-btmnav{
+    width:25%;
+    float: left;
+}
+
+.btn-btmnav.active{
+    background-color: #FFF;
+    color: #333;
+}
+
+.special-nav-bottom{
+    height: 57px;
+    border-top: 1px solid #DDD;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.special-nav-bottom ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.special-nav-bottom ul li{
+    float: left;
+    width: 20%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.special-nav-bottom ul li.active a{
+    color: #c8324c;
+}
+
+.navbar-brand{
+    color: #c8324c !important;
+}
+
+.navbar-brand:hover{
+    color: #333 !important;
+}
+
+.navbar-toggle{
+    border-color: #c8324c !important;
+}
+
+.icon-bar{
+    background-color: #c8324c !important;
+}
+
+.special-nav-bottom ul li a {
+    text-align: center;
+    width: 100%;
+    color: #999;
+    margin: 0;
+}
+
+.special-nav-bottom ul li a:hover{
+    text-decoration: none;
+}
+
+.special-nav-bottom ul li a p{
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body { padding-bottom: 70px; }
+
+
+#jumbologo{
+    float: left;
+    max-width: 120px;
+    padding: auto;
+    clear: both;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+#preloader img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preload_desc{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.virtual_ticket{
+    padding: 25px;
+    border: 1px solid #666;
+}
+
+#qrcode{
+    float: right;
+}
+
+#qrcode canvas{
+    height: 150px;
+}
+
+#ticketID{
+    word-wrap: break-word;
+}
+
+/* =============================
+* SWIPE
+* ============================== */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+/* =============================
+* MAP STYLES
+* ============================== */
+
+#view.hasmap{
+    
+}
+
+.map{
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    background-color: #666;
+}
+
+/* =============================
+* MEDIA QUERIES
+* ============================== */
+
+@media screen and (max-width: 480px){
+    #jumbologo{
+        display: block;
+        float: none;
+        width: 120px;
+        margin: auto;
+    }
+    #view{
+        padding-left: 3%;
+        padding-right: 3%;
+        width: 94%;
+    }
+    .virtual_ticket{
+        border: none;
+    }
+    #qrcode{
+        padding-top: 15px;
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px){
+}
+
+@media screen and (min-width: 961px){
+}

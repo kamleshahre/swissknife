@@ -1,0 +1,65 @@
+<div class='row'>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h1>Registration</h1>
+    <hr>
+    <h2>Personal Details</h2>
+    <p>Before we can register you, we'll need your name and your email address. This way, we can contact you if necessary.</p>
+    <br/>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputFirstname" class="col-sm-2 control-label">First name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputFirstname" placeholder="First name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputLastname" class="col-sm-2 control-label">Last name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputLastname" placeholder="Last name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 control-label">Email address</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email address">
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h2>Account Details</h2>
+    <p>
+        Next up, we'll need your desired username and password for your Swiss Knife Account. In order to avoid problems, you'll have to enter your password twice. Don't reuse passwords you use for other services!
+    </p>
+    <br/>
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="inputUsername"class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+                <input ng-model="username" type="text" class="form-control" id="inputUsername" placeholder="Username">
+                 <!--<p class="usernamecheck"><strong>{{username}}</strong> is available!</p>-->
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+            <div class="form-group">
+        <label for="inputPasswordRepeat" class="col-sm-2 control-label">Repeat password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Repeat password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Complete registration</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+<!-- FIXES SHOULD LOAD LAST -->
+<script src="scripts/fixes.js"></script>

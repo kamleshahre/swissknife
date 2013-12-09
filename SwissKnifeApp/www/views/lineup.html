@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1><i class="fa fa-clock-o"></i> Lineup</h1>
+        <hr>
+        <input type="text" class="form-control" id="input" placeholder="Search Lineups" ng-model="searchLineup">
+        <hr>
+        <div ng-repeat="stage in stages | filter:searchLineup">
+                <h3>{{ stage.name }}</h3>
+                <div class="list-group">
+                    <a ng-repeat="artist in stage.schedule | filter:searchLineup" href="{{ artist.link }}" class="list-group-item">
+                      <h4 class="list-group-item-heading">{{ artist.hour }}</h4>
+                      <p class="list-group-item-text">{{ artist.artist }}</p>
+                    </a>
+                </div>
+                <hr>
+        </div>
+    </div>
+</div>
+<!-- FIXES SHOULD LOAD LAST -->
+<script src="scripts/fixes.js"></script>
