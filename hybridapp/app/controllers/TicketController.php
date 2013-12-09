@@ -9,7 +9,7 @@ class TicketController extends \BaseController {
 	 */
 	public function index()
 	{
-        $tickets = Ticket::all();
+        $tickets = Ticket::with('User')->get();
         return Response::json($tickets)->setCallback(Input::get('callback'));
 	}
 
@@ -41,9 +41,21 @@ class TicketController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $ticket = Ticket::find($id);
+        $ticket = Ticket::find($id)->with('User')->get();
         return Response::json($ticket)->setCallback(Input::get('callback'));
 	}
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function showuser($id)
+    {
+        $ticket = User::get($id)->ticket;
+        return Response::json($ticket)->setCallback(Input::get('callback'));
+    }
 
 	/**
 	 * Show the form for editing the specified resource.

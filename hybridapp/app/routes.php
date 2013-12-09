@@ -53,4 +53,5 @@ Route::group(array('prefix' => 'API'), function()
     Route::resource('/comment','CommentController',array('only' => array('index', 'show')));
     ///Ticket routes
     Route::resource('/ticket','TicketController',array('only' => array('index', 'show')));
+    Route::get('/ticket/user/{id}','TicketController@showuser');
 });

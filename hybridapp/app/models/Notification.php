@@ -28,11 +28,11 @@ class Notification extends Eloquent{
 
     public function lineup()
     {
-        return $this->hasOne('Lineup');
+        return $this->belongsTo('Lineup');
     }
 
     public function user()
     {
-        return $this->hasOne('User');
+        return $this->belongsTo('User');
     }
 }
