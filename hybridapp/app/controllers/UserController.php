@@ -66,9 +66,23 @@ class UserController extends \BaseController {
         $friends = User::find($id)->friends;
         for($i = 0; $i<count($friends); $i++)
         {
-            $friends[$i]->clear();
+            $friends[$i]->clearSecrets();
         }
         return Response::json($friends)->setCallback(Input::get('callback'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @param  int  $friendid
+     * @return Response
+     */
+    public function showfriend($id, $friendid)
+    {
+        $friend = User::find($id)->friends()->where('user_friend_id', '=', $friendid)->first();
+        $friend->clearSecrets();
+        return Response::json($friend)->setCallback(Input::get('callback'));
     }
 
 	/**

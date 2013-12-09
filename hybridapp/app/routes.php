@@ -25,6 +25,7 @@ Route::group(array('prefix' => 'API'), function()
     ///User routes
     Route::resource('/user','UserController',array('only' => array('index', 'show')));
     Route::get('/user/{id}/friends/','UserController@showfriends');
+    Route::get('/user/{id}/friend/{friendid}','UserController@showfriend');
     ///Photo routes
     Route::resource('/photo','PhotoController',array('only' => array('index', 'show')));
     Route::get('/photo/user/{id}','PhotoController@showuser');
