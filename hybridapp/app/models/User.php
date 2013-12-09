@@ -20,19 +20,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         'created_at',
         'updated_at',
         'deleted_at',
+        'user_publickey',
+        'user_privatekey',
+        'user_password',
     ];
-
-    /**
-     * Get ecrypt password, private- and public key
-     *
-     */
-    public function clearSecrets()
-    {
-        $this->user_password = "";
-        $this->user_privatekey = "";
-        $this->user_publickey = "";
-        return $this;
-    }
 
     /**
      * Get Roles from Users

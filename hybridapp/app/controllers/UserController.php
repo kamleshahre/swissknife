@@ -64,10 +64,6 @@ class UserController extends \BaseController {
     public function showfriends($id)
     {
         $friends = User::find($id)->friends;
-        for($i = 0; $i<count($friends); $i++)
-        {
-            $friends[$i]->clearSecrets();
-        }
         return Response::json($friends)->setCallback(Input::get('callback'));
     }
 
@@ -81,7 +77,6 @@ class UserController extends \BaseController {
     public function showfriend($id, $friendid)
     {
         $friend = User::find($id)->friends()->where('user_friend_id', '=', $friendid)->first();
-        $friend->clearSecrets();
         return Response::json($friend)->setCallback(Input::get('callback'));
     }
 

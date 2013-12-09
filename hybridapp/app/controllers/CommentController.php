@@ -9,7 +9,7 @@ class CommentController extends \BaseController {
 	 */
 	public function index()
 	{
-        $comment = Comment::all();
+        $comment = Comment::with('User')->get();
         return Response::json($comment)->setCallback(Input::get('callback'));
 	}
 
