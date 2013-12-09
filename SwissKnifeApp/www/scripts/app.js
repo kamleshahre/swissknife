@@ -102,7 +102,7 @@ var app = angular
 }]
 ).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.KnifeSrvc',function($rootScope, $timeout, $location, KnifeSrvc){
     // APP INIT
-    $rootScope.appInitialized = false;
+    $rootScope.pageInitialized = true;
     // SET /app PATH
     /*$rootScope.$on('$routeChangeStart', function(event, next, current){
         if(!$rootScope.appInitialized) // + check if logged in!
@@ -123,7 +123,7 @@ Does things.
 
  */
 
-var appCtrl = app.controller('AppCtrl', ['$scope', '$location', 'appInitialized', function($scope, $location, appInitialized){
+var appCtrl = app.controller('AppCtrl', ['$scope', '$location', 'pageInitialized', function($scope, $location, appInitialized){
     if(appInitialized){
         $location.path('/');
     }

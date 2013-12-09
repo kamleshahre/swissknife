@@ -59,12 +59,18 @@
               </ul>
             </li>
             <li ng-class="{ active: isRouteActive('/login')}"><a href="#login">Log In</a></li>
-            <li ng-class="{ active: isRouteActive('/about')}"><a href="#about">About</a></li>
+            <li ng-class="{ active: isRouteActive('/about')}"><a href="#about">About Swiss Knife</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
-    <div id="view" class="container" ng-controller="swissKnifeApp.controllers.NavCtrl" ng-class="{ hasmap: isRouteActive('/map')}">
+    <div id="view" class="container" ng-controller="swissKnifeApp.controllers.NavCtrl" ng-class="{ hasmap: isRouteActive('/map')}" ng-show="pageInitialized">
         <div ng-view></div>
+    </div>
+    <div id="preloader" class="container" ng-hide="pageInitialized">
+        <br/>
+        <br/>
+        <img src="content/preloader.gif" alt="Preloading your stuff.">
+        <p class="preload_desc">Loading your content.</p>
     </div>
     </div>
     <nav class="navbar navbar-default navbar-fixed-bottom special-nav-bottom" role="navigation" ng-controller="swissKnifeApp.controllers.NavCtrl">
