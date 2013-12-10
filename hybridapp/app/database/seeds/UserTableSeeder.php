@@ -24,10 +24,10 @@ class UserTableSeeder extends Seeder {
         $userOne->roles()->attach(1);
         $userOne->roles()->attach(3);
 
-        $mail = 'nicoverbruggen@gmail.com';
-        $password = 'nicoverbr';
-        $privatekey = str_shuffle (Hash::make('nicoverbr'.$mail));
-        $publickey = str_shuffle (Hash::make('nicoverbr'.$mail));
+        $mail = 'nico.verb@gmail.com';
+        $password = 'root';
+        $privatekey = str_shuffle (Hash::make('root'.$mail));
+        $publickey = str_shuffle (Hash::make('root'.$mail));
 
         $userTwo = User::create(array(
             'user_mail' => $mail,
