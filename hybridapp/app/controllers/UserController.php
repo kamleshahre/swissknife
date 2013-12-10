@@ -23,15 +23,17 @@ class UserController extends \BaseController {
 
     public function auth()
     {
-        if (Auth::attempt(array('user_mail' => $_POST['email'], 'password' => $_POST['password'])))
+    	// In order to access $_POST data in Laravel, use
+    	// Input::get("") -> even if it is a post variable!
+    	// Docs: http://laravel.com/docs/requests
+
+        if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
         {
-            return Response::make('logged in!', 200);
+            return Response::make('Congratulations! You have been logged in.', 200);
         }else
         {
-            return Response::make('try again', 200);
+            return Response::make('Please try again.', 200);
         }
-
-
     }
 
 	/**
