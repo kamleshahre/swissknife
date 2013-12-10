@@ -28,13 +28,18 @@ class UserController extends \BaseController {
     	Input::get("") -> even if it is a post variable!
     	Docs: http://laravel.com/docs/requests
     	*/
-
+        
+        sleep(2);
+        
+        // In order to get all the data orderly
+        // var_dump(Input::all());
+        
         if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
         {
-            return Response::make('Congratulations! You have been logged in.', 200);
+            return Response::make('{"status" : "success"}', 200);
         }else
         {
-            return Response::make('Please try again.', 200);
+            return Response::make('{"error" : "Oops. Authentication failed. You should try again."}', 401);
         }
     }
 

@@ -81,6 +81,101 @@ span.sender{
 * BOOTSTRAP OVERRIDES
 * ============================== */
 
+span.loading-text{
+    text-transform: uppercase;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.fa-red{
+    color: #c8324c;
+}
+
+.fa-huge{
+    font-size: 6em;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+}
+
+.fa-pulsate {
+  -webkit-animation: pulsate 2s infinite linear;
+  -moz-animation: pulsate 2s infinite linear;
+  -o-animation: pulsate 2s infinite linear;
+  animation: pulsate 2s infinite linear;
+}
+
+@-moz-keyframes pulsate {
+  0% {
+    opacity: 1;
+    font-size: 6em;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 7em;
+  }
+  100% {
+    opacity: 1;
+    font-size: 6em;
+  }
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 1;
+    font-size: 6em;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 7em;
+  }
+  100% {
+    opacity: 1;
+    font-size: 6em;
+  }
+}
+@-o-keyframes pulsate {
+  0% {
+    opacity: 1;
+    font-size: 6em;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 7em;
+  }
+  100% {
+    opacity: 1;
+    font-size: 6em;
+  }
+}
+@-ms-keyframes pulsate {
+  0% {
+    opacity: 1;
+    font-size: 6em;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 7em;
+  }
+  100% {
+    opacity: 1;
+    font-size: 6em;
+  }
+}
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    font-size: 6em;
+  }
+  50%{
+    opacity: 0.3;
+    font-size: 7em;
+  }
+  100% {
+    opacity: 1;
+    font-size: 6em;
+  }
+}
+
 .avatarsh{
     box-shadow: 1px 1px 3px #333;
 }
@@ -124,7 +219,7 @@ table.table{
     font-weight: bold;
 }
 
-.list-group-item-icon{
+.list-group-item-icon, .list-group-item-icon-small{
     height: auto;
     float: left;
     clear: both;
@@ -134,6 +229,14 @@ table.table{
     margin-right: 15px;
     margin-bottom: 25px;
     font-size: 2.5em;
+}
+
+.list-group-item-icon-small{
+    width: 34px;
+    margin-right: 10px;
+    font-size: 1.9em;
+    position: relative;
+    top: -5px;
 }
 
 .panel-body h3{
@@ -331,6 +434,11 @@ body { padding-bottom: 70px; }
         margin-left: auto;
         margin-right: auto;
     }
+    .list-group-item-icon-small{
+        font-size: 2.2em;
+        position: relative;
+        top: 5px;
+}
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){
