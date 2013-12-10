@@ -10,6 +10,7 @@ class TicketController extends \BaseController {
 	public function index()
 	{
         $tickets = Ticket::all();
+        $tickets->load('user');
         return Response::json($tickets)->setCallback(Input::get('callback'));
 	}
 
@@ -42,6 +43,7 @@ class TicketController extends \BaseController {
 	public function show($id)
 	{
         $ticket = Ticket::find($id);
+        $ticket->load('user');
         return Response::json($ticket)->setCallback(Input::get('callback'));
 	}
 

@@ -22,19 +22,18 @@ class Stage extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     public function location()
     {
-        return $this->hasOne('Location');
+        return $this->belongsTo('Location');
     }
 
     public function lineups()
     {
-        return $this->hasMany('Lineup');
+        return $this->belongsTo('Lineup');
     }
 
     public function photos()

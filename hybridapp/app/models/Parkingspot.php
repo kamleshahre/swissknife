@@ -22,13 +22,12 @@ class Parkingspot extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     public function location()
     {
-        return $this->hasOne('Location');
+        return $this->belongsTo('Location');
     }
 }

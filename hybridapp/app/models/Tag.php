@@ -21,13 +21,12 @@ class Tag extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     public function photos()
     {
-        return $this->belongsToMany('Photo', 'photos_has_tags');
+        return $this->belongsToMany('Photo', 'photos_has_tags','photo_id','tag_id');
     }
 }

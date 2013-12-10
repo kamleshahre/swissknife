@@ -10,6 +10,8 @@ class LineupController extends \BaseController {
 	public function index()
 	{
         $lineups = Lineup::all();
+        $lineups->load('artist');
+        $lineups->load('stage');
         return Response::json($lineups)->setCallback(Input::get('callback'));
 	}
 
@@ -41,7 +43,7 @@ class LineupController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $lineup = Lineup::find($id);
+        $lineup = Lineup::find($id)->with('Artist')->with('Stage')->get();
         return Response::json($lineup)->setCallback(Input::get('callback'));
 	}
 
@@ -53,7 +55,7 @@ class LineupController extends \BaseController {
      */
     public function showstage($id)
     {
-        $lineups = Stage::find($id)->lineups()->with('Artist')->get();
+        $lineups = Stage::find($id)->lineups()->with('Artist')->with('Stage')->get();
         return Response::json($lineups)->setCallback(Input::get('callback'));
     }
 

@@ -10,6 +10,7 @@ class ParkingspotController extends \BaseController {
 	public function index()
 	{
         $parkings = Parkingspot::all();
+        $parkings->load('location');
         return Response::json($parkings)->setCallback(Input::get('callback'));
 	}
 
@@ -42,6 +43,7 @@ class ParkingspotController extends \BaseController {
 	public function show($id)
 	{
         $parking = Parkingspot::find($id);
+        $parking->load('location');
         return Response::json($parking)->setCallback(Input::get('callback'));
 	}
 

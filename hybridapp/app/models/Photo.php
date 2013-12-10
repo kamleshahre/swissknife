@@ -21,19 +21,18 @@ class Photo extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     public function user()
     {
-        return $this->hasOne('User');
+        return $this->belongsTo('User');
     }
 
     public function stage()
     {
-        return $this->hasOne('Stage');
+        return $this->belongsTo('Stage');
     }
 
     public function comments()

@@ -1,6 +1,6 @@
 <?php
 
-class LocationController extends \BaseController {
+class QuietplaceController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,11 +9,9 @@ class LocationController extends \BaseController {
 	 */
 	public function index()
 	{
-        $location = Location::all();
-        $location->load('quietplace');
-        $location->load('parkingspot');
-        $location->load('stage');
-        return Response::json($location)->setCallback(Input::get('callback'));
+        $quietplaces = Quietplace::all();
+        $quietplaces->load('location');
+        return Response::json($quietplaces)->setCallback(Input::get('callback'));
 	}
 
 	/**
@@ -44,12 +42,9 @@ class LocationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $location = Location::find($id);
-
-        $location->load('quietplace');
-        $location->load('parkingspot');
-        $location->load('stage');
-        return Response::json($location)->setCallback(Input::get('callback'));
+        $quietplace = Quietplace::find($id);
+        $quietplace->load('location');
+        return Response::json($quietplace)->setCallback(Input::get('callback'));
 	}
 
 	/**

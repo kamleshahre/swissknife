@@ -10,6 +10,8 @@ class NotificationController extends \BaseController {
 	public function index()
 	{
         $notifications = Notification::all();
+        $notifications->load('user');
+        $notifications->load('lineup');
         return Response::json($notifications)->setCallback(Input::get('callback'));
 	}
 
@@ -42,6 +44,8 @@ class NotificationController extends \BaseController {
 	public function show($id)
 	{
         $notification = Notification::find($id);
+        $notifications->load('user');
+        $notifications->load('lineup');
         return Response::json($notification)->setCallback(Input::get('callback'));
 	}
 

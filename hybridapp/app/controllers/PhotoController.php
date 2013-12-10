@@ -10,6 +10,10 @@ class PhotoController extends \BaseController {
 	public function index()
 	{
         $photos = Photo::all();
+        $photos->load('tags');
+        $photos->load('user');
+        $photos->load('stage');
+
         return Response::json($photos)->setCallback(Input::get('callback'));
 	}
 
@@ -42,6 +46,9 @@ class PhotoController extends \BaseController {
 	public function show($id)
 	{
         $photo = Photo::find($id);
+        $photo->load('user');
+        $photo->load('tags');
+        $photo->load('stage');
         return Response::json($photo)->setCallback(Input::get('callback'));
 	}
 
@@ -53,7 +60,8 @@ class PhotoController extends \BaseController {
      */
     public function showuser($id)
     {
-        $photos = User::find($id)->photos;
+        $photos = User::find($id)->photos()->with('Stage')->get();
+        $photos->load('tags');
         return Response::json($photos)->setCallback(Input::get('callback'));
     }
 
@@ -65,7 +73,8 @@ class PhotoController extends \BaseController {
      */
     public function showstage($id)
     {
-        $photos = Stage::find($id)->photos;
+        $photos = Stage::find($id)->photos()->with('User')->get();
+        $photos->load('tags');
         return Response::json($photos)->setCallback(Input::get('callback'));
     }
 
@@ -77,7 +86,7 @@ class PhotoController extends \BaseController {
      */
     public function showtag($id)
     {
-        $photos = Tag::find($id)->photos;
+        $photos = Tag::find($id)->photos()->with('User')->with('Stage')->get();
         return Response::json($photos)->setCallback(Input::get('callback'));
     }
 
