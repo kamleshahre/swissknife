@@ -11,28 +11,31 @@ class UserController extends \BaseController {
 	{
         if (Auth::check())
         {
-            echo 'logged in';
+            $users = User::all();
+            $users->load('roles');
+            $users->load('friends');
+            $users->load('photos');
+            $users->load('notifications');
+            return Response::json($users)->setCallback(Input::get('callback'));
         }
-        $users = User::all();
-        $users->load('roles');
-        $users->load('friends');
-        $users->load('photos');
-        $users->load('notifications');
-        return Response::json($users)->setCallback(Input::get('callback'));
+        return Response::make('You have to be logged in', 401);
 	}
 
     public function auth()
     {
-        var_dump($_POST);
-        if (Auth::attempt(array('user_mail' => $_POST['email'], 'password' => $_POST['password'])))
+    	/* 
+    	In order to access $_POST data in Laravel, use
+    	Input::get("") -> even if it is a post variable!
+    	Docs: http://laravel.com/docs/requests
+    	*/
+
+        if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
         {
-            echo 'logged in';
+            return Response::make('Congratulations! You have been logged in.', 200);
         }else
         {
-            echo 'try again';
+            return Response::make('Please try again.', 200);
         }
-
-
     }
 
 	/**
