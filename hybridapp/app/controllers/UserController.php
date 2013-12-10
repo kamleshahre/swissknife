@@ -9,6 +9,10 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
+        if (Auth::check())
+        {
+            echo 'logged in';
+        }
         $users = User::all();
         $users->load('roles');
         $users->load('friends');
@@ -19,8 +23,15 @@ class UserController extends \BaseController {
 
     public function auth()
     {
-        //View::make('user.index', array('mail' => $_POST['mail'],'password' => $_POST['password']));
-        return $_POST['mail'].' '.$_POST['password'];
+        if (Auth::attempt(array('user_mail' => $_POST['email'], 'password' => $_POST['password'])))
+        {
+            echo 'logged in';
+        }else
+        {
+            echo 'try again';
+        }
+
+
     }
 
 	/**
@@ -30,7 +41,7 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        //
 	}
 
 	/**
@@ -40,7 +51,7 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        var_dump($_POST);
 	}
 
 	/**

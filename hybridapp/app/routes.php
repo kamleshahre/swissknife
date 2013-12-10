@@ -23,7 +23,8 @@ Route::get('/', function()
 Route::group(array('prefix' => 'API'), function()
 {
     ///User routes
-    Route::resource('/user','UserController',array('only' => array('index', 'show')));
+    Route::resource('/user','UserController');
+    Route::post('/user/login','UserController@auth');
     ///Photo routes
     Route::resource('/photo','PhotoController',array('only' => array('index', 'show')));
     ///Tag routes
