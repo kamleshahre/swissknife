@@ -10,6 +10,7 @@ class TicketController extends \BaseController {
 	public function index()
 	{
         $tickets = Ticket::all();
+        $tickets->load('user');
         return Response::json($tickets)->setCallback(Input::get('callback'));
 	}
 
@@ -42,20 +43,9 @@ class TicketController extends \BaseController {
 	public function show($id)
 	{
         $ticket = Ticket::find($id);
+        $ticket->load('user');
         return Response::json($ticket)->setCallback(Input::get('callback'));
 	}
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showuser($id)
-    {
-        $ticket = User::find($id)->ticket;
-        return Response::json($ticket)->setCallback(Input::get('callback'));
-    }
 
 	/**
 	 * Show the form for editing the specified resource.

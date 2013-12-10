@@ -9,7 +9,11 @@ class CommentController extends \BaseController {
 	 */
 	public function index()
 	{
-        $comment = Comment::with('User')->get();
+        $comment = Comment::all();
+        $comment->load('user');
+        $comment->load('photo');
+        $comment->load('parent');
+        $comment->load('children');
         return Response::json($comment)->setCallback(Input::get('callback'));
 	}
 
@@ -41,7 +45,11 @@ class CommentController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $comment = Comment::find($id)->with('User')->get();
+        $comment = Comment::find($id);
+        $comment->load('user');
+        $comment->load('photo');
+        $comment->load('parent');
+        $comment->load('children');
         return Response::json($comment)->setCallback(Input::get('callback'));
 	}
 

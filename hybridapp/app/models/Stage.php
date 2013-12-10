@@ -22,7 +22,6 @@ class Stage extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];

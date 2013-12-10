@@ -10,10 +10,10 @@ class UserController extends \BaseController {
 	public function index()
 	{
         $users = User::all();
-        for($i = 0; $i<count($users); $i++)
-        {
-            $users[$i]->clear();
-        }
+        $users->load('roles');
+        $users->load('friends');
+        $users->load('photos');
+        $users->load('notifications');
         return Response::json($users)->setCallback(Input::get('callback'));
 	}
 
@@ -52,33 +52,11 @@ class UserController extends \BaseController {
 	public function show($id)
 	{
         $user = User::find($id);
+        $user->load('roles');
+        $user->load('friends');
+        $user->load('photos');
         return Response::json($user)->setCallback(Input::get('callback'));
 	}
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showfriends($id)
-    {
-        $friends = User::find($id)->friends;
-        return Response::json($friends)->setCallback(Input::get('callback'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @param  int  $friendid
-     * @return Response
-     */
-    public function showfriend($id, $friendid)
-    {
-        $friend = User::find($id)->friends()->where('user_friend_id', '=', $friendid)->first();
-        return Response::json($friend)->setCallback(Input::get('callback'));
-    }
 
 	/**
 	 * Show the form for editing the specified resource.

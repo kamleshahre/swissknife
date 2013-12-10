@@ -9,7 +9,8 @@ class QuietplaceController extends \BaseController {
 	 */
 	public function index()
 	{
-        $quietplaces = Quietplace::with('Location')->get();
+        $quietplaces = Quietplace::all();
+        $quietplaces->load('location');
         return Response::json($quietplaces)->setCallback(Input::get('callback'));
 	}
 
@@ -41,7 +42,8 @@ class QuietplaceController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $quietplace = Quietplace::find($id)->with('Location')->get();
+        $quietplace = Quietplace::find($id);
+        $quietplace->load('location');
         return Response::json($quietplace)->setCallback(Input::get('callback'));
 	}
 

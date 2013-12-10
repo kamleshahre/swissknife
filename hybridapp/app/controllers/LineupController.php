@@ -9,7 +9,9 @@ class LineupController extends \BaseController {
 	 */
 	public function index()
 	{
-        $lineups = Lineup::with('Artist')->with('Stage')->get();
+        $lineups = Lineup::all();
+        $lineups->load('artist');
+        $lineups->load('stage');
         return Response::json($lineups)->setCallback(Input::get('callback'));
 	}
 

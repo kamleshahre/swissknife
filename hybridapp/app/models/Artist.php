@@ -22,7 +22,6 @@ class Artist extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];
@@ -39,7 +38,7 @@ class Artist extends Eloquent{
     /**
      * Get Comments
      */
-    public function linups()
+    public function lineups()
     {
         return $this->hasMany('Lineup');
     }

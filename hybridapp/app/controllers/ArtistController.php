@@ -10,6 +10,8 @@ class ArtistController extends \BaseController {
 	public function index()
 	{
         $artists = Artist::all();
+        $artists->load('likes');
+        $artists->load('lineups');
         return Response::json($artists)->setCallback(Input::get('callback'));
 	}
 
@@ -42,6 +44,8 @@ class ArtistController extends \BaseController {
 	public function show($id)
 	{
         $artist = Artist::find($id);
+        $artist->load('likes');
+        $artist->load('lineups');
         return Response::json($artist)->setCallback(Input::get('callback'));
 	}
 

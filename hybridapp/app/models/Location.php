@@ -22,23 +22,22 @@ class Location extends Eloquent{
     ];
 
     protected $hidden = [
-        'created_at',
         'updated_at',
         'deleted_at',
     ];
 
     public function parkingspot()
     {
-        return $this->belongsTo('Parkingspot');
+        return $this->hasMany('Parkingspot');
     }
 
-    public function quiteplace()
+    public function quietplace()
     {
-        return $this->belongsTo('Quiteplace');
+        return $this->hasMany('Quietplace');
     }
 
     public function stage()
     {
-        return $this->belongsTo('Stage');
+        return $this->hasMany('Stage');
     }
 }

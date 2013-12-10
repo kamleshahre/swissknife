@@ -10,6 +10,7 @@ class TagController extends \BaseController {
 	public function index()
 	{
         $tags = Tag::all();
+        $tags->load('photos');
         return Response::json($tags)->setCallback(Input::get('callback'));
 	}
 
@@ -42,20 +43,9 @@ class TagController extends \BaseController {
 	public function show($id)
 	{
         $tag = Tag::find($id);
+        $tag->load('photos');
         return Response::json($tag)->setCallback(Input::get('callback'));
 	}
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showphoto($id)
-    {
-        $tags = Photo::find($id)->tags;
-        return Response::json($tags)->setCallback(Input::get('callback'));
-    }
 
 	/**
 	 * Show the form for editing the specified resource.
