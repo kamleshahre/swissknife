@@ -75,7 +75,7 @@ var app = angular
             }
     });
     $routeProvider.when('/find/friends', {
-            templateUrl:'views/friends.html',
+            templateUrl:'views/add_a_friend.html',
             resolve: {
                 //
             }
