@@ -47,15 +47,15 @@
             <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">Hub <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#lineup">Festival Lineup</a></li>
-                <li><a href="#map">Festival Map</a></li>
+                <li><a href="#lineup"><i class="fa fa-clock-o"></i> Festival Lineup</a></li>
+                <li><a href="#map"><i class="fa fa-map-marker"></i> Festival Map</a></li>
                 <li class="divider"></li>
-                <li><a href="#friends">Friends</a></li>
-                <li><a href="#photo">Photos</a></li>
+                <li><a href="#friends"><i class="fa fa-user"></i> Friends</a></li>
+                <li><a href="#photo"><i class="fa fa-camera-retro"></i> Photos</a></li>
                 <li class="divider"></li>
-                <li><a href="#tickets">Tickets</a></li>
+                <li><a href="#tickets"><i class="fa fa-money"></i> Tickets</a></li>
                 <li class="divider"></li>
-                <li><a href="#twitterwall">Twitterwall</a></li>
+                <li><a href="#twitterwall"><i class="fa fa-twitter"></i> Twitterwall</a></li>
               </ul>
             </li>
             <li ng-class="{ active: isRouteActive('/login')}"><a href="#login">Log In</a></li>
@@ -72,7 +72,7 @@
         
         <p class="preload_desc"><i class="fa fa-refresh fa-spin fa-4x"></i>
             <br/><br/>
-            Loading your content</p>
+            Loading your content...</p>
     </div>
     </div>
     <nav class="navbar navbar-default navbar-fixed-bottom special-nav-bottom" role="navigation" ng-controller="swissKnifeApp.controllers.NavCtrl">
@@ -107,8 +107,10 @@
     <script src="scripts/controllers/RegisterCtrl.js"></script>
     <script src="scripts/controllers/MapCtrl.js"></script>
     <script src="scripts/controllers/UserDetailCtrl.js"></script>
+    <script src="scripts/controllers/UserSearchCtrl.js"></script>
     <script src="scripts/controllers/LineupCtrl.js"></script>
     <script src="scripts/controllers/PhotoFeedCtrl.js"></script>
+    <script src="scripts/controllers/PhotoDetailCtrl.js"></script>
     <script src="scripts/controllers/TicketCtrl.js"></script>
     <script src="scripts/services/KnifeSrvc.js"></script>
 </body>

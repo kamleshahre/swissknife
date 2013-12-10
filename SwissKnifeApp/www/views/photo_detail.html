@@ -1,0 +1,36 @@
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#photo">Photo</a></li>
+  <li class="active">{{ username }}'s photo</li>
+</ol>
+<div class='row'>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h1>Photo by {{ username }}</h1>
+    <hr>
+    <img class="photodetail" ng-src="{{ image }}"/>
+    <hr/>
+    <!-- COMMENTS -->
+    <div class="media">
+        <a class="pull-left" href="#friends/nicoverbruggen">
+          <img class="media-object avatarsh" src="content/twitteravatar.png" alt="Comment placeholder" width="54" height="54">
+        </a>
+        <div class="media-body">
+            <p><strong>nicoverbruggen</strong> says:</p>
+            <p class="well well-sm">Comment placeholder. Here's to allowing people to comment on pictures!</p>
+        </div>
+    </div>
+    <div class="media">
+        <a class="pull-left" href="#friends/nicoverbruggen">
+          <img class="media-object avatarsh" src="content/twitteravatar.png" alt="Comment placeholder" width="54" height="54">
+        </a>
+        <div class="media-body">
+            <p><strong>nicoverbruggen</strong> says:</p>
+            <p class="well well-sm">I'm a fan of comments.</p>
+        </div>
+    </div>
+    <ul class="pager">
+        <li class="previous"><a href="#photo">&larr; Back to Photos</a></li>
+    </ul>
+    </div>
+    
+</div>

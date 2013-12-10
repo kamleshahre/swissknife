@@ -23,6 +23,7 @@ class UserController extends \BaseController {
 
     public function auth()
     {
+        var_dump($_POST);
         if (Auth::attempt(array('user_mail' => $_POST['email'], 'password' => $_POST['password'])))
         {
             return Response::make('logged in!', 200);

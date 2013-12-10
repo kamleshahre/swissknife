@@ -1,3 +1,7 @@
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li class="active">Lineup</li>
+</ol>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h1><i class="fa fa-clock-o"></i> Lineup</h1>
@@ -7,7 +11,7 @@
         <div ng-repeat="stage in stages | filter:searchLineup">
                 <h3>{{ stage.name }}</h3>
                 <div class="list-group">
-                    <a ng-repeat="artist in stage.schedule | filter:searchLineup" href="{{ artist.link }}" class="list-group-item">
+                    <a ng-repeat="artist in stage.schedule | filter:searchLineup" href="" rel="{{ artist.link }}" class="list-group-item external">
                       <h4 class="list-group-item-heading">{{ artist.hour }}</h4>
                       <p class="list-group-item-text">{{ artist.artist }}</p>
                     </a>
