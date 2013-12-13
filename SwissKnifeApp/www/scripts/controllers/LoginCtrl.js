@@ -9,7 +9,7 @@
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.LoginCtrl',['$scope', '$http', '$location', function($scope, $http, $location){
+    controllers.controller('swissKnifeApp.controllers.LoginCtrl',['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 
         $scope.DoLoginAction = function(){
             $scope.isBusy = true;
@@ -20,6 +20,8 @@
                     if (returned_data.status === "success"){
                          // Fix the navigation glitch
                          $("nav").show();
+                         $rootScope.userLoggedIn = true;
+                         $rootScope.userName = returned_data.username;
                          $location.path( "/" );
                     }else{
                         console.log = "I have no idea.";

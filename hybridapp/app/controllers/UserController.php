@@ -36,7 +36,7 @@ class UserController extends \BaseController {
         
         if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
         {
-            return Response::make('{"status" : "success"}', 200);
+            return Response::make('{"status" : "success", "username" : "" }', 200);
         }else
         {
             return Response::make('{"error" : "Oops. Authentication failed. You should try again."}', 401);
