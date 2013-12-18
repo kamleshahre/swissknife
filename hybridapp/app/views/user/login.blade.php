@@ -42,7 +42,6 @@
     @endif
 
     {{ Form::submit('Aanmelden', ['class' => 'button radius']), PHP_EOL }}
-    {{ HTML::link('/', 'Terug naar de startpagina', ['' => '']), PHP_EOL }}
     {{ Form::close(), PHP_EOL }}
 </div>
 @stop

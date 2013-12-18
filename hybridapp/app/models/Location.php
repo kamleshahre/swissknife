@@ -40,4 +40,9 @@ class Location extends Eloquent{
     {
         return $this->hasMany('Stage');
     }
+
+    public function tent()
+    {
+        return $this->hasOne('Tent');
+    }
 }

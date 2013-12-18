@@ -16,6 +16,7 @@ class UserController extends \BaseController {
             $users->load('friends');
             $users->load('photos');
             $users->load('notifications');
+            $users->load('tent');
             return Response::json($users)->setCallback(Input::get('callback'));
         }
         return Response::make('You have to be logged in', 401);
@@ -23,23 +24,28 @@ class UserController extends \BaseController {
 
     public function auth()
     {
-    	/* 
-    	In order to access $_POST data in Laravel, use
-    	Input::get("") -> even if it is a post variable!
-    	Docs: http://laravel.com/docs/requests
-    	*/
-        
-        sleep(2);
-        
-        // In order to get all the data orderly
-        // var_dump(Input::all());
-        
-        if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
-        {
-            return Response::make('{"status" : "success"}', 200);
-        }else
-        {
-            return Response::make('{"error" : "Oops. Authentication failed. You should try again."}', 401);
+        $rules = [
+            'email'    => 'required|email',
+            'password' => 'required',
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password')))) {
+
+                return Redirect::to('/');
+            } else {
+
+                return Redirect::route('frontoffice.user.login')
+                    ->withInput()             // Vul het formulier opnieuw in met de Input.
+                    ->with('auth-error-message', 'U heeft een onjuiste gebruikersnaam of een onjuist wachtwoord ingevoerd.');
+            }
+        } else {
+
+            return Redirect::route('frontoffice.user.login') // Zie: $ php artisan routes
+                ->withInput()             // Vul het formulier opnieuw in met de Input.
+                ->withErrors($validator); // Maakt $errors in View.
         }
     }
 
@@ -50,7 +56,11 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-        //
+        //$user = new User;
+
+        //$user->name = 'John';
+
+        //$user->save();
 	}
 
 	/**
@@ -60,7 +70,7 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-        var_dump($_POST);
+        //var_dump($_POST);
 	}
 
 	/**
@@ -75,6 +85,7 @@ class UserController extends \BaseController {
         $user->load('roles');
         $user->load('friends');
         $user->load('photos');
+        $user->load('tent');
         return Response::json($user)->setCallback(Input::get('callback'));
 	}
 

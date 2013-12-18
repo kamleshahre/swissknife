@@ -20,6 +20,12 @@ $version = [
     </ul>
 
     <section class="top-bar-section">
+        @if (Auth::Guest())
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li>{{ HTML::linkRoute('frontoffice.user.login', 'Login', [], []) }}</li>
+        </ul>
+        @else
         <!-- Right Nav Section -->
         <ul class="right">
             <li>{{ HTML::linkRoute('frontoffice.user.logout', 'Meld je af', [], []) }}</li>
@@ -33,11 +39,10 @@ $version = [
             <li><a href="#">Photo's</a></li>
             <li><a href="#">Comments</a></li>
         </ul>
+        @endif
     </section>
 </nav>
-<div class="row">
-        @yield('content')
-</div>
+@yield('content')
 {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/js/vendor/jquery.min.js") }}
 {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/js/foundation.min.js") }}
 <script>

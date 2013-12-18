@@ -14,7 +14,8 @@ class CreateUsersTable extends Migration {
         Schema::create('users', function($table) {
             // auto incremental id (PK)
             $table->increments('user_id');
-            $table->string('user_mail',255);
+            $table->string('user_mail',255)->unique();
+            $table->string('user_username',255)->unique();
             $table->string('user_password',60);
             $table->string('user_privatekey',255);
             $table->string('user_publickey',255);

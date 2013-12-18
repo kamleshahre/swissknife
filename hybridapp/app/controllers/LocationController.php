@@ -12,6 +12,7 @@ class LocationController extends \BaseController {
         $location = Location::all();
         $location->load('quietplace');
         $location->load('parkingspot');
+        $location->load('tent');
         $location->load('stage');
         return Response::json($location)->setCallback(Input::get('callback'));
 	}
@@ -45,10 +46,10 @@ class LocationController extends \BaseController {
 	public function show($id)
 	{
         $location = Location::find($id);
-
         $location->load('quietplace');
         $location->load('parkingspot');
         $location->load('stage');
+        $location->load('tent');
         return Response::json($location)->setCallback(Input::get('callback'));
 	}
 

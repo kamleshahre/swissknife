@@ -11,11 +11,32 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', function ()
 {
-	return View::make('hello');
+    if (Auth::Guest()){
+        return Redirect::to('/login');
+    }else{
+        return View::make('home');
+    }
 });
+Route::get('/login', [
+    'as'   => 'frontoffice.user.login',
+    function () {
+        return View::make('user.login');
+    }
+]);
+Route::post('/login', [
+    'as'   => 'frontoffice.user.auth',
+    'uses' => 'UserController@auth'
+])->before('guest');
+Route::get('/logout', [
+    'as'   => 'frontoffice.user.logout',
+    function () {
+        Auth::logout();
 
+        return Redirect::to('/');
+    }
+])->before('auth');
 
 /**
  * API ROUTES
@@ -23,28 +44,30 @@ Route::get('/', function()
 Route::group(array('prefix' => 'API'), function()
 {
     ///User routes
-    Route::resource('/user','UserController');
-    Route::post('/user/login','UserController@auth');
+    Route::resource('/user','UserRestController');
+    Route::post('/user/login','UserRestController@auth');
     ///Photo routes
-    Route::resource('/photo','PhotoController',array('only' => array('index', 'show')));
+    Route::resource('/photo','PhotoRestController',array('only' => array('index', 'show')));
     ///Tag routes
-    Route::resource('/tag','TagController',array('only' => array('index', 'show')));
+    Route::resource('/tag','TagRestController',array('only' => array('index', 'show')));
     ///Location routes
-    Route::resource('/location','LocationController',array('only' => array('index', 'show')));
+    Route::resource('/location','LocationRestController',array('only' => array('index', 'show')));
     ///Parkingspot routes
-    Route::resource('/parkingspot','ParkingspotController',array('only' => array('index', 'show')));
+    Route::resource('/parkingspot','ParkingspotRestController',array('only' => array('index', 'show')));
     ///Parkingspot routes
-    Route::resource('/quietplace','QuietplaceController',array('only' => array('index', 'show')));
+    Route::resource('/quietplace','QuietplaceRestController',array('only' => array('index', 'show')));
     ///Stage routes
-    Route::resource('/stage','StageController',array('only' => array('index', 'show')));
+    Route::resource('/stage','StageRestController',array('only' => array('index', 'show')));
     ///Lineup routes
-    Route::resource('/lineup','LineupController',array('only' => array('index', 'show')));
+    Route::resource('/lineup','LineupRestController',array('only' => array('index', 'show')));
     ///Artist routes
-    Route::resource('/artist','ArtistController',array('only' => array('index', 'show')));
+    Route::resource('/artist','ArtistRestController',array('only' => array('index', 'show')));
     ///Notification routes
-    Route::resource('/notification','NotificationController',array('only' => array('index', 'show')));
+    Route::resource('/notification','NotificationRestController',array('only' => array('index', 'show')));
     ///Comment routes
-    Route::resource('/comment','CommentController',array('only' => array('index', 'show')));
+    Route::resource('/comment','CommentRestController',array('only' => array('index', 'show')));
     ///Ticket routes
-    Route::resource('/ticket','TicketController',array('only' => array('index', 'show')));
+    Route::resource('/ticket','TicketRestController',array('only' => array('index', 'show')));
+    //Ten routes
+    Route::resource('/tent','TentRestController',array('only' => array('index', 'show')));
 });

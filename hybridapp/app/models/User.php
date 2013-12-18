@@ -84,6 +84,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     }
 
     /**
+     * Get Ticket
+     */
+    public function tent()
+    {
+        return $this->hasOne('Tent');
+    }
+
+    /**
      * Get the unique identifier for the user.
      *
      * @return mixed
