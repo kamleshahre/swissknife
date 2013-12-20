@@ -9,11 +9,11 @@
         <input type="text" class="form-control" id="input" placeholder="Search Lineups" ng-model="searchLineup">
         <hr>
         <div ng-repeat="stage in stages | filter:searchLineup">
-                <h3>{{ stage.name }}</h3>
+                <h3>{{ stage["stage_name"] }}</h3>
                 <div class="list-group">
-                    <a ng-repeat="artist in stage.schedule | filter:searchLineup" href="" rel="{{ artist.link }}" class="list-group-item external">
-                      <h4 class="list-group-item-heading">{{ artist.hour }}</h4>
-                      <p class="list-group-item-text">{{ artist.artist }}</p>
+                    <a ng-repeat="lineup in stage['lineups'] | filter:searchLineup" href="" rel="{{ lineup['artist']['artist_url'] }}" class="list-group-item external">
+                      <h4 class="list-group-item-heading">{{ lineup['lineup_start'] }}</h4>
+                      <p class="list-group-item-text">{{ lineup['artist']['artist_name'] }}</p>
                     </a>
                 </div>
                 <hr>

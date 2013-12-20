@@ -11,6 +11,8 @@ class StageController extends \BaseController {
 	{
         $stages = Stage::all();
         $stages->load('location');
+        $stages->load('lineups');
+        $stages->load('photos');
         return Response::json($stages)->setCallback(Input::get('callback'));
 	}
 

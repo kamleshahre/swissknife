@@ -23,23 +23,35 @@ class UserController extends \BaseController {
 
     public function auth()
     {
-    	/* 
-    	In order to access $_POST data in Laravel, use
-    	Input::get("") -> even if it is a post variable!
-    	Docs: http://laravel.com/docs/requests
-    	*/
-        
-        sleep(2);
-        
-        // In order to get all the data orderly
-        // var_dump(Input::all());
-        
-        if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
-        {
-            return Response::make('{"status" : "success", "username" : "" }', 200);
-        }else
-        {
-            return Response::make('{"error" : "Oops. Authentication failed. You should try again."}', 401);
+
+        $rules = [
+            'email'    => 'required|email',
+            'password' => 'required',
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            $credentials = [
+                'user_mail'      => Input::get('email'),
+                'user_password'   => Input::get('password'),
+                'deleted_at' => null, // Extra voorwaarde
+            ];
+
+            if (Auth::attempt($credentials)) {
+
+                return Redirect::to('/');
+            } else {
+
+                return Redirect::route('frontoffice.user.login')
+                    ->withInput()             // Vul het formulier opnieuw in met de Input.
+                    ->with('auth-error-message', 'U heeft een onjuiste gebruikersnaam of een onjuist wachtwoord ingevoerd.');
+            }
+        } else {
+
+            return Redirect::route('frontoffice.user.login') // Zie: $ php artisan routes
+                ->withInput()             // Vul het formulier opnieuw in met de Input.
+                ->withErrors($validator); // Maakt $errors in View.
         }
     }
 

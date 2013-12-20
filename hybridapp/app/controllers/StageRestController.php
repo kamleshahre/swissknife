@@ -11,6 +11,11 @@ class StageRestController extends \BaseController {
     {
         $stages = Stage::all();
         $stages->load('location');
+        $stages->load('lineups');
+        $stages->load('photos');
+        foreach($stages as $stage){
+            $stage->lineups->load("artist");
+        }
         return Response::json($stages)->setCallback(Input::get('callback'));
     }
 

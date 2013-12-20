@@ -33,7 +33,7 @@ class Stage extends Eloquent{
 
     public function lineups()
     {
-        return $this->belongsTo('Lineup');
+        return $this->hasMany('Lineup');
     }
 
     public function photos()
