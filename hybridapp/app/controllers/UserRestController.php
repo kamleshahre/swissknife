@@ -17,6 +17,7 @@ class UserRestController extends \BaseController {
             $users->load('photos');
             $users->load('notifications');
             $users->load('tent');
+            $users->load('ticket');
             return Response::json($users)->setCallback(Input::get('callback'));
         }
         return Response::make('You have to be logged in', 401);
@@ -37,7 +38,7 @@ class UserRestController extends \BaseController {
 
         if (Auth::attempt(array('user_mail' => Input::get('email'), 'password' => Input::get('password'))))
         {
-            return Response::make('{"status" : "success"}', 200);
+            return  Response::json(Auth::user()->load("friends")->load("photos")->load("notifications")->load("tent")->load('ticket'))->setCallback(Input::get('callback'));
         }else
         {
             return Response::make('{"error" : "Oops. Authentication failed. You should try again."}', 401);

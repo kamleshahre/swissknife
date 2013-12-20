@@ -15,13 +15,13 @@
             $scope.isBusy = true;
             $scope.isAlert = false;
             var data = {"email" : $scope.email, "password" : $scope.password};
-            $http.post('http://localhost:8080/HybridAPI/public/API/user/login', data)
+            $http.post('http://localhost/HybridAPI/public/API/user/login', data)
     		.success(function(returned_data){
-                    if (returned_data.status === "success"){
+                    if (returned_data.status !== ""){
                          // Fix the navigation glitch
                          $("nav").show();
                          $rootScope.userLoggedIn = true;
-                         $rootScope.userName = returned_data.username;
+                         $rootScope.user = returned_data;
                          $location.path( "/" );
                     }else{
                         console.log = "I have no idea.";

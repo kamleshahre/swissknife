@@ -16,6 +16,7 @@ class UserTableSeeder extends Seeder {
 
         $userOne = User::create(array(
             'user_mail' => $mail,
+            'user_username' => "bjorvack",
             'user_password' => $password,
             'user_privatekey' => $privatekey,
             'user_publickey' => $publickey,
@@ -31,6 +32,7 @@ class UserTableSeeder extends Seeder {
 
         $userTwo = User::create(array(
             'user_mail' => $mail,
+            'user_username' => "nicoverbr",
             'user_password' => $password,
             'user_privatekey' => $privatekey,
             'user_publickey' => $publickey,

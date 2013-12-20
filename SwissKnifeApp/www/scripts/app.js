@@ -61,6 +61,11 @@ var app = angular
             resolve: {
             }
     });
+    $routeProvider.when('/you', {
+        templateUrl:'views/profile.html',
+        resolve: {
+        }
+    });
     $routeProvider.when('/friends/:friendUsername', {
             templateUrl:'views/friend_detail.html',
             controller: 'swissKnifeApp.controllers.UserDetailCtrl',
@@ -113,7 +118,7 @@ var app = angular
     // If not, empty
     
     $rootScope.userLoggedIn = false;
-    $rootScope.userName = "Anonymous";
+    $rootScope.user = {"user_username" : "anonymous"};
     
 }]);
 

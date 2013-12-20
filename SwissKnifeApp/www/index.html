@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Leaflet CSS -->
+    <script src="bower_components/leaflet/dist/leaflet.css"></script>
     <!-- Application CSS -->
     <link rel="stylesheet" href="styles/app.css">
     <!-- Modernizr -->
@@ -59,7 +61,7 @@
               </ul>
             </li>
             <li ng-hide="userLoggedIn" ng-class="{ active: isRouteActive('/login')}"><a href="#login">Log In</a></li>
-            <li ng-show="userLoggedIn" ng-class="{ active: isRouteActive('/you')}"><a href="#you">{{userName}}</a></li>
+            <li ng-show="userLoggedIn" ng-class="{ active: isRouteActive('/you')}"><a href="#you">{{user["user_username"]}}</a></li>
             <li ng-class="{ active: isRouteActive('/about')}"><a href="#about">About Swiss Knife</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -95,6 +97,8 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <!-- Angular Route JS -->
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- Leaflet JS -->
+    <script src="bower_components/leaflet/src/Leaflet.js"></script>
     <!-- Angular LocalStorage -->
     <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
 
