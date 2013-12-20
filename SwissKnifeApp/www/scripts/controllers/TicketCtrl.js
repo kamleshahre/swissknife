@@ -20,6 +20,8 @@
             "email" : "nico.verb@gmail.com",
             "price" : "25 EUR"
         };
+        
+        $('#qrcode').qrcode($scope.ticket["username"] + "|" + $scope.ticket["ticket_id"]);
             
     }]);
 })();

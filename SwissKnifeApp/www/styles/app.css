@@ -60,6 +60,11 @@ span.sender{
     width: 90%;
 }
 
+.navbar-brand img{
+    position: relative;
+    top: -2px;
+}
+
 /* =============================
 * CLEARFIX
 * ============================== */

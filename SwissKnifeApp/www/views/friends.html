@@ -2,7 +2,7 @@
   <li><a href="#">Home</a></li>
   <li class="active">Friends</li>
 </ol>
-<div class='row'>
+<div class='row' ng-show="userLoggedIn">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h1><i class="fa fa-user"></i> Friends</h1>
     
@@ -39,5 +39,10 @@
         </div>
     </div>
 </div>
+    <div class="row" ng-hide="userLoggedIn">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p>You are not logged on. You can't use Friends.</p>
+        </div>
+    </div>
 <!-- FIXES SHOULD LOAD LAST -->
 <script src="scripts/fixes.js"></script>

@@ -1,0 +1,19 @@
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li class="active">{{user["user_username"]}}</li>
+</ol>
+<div class='row'>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <hr>
+    <h1><i class="fa fa-user"></i> {{user["user_username"]}}</h1>
+    <hr>
+    <h2>User profile</h2>
+    <p>{{user["user_mail"]}}</p>
+    {{data.status}}
+    <hr/>
+    <ul class="pager">
+        <li class="previous"><a href="#friends">&larr; Back to Friends</a></li>
+    </ul>
+    </div>
+    
+</div>

@@ -1,18 +1,15 @@
 <ol class="breadcrumb">
   <li class="active">Home</li>
 </ol>
-<div class="list-group">
-  <a href="#login" class="list-group-item">
-    <i class="fa fa-user list-group-item-icon-small"></i>
-    <p class="list-group-item-text"><strong>You haven't logged in yet.</strong> You can use <em>some</em> of the functionality, but please log in.</p>
-  </a>
+<div ng-hide="userLoggedIn" id="alert-box" class="alert alert-warning" >
+<strong>You haven't logged in yet.</strong> You can use <em>some</em> of the functionality.
 </div>
 <hr/>
-<div class="jumbotron">
+<!--<div class="jumbotron">
   <img src='content/SwissKnifeLogo_Inverted.png' alt='Swiss Knife logo' id='jumbologo'>
   <h2>Welcome to Swiss Knife App!</h2>
   <p>SwissKnifeApp is the solution for all your festival needs. Scroll down to see what features are available.</p>
-</div>
+</div>-->
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="panel panel-default">
