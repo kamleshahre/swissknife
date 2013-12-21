@@ -14,14 +14,7 @@
                 <input type="text" class="form-control" id="input" placeholder="Search friends" ng-model="searchFriend">
             <hr/>
             <div class="list-group">
-                <div class="sample" ng-init="users=[
-                                                    {'username':'nedstark', 'name':'Eddard Stark'},
-                                                    {'username':'dany', 'name':'Daenerys Targaryen'},
-                                                    {'username':'robbstark', 'name':'Robb Stark'},
-                                                    {'username':'jaimelannister', 'name':'Jaime Lannister'},
-                                                    {'username':'tyrion', 'name':'Tyrion Lannister'}
-                                                   ]"></div>
-                <a ng-repeat="person in users | filter:searchFriend | orderBy:'name'" href="#friends/{{person.username}}" class="list-group-item"><strong>{{person.name}}</strong> ({{person.username}})</a>
+                <a ng-repeat="friend in user['friends'] | filter:searchFriend | orderBy:'user_username'" href="#friends/{{friend.user_username}}" class="list-group-item"><strong>{{friend.user_username}}</strong> {{friend.user_mail}}</a>
             </div>
             <br/>
         </div>

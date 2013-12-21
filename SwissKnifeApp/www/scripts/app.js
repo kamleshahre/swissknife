@@ -58,6 +58,7 @@ var app = angular
     });
     $routeProvider.when('/friends', {
             templateUrl:'views/friends.html',
+            controller: 'swissKnifeApp.controllers.FriendsCtrl',
             resolve: {
             }
     });

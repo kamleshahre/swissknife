@@ -14,7 +14,7 @@
     controllers.controller('swissKnifeApp.controllers.LineupCtrl',['$scope', '$rootScope', '$http', function($scope, $rootScope, $http){
         // Get data from providers
         $scope.isBusy = true;
-        $http.get('http://localhost/HybridAPI/public/API/stage')
+        $http.jsonp('http://localhost/HybridAPI/public/API/stage?callback=JSON_CALLBACK')
             .success(function(returned_data){
                 if (returned_data.status !== ""){
                     $scope.stages = returned_data;
