@@ -12,7 +12,6 @@
     
     // Defining the controller
     controllers.controller('swissKnifeApp.controllers.FriendsCtrl',['$scope', '$rootScope', '$http', function($scope, $rootScope, $http){
-    console.log($rootScope.user['friends']);
 
 }]);
 })();

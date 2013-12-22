@@ -10,6 +10,9 @@
     <h2>User profile</h2>
     <p>{{user["user_mail"]}}</p>
     {{data.status}}
+    <div id="map" ng-if="{{user['tent'] !== null}}" class="map map-fs">
+
+    </div>
     <hr/>
     <ul class="pager">
         <li class="previous"><a href="#friends">&larr; Back to Friends</a></li>

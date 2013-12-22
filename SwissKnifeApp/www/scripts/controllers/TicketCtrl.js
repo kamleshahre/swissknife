@@ -11,13 +11,13 @@
     var controllers = angular.module('swissKnifeApp.controllers');
     
     // Defining the controller
-    controllers.controller('swissKnifeApp.controllers.TicketCtrl',['$scope', function($scope){
+    controllers.controller('swissKnifeApp.controllers.TicketCtrl',['$scope','$rootScope', function($scope,$rootScope){
 
         $scope.ticket = {
-            "username" : "nicoverbruggen",
+            "username" :$rootScope.user["user_username"],
             "event" : "Festivalitis",
-            "ticket_id" : "D0D2AAD534EBEC8B37B855CA91FBFB1A3B4B251E17B7CAB383C4A484718664720769188E1E78DE05E313726AF0D7AB0F2D968F07ACA8F4960D8C05BEDD43E347",
-            "email" : "nico.verb@gmail.com",
+            "ticket_id" : $rootScope.user["ticket"]["ticket_body"],
+            "email" : $rootScope.user["user_mail"],
             "price" : "25 EUR"
         };
         
