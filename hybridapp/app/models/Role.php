@@ -17,8 +17,8 @@ class Role extends Eloquent{
      * @var array
      */
     protected $fillable = [
-        'title',
-        'description',
+        'role_title',
+        'role_description',
     ];
 
     protected $hidden = [

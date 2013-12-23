@@ -1,6 +1,7 @@
 <?php
 
 class UserController extends \BaseController {
+    protected $layout = 'layouts.master';
 
 	/**
 	 * Display a listing of the resource.
@@ -12,13 +13,10 @@ class UserController extends \BaseController {
         if (Auth::check())
         {
             $users = User::all();
-            $users->load('roles');
-            $users->load('friends');
-            $users->load('photos');
-            $users->load('notifications');
-            return Response::json($users)->setCallback(Input::get('callback'));
+            $this->layout->content = View::make('user.index')->with('users',$users);
+        }else{
+            return Redirect::route('backoffice.user.login');
         }
-        return Response::make('You have to be logged in', 401);
 	}
 
     public function auth()
@@ -34,22 +32,34 @@ class UserController extends \BaseController {
         if ($validator->passes()) {
             $credentials = [
                 'user_mail'      => Input::get('email'),
-                'user_password'   => Input::get('password'),
+                'password'   => Input::get('password'),
                 'deleted_at' => null, // Extra voorwaarde
             ];
 
             if (Auth::attempt($credentials)) {
+                $user = Auth::user()->load('roles');
+                $roles = $user->roles;
+                $authorized = false;
+                foreach($roles as $role){
+                    if($role->role_id == 1 || $role->role_id == 2){$authorized = true;}
+                }
+                if($authorized){
+                    return Redirect::route('backoffice.index');
+                }else{
+                    return Redirect::route('backoffice.user.login')
+                        ->withInput()             // Vul het formulier opnieuw in met de Input.
+                        ->with('auth-error-message', 'U heeft niet de juiste bevoegdheden om in te loggen.');
+                }
 
-                return Redirect::to('/');
             } else {
 
-                return Redirect::route('frontoffice.user.login')
+                return Redirect::route('backoffice.user.login')
                     ->withInput()             // Vul het formulier opnieuw in met de Input.
                     ->with('auth-error-message', 'U heeft een onjuiste gebruikersnaam of een onjuist wachtwoord ingevoerd.');
             }
         } else {
 
-            return Redirect::route('frontoffice.user.login') // Zie: $ php artisan routes
+            return Redirect::route('backoffice.user.login') // Zie: $ php artisan routes
                 ->withInput()             // Vul het formulier opnieuw in met de Input.
                 ->withErrors($validator); // Maakt $errors in View.
         }

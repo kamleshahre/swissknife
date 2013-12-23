@@ -18,7 +18,7 @@
         <a href="#" class="close">&times;</a>
     </div>
     @endif
-    {{ Form::open(['route' => 'frontoffice.user.auth']), PHP_EOL }}
+    {{ Form::open(['route' => 'backoffice.user.auth']), PHP_EOL }}
     {{ Form::label('email', Lang::get('validation.attributes.email') . ':', [
     'class'       => ($errors->has('email') || Session::has('auth-error-message') ? 'error' : '' ),
     ]), PHP_EOL }}

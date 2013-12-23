@@ -10,34 +10,45 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::get('/', function ()
+Route::group(array('prefix' => 'backoffice'), function()
 {
-    if (Auth::Guest()){
-        return Redirect::to('/login');
-    }else{
-        return View::make('home');
-    }
+    Route::get('/', [
+        'as'   => 'backoffice.index',
+        function (){
+            if (Auth::Guest()){
+                return Redirect::route('backoffice.user.login');
+            }else{
+                return View::make('home');
+            }
+        }
+    ]);
+
+    Route::get('/login', [
+        'as'   => 'backoffice.user.login',
+        function () {
+            return View::make('user.login');
+        }
+    ]);
+
+    Route::post('/login', [
+        'as'   => 'backoffice.user.auth',
+        'uses' => 'UserController@auth'
+    ])->before('guest');
+
+    Route::get('/logout', [
+        'as'   => 'backoffice.user.logout',
+        function () {
+            Auth::logout();
+
+            return Redirect::route('backoffice.index');
+        }
+    ])->before('auth');
+
+    Route::get('/users', [
+        'as'   => 'backoffice.user.index',
+        'uses' => 'UserController@index'
+    ]);
 });
-Route::get('/login', [
-    'as'   => 'frontoffice.user.login',
-    function () {
-        return View::make('user.login');
-    }
-]);
-Route::post('/login', [
-    'as'   => 'frontoffice.user.auth',
-    'uses' => 'UserController@auth'
-])->before('guest');
-Route::get('/logout', [
-    'as'   => 'frontoffice.user.logout',
-    function () {
-        Auth::logout();
-
-        return Redirect::to('/');
-    }
-])->before('auth');
-
 /**
  * API ROUTES
  */
