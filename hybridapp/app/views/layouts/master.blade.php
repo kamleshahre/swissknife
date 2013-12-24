@@ -9,6 +9,7 @@ $version = [
     <title>{{ HTML::entities('New Media Design & Development III') }} </title>
     {{ HTML::style("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/css/normalize.min.css") }}
     {{ HTML::style("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/css/foundation.min.css") }}
+    {{ HTML::style("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css") }}
     {{ HTML::style("./_styles/main.css") }}
 </head>
 <body>
@@ -35,8 +36,8 @@ $version = [
         <!-- Left Nav Section -->
         <ul class="left">
             <li>{{ HTML::linkRoute('backoffice.user.index', 'Users', [], []) }}</li>
-            <li><a href="#">Tickets</a></li>
-            <li><a href="#">Stages</a></li>
+            <li>{{ HTML::linkRoute('backoffice.ticket.index', 'Tickets', [], []) }}</li>
+            <li>{{ HTML::linkRoute('backoffice.stage.index', 'Stages', [], []) }}</li>
             <li><a href="#">Photo's</a></li>
             <li><a href="#">Comments</a></li>
         </ul>

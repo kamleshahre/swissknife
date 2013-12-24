@@ -1,7 +1,7 @@
 <?php
 
 class TicketController extends \BaseController {
-
+    protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,9 +9,14 @@ class TicketController extends \BaseController {
 	 */
 	public function index()
 	{
-        $tickets = Ticket::all();
-        $tickets->load('user');
-        return Response::json($tickets)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $tickets = Ticket::all();
+            $tickets->load('user');
+            $this->layout->content = View::make('ticket.index')->with('tickets',$tickets);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**
@@ -42,9 +47,14 @@ class TicketController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $ticket = Ticket::find($id);
-        $ticket->load('user');
-        return Response::json($ticket)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $ticket = Ticket::find($id);
+            $ticket->load('user');
+            $this->layout->content = View::make('ticket.detail')->with('ticket',$ticket);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**

@@ -1,7 +1,7 @@
 <?php
 
 class StageController extends \BaseController {
-
+    protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,11 +9,13 @@ class StageController extends \BaseController {
 	 */
 	public function index()
 	{
-        $stages = Stage::all();
-        $stages->load('location');
-        $stages->load('lineups');
-        $stages->load('photos');
-        return Response::json($stages)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $stages = Stage::all();
+            $this->layout->content = View::make('stage.index')->with('stages',$stages);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**
@@ -44,9 +46,19 @@ class StageController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $stage = Stage::find($id);
-        $stage->load('location');
-        return Response::json($stage)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $stage = Stage::find($id);
+            $stage->load('location');
+            $stage->load('lineups');
+            $stage->load('photos');
+            foreach($stage->lineups as $lineup){
+                $lineup->load("artist");
+            }
+            $this->layout->content = View::make('stage.detail')->with('stage',$stage);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**

@@ -12,6 +12,7 @@
 */
 Route::group(array('prefix' => 'backoffice'), function()
 {
+    //Home Route
     Route::get('/', [
         'as'   => 'backoffice.index',
         function (){
@@ -23,6 +24,7 @@ Route::group(array('prefix' => 'backoffice'), function()
         }
     ]);
 
+    //User Routes
     Route::get('/login', [
         'as'   => 'backoffice.user.login',
         function () {
@@ -47,6 +49,33 @@ Route::group(array('prefix' => 'backoffice'), function()
     Route::get('/users', [
         'as'   => 'backoffice.user.index',
         'uses' => 'UserController@index'
+    ]);
+
+    Route::get('/user/{id}', [
+        'as'   => 'backoffice.user.detail',
+        'uses' => 'UserController@show'
+    ]);
+
+    //Ticket Routes
+    Route::get('/tickets', [
+        'as'   => 'backoffice.ticket.index',
+        'uses' => 'TicketController@index'
+    ]);
+
+    Route::get('/ticket/{id}', [
+        'as'   => 'backoffice.ticket.detail',
+        'uses' => 'TicketController@show'
+    ]);
+
+    //Ticket Stages
+    Route::get('/stages', [
+        'as'   => 'backoffice.stage.index',
+        'uses' => 'StageController@index'
+    ]);
+
+    Route::get('/stage/{id}', [
+        'as'   => 'backoffice.stage.detail',
+        'uses' => 'StageController@show'
     ]);
 });
 /**

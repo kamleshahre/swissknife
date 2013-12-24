@@ -93,11 +93,16 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $user = User::find($id);
-        $user->load('roles');
-        $user->load('friends');
-        $user->load('photos');
-        return Response::json($user)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $user = User::find($id);
+            $user->load('roles');
+            $user->load('friends');
+            $user->load('photos');
+            $this->layout->content = View::make('user.detail')->with('user',$user);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**
