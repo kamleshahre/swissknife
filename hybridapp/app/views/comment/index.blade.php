@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="large-12 columns">
-        <h1 class="subheader">Users</h1>
+        <h1 class="subheader">Comments</h1>
     </div>
 </div>
 <div class="row">
@@ -10,16 +10,16 @@
         <table width="100%">
             <thead>
                 <tr>
-                    <th width="40%">Username</th>
-                    <th width="50%">E-mail</th>
+                    <th width="20%">User</th>
+                    <th width="60%">Comment</th>
                     <th width="10%">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $user)
+                @foreach ($comments as $comment)
                 <tr>
-                    <td>{{ HTML::linkRoute('backoffice.user.detail', $user->user_username, [$user->user_id], []) }}</td>
-                    <td>{{ $user->user_mail }}</td>
+                    <td>{{ HTML::linkRoute('backoffice.user.detail', $comment->user->user_username, [ $comment->user->user_id], []) }}</td>
+                    <td>{{$comment->comment_body}}</td>
                     <td>
                         <ul class="inline-list">
                             <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
@@ -30,7 +30,8 @@
                 @endforeach
             </tbody>
         </table>
-        {{$users->links()}}
+        {{$comments->links()}}
+
     </div>
 </div>
 @stop

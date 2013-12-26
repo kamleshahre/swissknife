@@ -11,7 +11,7 @@ class StageController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $stages = Stage::all();
+            $stages = Stage::paginate(10);
             $this->layout->content = View::make('stage.index')->with('stages',$stages);
         }else{
             return Redirect::route('backoffice.user.login');

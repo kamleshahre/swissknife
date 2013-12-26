@@ -11,8 +11,7 @@ class TicketController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $tickets = Ticket::all();
-            $tickets->load('user');
+            $tickets = Ticket::paginate(10);
             $this->layout->content = View::make('ticket.index')->with('tickets',$tickets);
         }else{
             return Redirect::route('backoffice.user.login');

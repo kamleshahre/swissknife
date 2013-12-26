@@ -10,14 +10,16 @@
         <table width="100%">
             <thead>
                 <tr>
+                    <th width="10%">ID</th>
                     <th width="30%">Photo</th>
-                    <th width="60%">User</th>
+                    <th width="50%">User</th>
                     <th width="10%">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($photos as $photo)
                 <tr>
+                    <td>{{ HTML::linkRoute('backoffice.photo.detail', $photo->photo_id, [ $photo->photo_id], []) }}</td>
                     <td><img src="{{$photo->photo_url}}" class="thumbnail"  alt=""/></td>
                     <td>{{ HTML::linkRoute('backoffice.user.detail', $photo->user->user_username, [ $photo->user->user_id], []) }}</td>
                     <td>

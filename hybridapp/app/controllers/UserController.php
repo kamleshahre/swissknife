@@ -12,7 +12,7 @@ class UserController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $users = User::all();
+            $users = User::paginate(10);
             $this->layout->content = View::make('user.index')->with('users',$users);
         }else{
             return Redirect::route('backoffice.user.login');

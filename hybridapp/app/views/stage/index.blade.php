@@ -30,7 +30,7 @@
                 @endforeach
             </tbody>
         </table>
-
+        {{$stages->links()}}
     </div>
 </div>
 @stop

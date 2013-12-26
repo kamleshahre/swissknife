@@ -88,6 +88,12 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.photo.detail',
         'uses' => 'PhotoController@show'
     ]);
+
+    //Comment Routes
+    Route::get('/comments', [
+        'as'   => 'backoffice.comment.index',
+        'uses' => 'CommentController@index'
+    ]);
 });
 /**
  * API ROUTES

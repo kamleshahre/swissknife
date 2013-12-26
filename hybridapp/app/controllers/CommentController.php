@@ -1,7 +1,7 @@
 <?php
 
 class CommentController extends \BaseController {
-
+    protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,12 +9,13 @@ class CommentController extends \BaseController {
 	 */
 	public function index()
 	{
-        $comment = Comment::all();
-        $comment->load('user');
-        $comment->load('photo');
-        $comment->load('parent');
-        $comment->load('children');
-        return Response::json($comment)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $comments = Comment::paginate(10);
+            $this->layout->content = View::make('comment.index')->with('comments',$comments);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**

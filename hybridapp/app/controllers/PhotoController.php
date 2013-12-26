@@ -10,7 +10,7 @@ class PhotoController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $photos = Photo::paginate(1);
+            $photos = Photo::paginate(10);
             $this->layout->content = View::make('photo.index')->with('photos',$photos);
         }else{
             return Redirect::route('backoffice.user.login');
@@ -45,11 +45,17 @@ class PhotoController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $photo = Photo::find($id);
-        $photo->load('user');
-        $photo->load('tags');
-        $photo->load('stage');
-        return Response::json($photo)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+
+            $photo = Photo::find($id);
+            $photo->load('user');
+            $photo->load('tags');
+            $photo->load('stage');
+            $this->layout->content = View::make('photo.detail')->with('photo',$photo);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
     /**
