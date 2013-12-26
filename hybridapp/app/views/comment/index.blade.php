@@ -10,21 +10,33 @@
         <table width="100%">
             <thead>
                 <tr>
-                    <th width="20%">User</th>
-                    <th width="60%">Comment</th>
-                    <th width="10%">Actions</th>
+                    <th width="30%">User</th>
+                    <th width="55%">Comment</th>
+                    <th width="15%">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($comments as $comment)
                 <tr>
-                    <td>{{ HTML::linkRoute('backoffice.user.detail', $comment->user->user_username, [ $comment->user->user_id], []) }}</td>
+                    @if($comment->user == null)
+                    <td>{{ HTML::linkRoute('backoffice.user.detail', 'deleted user', [ $comment->user_id], []) }}</td>
+                    @else
+                    <td>{{ HTML::linkRoute('backoffice.user.detail', $comment->user->user_username, [ $comment->user_id], []) }}</td>
+                    @endif
                     <td>{{$comment->comment_body}}</td>
                     <td>
                         <ul class="inline-list">
                             <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
-                            <li><a href="#" ><i  class="fa fa-trash-o"></i></a></li>
-                        </ul>
+                            <li>
+                                <a href="{{route('backoffice.comment.delete', $comment->comment_id)}}">
+                                    @if($comment->trashed())
+                                    <i class="fa fa-check"></i>
+                                    @else
+                                    <i class="fa fa-ban"></i>
+                                    @endif
+                                </a>
+                            </li>
+                            <li><a href="{{route('backoffice.comment.destroy', $comment->comment_id)}}"><i  class="fa fa-trash-o"></i></a></li>
                     </td>
                 </tr>
                 @endforeach

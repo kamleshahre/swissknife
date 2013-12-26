@@ -10,7 +10,7 @@ class PhotoController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $photos = Photo::paginate(10);
+            $photos = Photo::withTrashed()->paginate(10);
             $this->layout->content = View::make('photo.index')->with('photos',$photos);
         }else{
             return Redirect::route('backoffice.user.login');
@@ -48,7 +48,7 @@ class PhotoController extends \BaseController {
         if (Auth::check())
         {
 
-            $photo = Photo::find($id);
+            $photo = Photo::withTrashed()->find($id);
             $photo->load('user');
             $photo->load('tags');
             $photo->load('stage');
@@ -126,7 +126,36 @@ class PhotoController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
-	}
+        if (Auth::check())
+        {
+            $photo = Photo::withTrashed()->find($id);
+            $photo->forceDelete();
+            return Redirect::back();
 
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
+	}
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function delete($id)
+    {
+        if (Auth::check())
+        {
+            $photo = Photo::withTrashed()->find($id);
+            if($photo->trashed()){
+                $photo->restore();
+            }else{
+                $photo->delete();
+            }
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
+    }
 }

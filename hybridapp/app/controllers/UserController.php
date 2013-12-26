@@ -95,7 +95,7 @@ class UserController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $user = User::find($id);
+            $user = User::withTrashed()->find($id);
             $user->load('roles');
             $user->load('friends');
             $user->load('photos');
@@ -138,6 +138,25 @@ class UserController extends \BaseController {
         if (Auth::check())
         {
             $user = User::withTrashed()->find($id);
+            $user->forceDelete();
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
+	}
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function delete($id)
+    {
+        if (Auth::check())
+        {
+            $user = User::withTrashed()->find($id);
             if($user->trashed()){
                 $user->restore();
             }else{
@@ -148,6 +167,5 @@ class UserController extends \BaseController {
         }else{
             return Redirect::route('backoffice.user.login');
         }
-	}
-
+    }
 }

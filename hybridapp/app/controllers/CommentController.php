@@ -11,7 +11,7 @@ class CommentController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $comments = Comment::paginate(10);
+            $comments = Comment::withTrashed()->paginate(10);
             $this->layout->content = View::make('comment.index')->with('comments',$comments);
         }else{
             return Redirect::route('backoffice.user.login');
@@ -46,7 +46,7 @@ class CommentController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        $comment = Comment::find($id);
+        $comment = Comment::withTrashed()->find($id);
         $comment->load('user');
         $comment->load('photo');
         $comment->load('parent');
@@ -84,7 +84,38 @@ class CommentController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+        if (Auth::check())
+        {
+            $comment = Comment::withTrashed()->find($id);
+            if($comment->trashed()){
+                $comment->restore();
+            }else{
+                $comment->delete();
+            }
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function delete($id)
+    {
+        if (Auth::check())
+        {
+            $comment = Comment::withTrashed()->find($id);
+            $comment->forceDelete();
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
+    }
 
 }

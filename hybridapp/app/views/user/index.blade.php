@@ -10,9 +10,9 @@
         <table width="100%">
             <thead>
                 <tr>
-                    <th width="40%">Username</th>
-                    <th width="50%">E-mail</th>
-                    <th width="10%">Actions</th>
+                    <th width="30%">Username</th>
+                    <th width="45%">E-mail</th>
+                    <th width="15%">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,14 +23,16 @@
                     <td>
                         <ul class="inline-list">
                             <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
-                            <li><a href="{{route('backoffice.user.delete', $user->user_id)}}">
+                            <li>
+                                <a href="{{route('backoffice.user.delete', $user->user_id)}}">
                                     @if($user->trashed())
                                         <i class="fa fa-check"></i>
-                                    @elseif
-                                        <i class="fa fa-trash-o"></i>
+                                    @else
+                                        <i class="fa fa-ban"></i>
                                     @endif
-                            </a></li>
-
+                                </a>
+                            </li>
+                            <li><a href="{{route('backoffice.user.destroy', $user->user_id)}}"><i  class="fa fa-trash-o"></i></a></li>
                         </ul>
                     </td>
                 </tr>

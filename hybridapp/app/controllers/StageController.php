@@ -11,7 +11,7 @@ class StageController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $stages = Stage::paginate(10);
+            $stages = Stage::withTrashed()->paginate(10);
             $this->layout->content = View::make('stage.index')->with('stages',$stages);
         }else{
             return Redirect::route('backoffice.user.login');
@@ -48,7 +48,7 @@ class StageController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $stage = Stage::find($id);
+            $stage = Stage::withTrashed()->find($id);
             $stage->load('location');
             $stage->load('lineups');
             $stage->load('photos');
@@ -91,7 +91,37 @@ class StageController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+        if (Auth::check())
+        {
+            $stage = Stage::withTrashed()->find($id);
+            $stage->forceDelete();
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function delete($id)
+    {
+        if (Auth::check())
+        {
+            $stage = Stage::withTrashed()->find($id);
+            if($stage->trashed()){
+                $stage->restore();
+            }else{
+                $stage->delete();
+            }
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
+    }
 }

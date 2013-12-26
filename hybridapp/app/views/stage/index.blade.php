@@ -11,8 +11,8 @@
             <thead>
                 <tr>
                     <th width="10%">ID</th>
-                    <th width="80%">Stagename</th>
-                    <th width="10%">Actions</th>
+                    <th width="75%">Stagename</th>
+                    <th width="15%">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,7 +23,15 @@
                     <td>
                         <ul class="inline-list">
                             <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
-                            <li><a href="#" ><i  class="fa fa-trash-o"></i></a></li>
+                            <li><a href="{{route('backoffice.stage.delete', $stage->stage_id)}}">
+                                    @if($stage->trashed())
+                                    <i class="fa fa-check"></i>
+                                    @else
+                                    <i class="fa fa-ban"></i>
+                                    @endif
+                                </a>
+                            </li>
+                            <li><a href="{{route('backoffice.stage.destroy', $stage->stage_id)}}"><i  class="fa fa-trash-o"></i></a></li>
                         </ul>
                     </td>
                 </tr>

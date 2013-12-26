@@ -11,7 +11,11 @@ class TicketController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $tickets = Ticket::paginate(10);
+            $tickets = Ticket::withTrashed()->paginate(10);
+            foreach($tickets as $ticket)
+            {
+                $ticket->load('user')->withTrashed();
+            }
             $this->layout->content = View::make('ticket.index')->with('tickets',$tickets);
         }else{
             return Redirect::route('backoffice.user.login');
@@ -48,7 +52,7 @@ class TicketController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $ticket = Ticket::find($id);
+            $ticket = Ticket::withTrashed()->find($id);
             $ticket->load('user');
             $this->layout->content = View::make('ticket.detail')->with('ticket',$ticket);
         }else{
@@ -86,7 +90,37 @@ class TicketController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+        if (Auth::check())
+        {
+            $ticket = Ticket::withTrashed()->find($id);
+            if($ticket->trashed()){
+                $ticket->restore();
+            }else{
+                $ticket->delete();
+            }
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function delete($id)
+    {
+        if (Auth::check())
+        {
+            $ticket = Ticket::withTrashed()->find($id);
+            $ticket->forceDelete();
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
+    }
 }
