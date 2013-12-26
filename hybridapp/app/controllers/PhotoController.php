@@ -1,7 +1,6 @@
 <?php
-
 class PhotoController extends \BaseController {
-
+    protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,12 +8,13 @@ class PhotoController extends \BaseController {
 	 */
 	public function index()
 	{
-        $photos = Photo::all();
-        $photos->load('tags');
-        $photos->load('user');
-        $photos->load('stage');
-
-        return Response::json($photos)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $photos = Photo::paginate(1);
+            $this->layout->content = View::make('photo.index')->with('photos',$photos);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**

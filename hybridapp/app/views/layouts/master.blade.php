@@ -38,7 +38,7 @@ $version = [
             <li>{{ HTML::linkRoute('backoffice.user.index', 'Users', [], []) }}</li>
             <li>{{ HTML::linkRoute('backoffice.ticket.index', 'Tickets', [], []) }}</li>
             <li>{{ HTML::linkRoute('backoffice.stage.index', 'Stages', [], []) }}</li>
-            <li><a href="#">Photo's</a></li>
+            <li>{{ HTML::linkRoute('backoffice.photo.index', 'Photo\'s', [], []) }}</li>
             <li><a href="#">Comments</a></li>
         </ul>
         @endif

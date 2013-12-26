@@ -67,7 +67,7 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'TicketController@show'
     ]);
 
-    //Ticket Stages
+    //Stages Routes
     Route::get('/stages', [
         'as'   => 'backoffice.stage.index',
         'uses' => 'StageController@index'
@@ -76,6 +76,17 @@ Route::group(array('prefix' => 'backoffice'), function()
     Route::get('/stage/{id}', [
         'as'   => 'backoffice.stage.detail',
         'uses' => 'StageController@show'
+    ]);
+
+    //Photo Routes
+    Route::get('/photos', [
+        'as'   => 'backoffice.photo.index',
+        'uses' => 'PhotoController@index'
+    ]);
+
+    Route::get('/photo/{id}', [
+        'as'   => 'backoffice.photo.detail',
+        'uses' => 'PhotoController@show'
     ]);
 });
 /**
