@@ -10,6 +10,7 @@ class Quietplace extends Eloquent{
      */
     protected $table = 'quietplaces';
     protected $primaryKey = 'quietplace_id';
+    protected $softDelete = true;
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

@@ -10,6 +10,7 @@ class Stage extends Eloquent{
      */
     protected $table = 'stages';
     protected $primaryKey = 'stage_id';
+    protected $softDelete = true;
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

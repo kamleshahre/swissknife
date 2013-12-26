@@ -10,6 +10,7 @@ class Artist extends Eloquent{
      */
     protected $table = 'artists';
     protected $primaryKey = 'artist_id';
+    protected $softDelete = true;
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

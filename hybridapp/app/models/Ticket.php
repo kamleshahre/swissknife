@@ -10,6 +10,7 @@ class Ticket extends Eloquent{
      */
     protected $table = 'tickets';
     protected $primaryKey = 'ticket_id';
+    protected $softDelete = true;
 
     /**
      * De attributen die toegekend mogen worden aan het model via Mass Assignment (zie: http://laravel.com/docs/eloquent#mass-assignment ).

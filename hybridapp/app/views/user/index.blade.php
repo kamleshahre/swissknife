@@ -23,7 +23,14 @@
                     <td>
                         <ul class="inline-list">
                             <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
-                            <li><a href="#" ><i  class="fa fa-trash-o"></i></a></li>
+                            <li><a href="{{route('backoffice.user.delete', $user->user_id)}}">
+                                    @if($user->trashed())
+                                        <i class="fa fa-check"></i>
+                                    @elseif
+                                        <i class="fa fa-trash-o"></i>
+                                    @endif
+                            </a></li>
+
                         </ul>
                     </td>
                 </tr>

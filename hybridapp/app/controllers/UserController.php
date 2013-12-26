@@ -12,7 +12,7 @@ class UserController extends \BaseController {
 	{
         if (Auth::check())
         {
-            $users = User::paginate(10);
+            $users = User::withTrashed()->paginate(10);
             $this->layout->content = View::make('user.index')->with('users',$users);
         }else{
             return Redirect::route('backoffice.user.login');
@@ -135,7 +135,19 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+        if (Auth::check())
+        {
+            $user = User::withTrashed()->find($id);
+            if($user->trashed()){
+                $user->restore();
+            }else{
+                $user->delete();
+            }
+            return Redirect::back();
+
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 }

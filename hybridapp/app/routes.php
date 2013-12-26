@@ -56,6 +56,11 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'UserController@show'
     ]);
 
+    Route::get('/user/delete/{id}', [
+        'as'   => 'backoffice.user.delete',
+        'uses' => 'UserController@destroy'
+    ]);
+
     //Ticket Routes
     Route::get('/tickets', [
         'as'   => 'backoffice.ticket.index',
