@@ -41,10 +41,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileCtrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ProfileCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/ProfileCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="29" selection-start="743" selection-end="743" vertical-scroll-proportion="0.37935844" vertical-offset="0" max-vertical-offset="717">
+            <state line="16" column="29" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tickets.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/tickets.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="25" selection-start="1028" selection-end="1028" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="629">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TicketCtrl.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/TicketCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="94" selection-start="903" selection-end="903" vertical-scroll-proportion="0.59274757" vertical-offset="0" max-vertical-offset="717">
               <folding />
             </state>
           </provider>
@@ -63,24 +81,6 @@
         <entry file="file://$PROJECT_DIR$/views/profile.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="8" selection-start="361" selection-end="540" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="510">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="85" selection-start="1638" selection-end="1665" vertical-scroll-proportion="-21.576923" vertical-offset="255" max-vertical-offset="1071">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="10" selection-start="435" selection-end="2138" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="952">
               <folding />
             </state>
           </provider>
@@ -114,8 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/controllers/TicketCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/FriendsCtrl.js" />
         <option value="$PROJECT_DIR$/views/about.html" />
         <option value="$PROJECT_DIR$/scripts/common/directives/LeafletManyPlaces.js" />
         <option value="$PROJECT_DIR$/views/map.html" />
@@ -130,6 +128,8 @@
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/ProfileCtrl.js" />
+        <option value="$PROJECT_DIR$/views/tickets.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/TicketCtrl.js" />
       </list>
     </option>
   </component>
@@ -437,35 +437,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bower_components/leaflet/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.24" vertical-offset="102" max-vertical-offset="680" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="8" selection-start="408" selection-end="587" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="410" column="0" selection-start="6211" selection-end="6211" vertical-scroll-proportion="0.7112526" vertical-offset="6635" max-vertical-offset="7769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/friend_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="34" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/MapCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="12" selection-start="396" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
@@ -494,30 +465,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="61" selection-start="6936" selection-end="6936" vertical-scroll-proportion="-49.307693" vertical-offset="741" max-vertical-offset="2261">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="10" selection-start="435" selection-end="2138" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="31" selection-start="910" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="26" selection-start="670" selection-end="670" vertical-scroll-proportion="-6.6538463" vertical-offset="65" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
@@ -536,6 +486,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="26" selection-start="670" selection-end="670" vertical-scroll-proportion="-6.6538463" vertical-offset="65" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="8" selection-start="361" selection-end="540" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="510">
@@ -543,9 +500,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/ProfileCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="743" selection-end="743" vertical-scroll-proportion="0.37935844" vertical-offset="0" max-vertical-offset="717">
+        <state line="16" column="29" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/friend_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="34" selection-start="354" selection-end="354" vertical-scroll-proportion="0.27062228" vertical-offset="0" max-vertical-offset="691">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="31" selection-start="910" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="61" selection-start="6936" selection-end="6936" vertical-scroll-proportion="-49.307693" vertical-offset="741" max-vertical-offset="2261">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/tickets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="25" selection-start="1028" selection-end="1028" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/TicketCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="94" selection-start="903" selection-end="903" vertical-scroll-proportion="0.59274757" vertical-offset="0" max-vertical-offset="717">
           <folding />
         </state>
       </provider>

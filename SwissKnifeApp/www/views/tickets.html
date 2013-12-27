@@ -1,28 +1,32 @@
 <script src="bower_components/jquery-qrcode/jquery.qrcode.min.js"></script>
 <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li class="active">Tickets</li>
+    <li><a href="#">Home</a></li>
+    <li class="active">Tickets</li>
 </ol>
 <div class='row'>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <h1><i class="fa fa-money"></i> Tickets</h1>
-    <hr>
-    <div class='row virtual_ticket'>
-    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-    <h1>{{ticket.event}}</h1>
-    <hr/>
-    <h2>Registered to {{ticket.username}}</h2>
-    <hr/>
-    <p><strong>Unique SHA</strong>: <span id="ticketID">{{ticket.ticket_id}}</span></p>
-    <p><strong>Email:</strong> {{ticket.email}}</p>
-    <p><strong>Price paid</strong>: {{ticket.price}}</p>
-    <hr/>
-    </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div id="qrcode"></div>
+        <h1><i class="fa fa-money"></i> Tickets</h1>
+        <hr>
+        <div ng-if="ticket !== null"class='row virtual_ticket'>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <h1>{{ticket.event}}</h1>
+                <hr/>
+                <h2>Registered to {{ticket.username}}</h2>
+                <hr/>
+                <p><strong>Unique SHA</strong>: <span id="ticketID">{{ticket.ticket_id}}</span></p>
+
+                <p><strong>Email:</strong> {{ticket.email}}</p>
+
+                <p><strong>Price paid</strong>: {{ticket.price}}</p>
+                <hr/>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div id="qrcode"></div>
+            </div>
         </div>
+        <p ng-if="ticket == null">No ticket available</p>
     </div>
-    
+
 </div>
 <script>
 </script>
