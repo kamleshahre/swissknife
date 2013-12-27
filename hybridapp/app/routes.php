@@ -10,6 +10,27 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+/*
+| Empty route should automatically redirect to the backoffice
+| (visiting: _host_/public/ takes you to _host_/public/backoffice)
+*/
+
+Route::get('/', [
+        function (){
+            if (Auth::Guest()){
+                return Redirect::route('backoffice.user.login');
+            }else{
+                return View::make('home');
+            }
+        }
+    ]);
+    
+/*
+| Backoffice routes
+| visiting _host/public/backoffice
+*/
+
 Route::group(array('prefix' => 'backoffice'), function()
 {
     //Home Route
@@ -102,7 +123,12 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.stage.delete',
         'uses' => 'StageController@delete'
     ]);
-
+    
+    Route::get('/stage/edit/{id}', [
+        'as'   => 'backoffice.stage.edit',
+        'uses' => 'StageController@edit'
+    ]);
+    
     Route::get('/stage/destroy/{id}', [
         'as'   => 'backoffice.stage.destroy',
         'uses' => 'StageController@destroy'
@@ -146,10 +172,13 @@ Route::group(array('prefix' => 'backoffice'), function()
     ]);
 
 });
-/**
- * API ROUTES
- */
-Route::group(array('prefix' => 'API'), function()
+
+/*
+| API routes
+| visiting _host/public/api
+*/
+
+Route::group(array('prefix' => 'api'), function()
 {
     ///User routes
     Route::resource('/user','UserRestController');

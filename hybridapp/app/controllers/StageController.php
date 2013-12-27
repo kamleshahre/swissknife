@@ -69,7 +69,19 @@ class StageController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+	if (Auth::check())
+        {
+            $stage = Stage::withTrashed()->find($id);
+            $stage->load('location');
+            $stage->load('lineups');
+            $stage->load('photos');
+            foreach($stage->lineups as $lineup){
+                $lineup->load("artist");
+            }
+            $this->layout->content = View::make('stage.edit')->with('stage',$stage);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**
