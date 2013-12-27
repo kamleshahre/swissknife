@@ -154,6 +154,7 @@ Route::group(array('prefix' => 'API'), function()
     ///User routes
     Route::resource('/user','UserRestController');
     Route::post('/user/login','UserRestController@auth');
+    Route::post('/user/create','UserRestController@create');
     ///Photo routes
     Route::resource('/photo','PhotoRestController',array('only' => array('index', 'show')));
     ///Tag routes

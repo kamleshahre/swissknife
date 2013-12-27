@@ -62,11 +62,24 @@ class UserRestController extends \BaseController {
      */
     public function create()
     {
-        //$user = new User;
-
-        //$user->name = 'John';
-
-        //$user->save();
+        $user = User::where('user_name', '=', Input::get('username'))->first();
+        if($user == null){
+            $user = User::where('user_mail', '=', Input::get('email'))->first();
+            if($user == null){
+                $user = new User;
+                $user->user_mail = Input::get('email');
+                $user->user_username = Input::get('username');
+                $user->user_password = Input::get('password');
+                $user->user_privatekey = str_shuffle (Hash::make(Input::get('password').Input::get('email')));
+                $user->user_publickey = str_shuffle (Hash::make(Input::get('password').Input::get('email')));
+                $user->save();
+                return  Response::json($user)->setCallback(Input::get('callback'));
+            }else{
+                return Response::make('{"error" : "This e-mail is already registered."}', 401);
+            }
+        }else{var_dump($user);
+            return Response::make('{"error" : "This username is already registered."}', 401);
+        }
     }
 
     /**
