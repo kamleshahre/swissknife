@@ -24,11 +24,11 @@ class CreateCommentsTable extends Migration {
             $table->integer('user_id')->unsigned();
             $table->integer('comment_parrent')->unsigned()->nullable();
             //foreign key
-            $table->foreign('photo_id')->references('photo_id')->on('photos');
+            $table->foreign('photo_id')->references('photo_id')->on('photos')->onDelete('cascade');;
             //foreign key
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');;
             //foreign key
-            $table->foreign('comment_parrent')->references('comment_id')->on('comments');
+            $table->foreign('comment_parrent')->references('comment_id')->on('comments')->onDelete('set null');;
         });
     }
 

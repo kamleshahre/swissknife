@@ -139,7 +139,7 @@ class UserController extends \BaseController {
         {
             $user = User::withTrashed()->find($id);
             $user->forceDelete();
-            return Redirect::back();
+            //return Redirect::back();
 
         }else{
             return Redirect::route('backoffice.user.login');

@@ -23,9 +23,9 @@ class CreatePhotosTable extends Migration {
             $table->integer('user_id')->unsigned();
             $table->integer('stage_id')->unsigned()->nullable();
             //foreign key
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');;
             //foreign key
-            $table->foreign('stage_id')->references('stage_id')->on('stages');
+            $table->foreign('stage_id')->references('stage_id')->on('stages')->onDelete('set null');;
         });
     }
 

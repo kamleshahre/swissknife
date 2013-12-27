@@ -23,8 +23,8 @@ class CreateTentsTable extends Migration {
             $table->integer('location_id')->unsigned();
             $table->integer('user_id')->unsigned();
             //foreign key
-            $table->foreign('location_id')->references('location_id')->on('locations');
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('location_id')->references('location_id')->on('locations')->onDelete('cascade');;
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');;
         });
     }
 

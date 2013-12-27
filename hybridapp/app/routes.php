@@ -82,6 +82,11 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'TicketController@delete'
     ]);
 
+    Route::get('/ticket/destroy/{id}', [
+        'as'   => 'backoffice.ticket.destroy',
+        'uses' => 'TicketController@destroy'
+    ]);
+
     //Stages Routes
     Route::get('/stages', [
         'as'   => 'backoffice.stage.index',
@@ -96,6 +101,11 @@ Route::group(array('prefix' => 'backoffice'), function()
     Route::get('/stage/delete/{id}', [
         'as'   => 'backoffice.stage.delete',
         'uses' => 'StageController@delete'
+    ]);
+
+    Route::get('/stage/destroy/{id}', [
+        'as'   => 'backoffice.stage.destroy',
+        'uses' => 'StageController@destroy'
     ]);
 
     //Photo Routes
@@ -113,6 +123,12 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.photo.delete',
         'uses' => 'PhotoController@destroy'
     ]);
+
+    Route::get('/photo/destroy/{id}', [
+        'as'   => 'backoffice.photo.destroy',
+        'uses' => 'PhotoController@destroy'
+    ]);
+
     //Comment Routes
     Route::get('/comments', [
         'as'   => 'backoffice.comment.index',
@@ -123,6 +139,12 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.comment.delete',
         'uses' => 'CommentController@delete'
     ]);
+
+    Route::get('/comment/destroy/{id}', [
+        'as'   => 'backoffice.comment.destroy',
+        'uses' => 'CommentController@destroy'
+    ]);
+
 });
 /**
  * API ROUTES

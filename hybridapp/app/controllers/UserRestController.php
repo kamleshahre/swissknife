@@ -20,7 +20,9 @@ class UserRestController extends \BaseController {
             $users->load('ticket');
             foreach($users as $user)
             {
-                $user->tent->load('location');
+                if($user->tent !== null){
+                    $user->tent->load('location');
+                }
             }
             return Response::json($users)->setCallback(Input::get('callback'));
         }
@@ -90,7 +92,9 @@ class UserRestController extends \BaseController {
         $user->load('friends');
         $user->load('photos');
         $user->load('tent');
-        $user->tent->load('location');
+        if($user->tent !== null){
+            $user->tent->load('location');
+        }
         return Response::json($user)->setCallback(Input::get('callback'));
     }
 

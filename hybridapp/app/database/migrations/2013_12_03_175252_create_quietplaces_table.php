@@ -22,7 +22,7 @@ class CreateQuietplacesTable extends Migration {
 
             $table->integer('location_id')->unsigned();
             //foreign key
-            $table->foreign('location_id')->references('location_id')->on('locations');
+            $table->foreign('location_id')->references('location_id')->on('locations')->onDelete('cascade');;
         });
     }
 

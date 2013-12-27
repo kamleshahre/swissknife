@@ -22,7 +22,7 @@ class CreateTicketsTable extends Migration {
 
             $table->integer('user_id')->unsigned;
             //foreign key
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');;
         });
     }
 

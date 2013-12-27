@@ -23,9 +23,9 @@ class CreateLineupsTable extends Migration {
             $table->integer('stage_id')->unsigned();
             $table->integer('artist_id')->unsigned();
             //foreign key
-            $table->foreign('stage_id')->references('stage_id')->on('stages');
+            $table->foreign('stage_id')->references('stage_id')->on('stages')->onDelete('cascade');;
             //foreign key
-            $table->foreign('artist_id')->references('artist_id')->on('artists');
+            $table->foreign('artist_id')->references('artist_id')->on('artists')->onDelete('cascade');;
         });
     }
 
