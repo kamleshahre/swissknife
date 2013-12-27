@@ -96,6 +96,7 @@ class UserController extends \BaseController {
         if (Auth::check())
         {
             $user = User::withTrashed()->find($id);
+            $user->load('ticket');
             $user->load('roles');
             $user->load('friends');
             $user->load('photos');

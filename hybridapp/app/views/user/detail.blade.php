@@ -8,7 +8,12 @@
 <div class="row">
     <div class="large-12 columns">
         <p>Placeholder tekst</p>
-        {{ HTML::linkRoute('backoffice.ticket.detail', "Ticket", [$user->ticket->ticket_id], []) }}
+        @if($user->ticket != null)
+            {{ HTML::linkRoute('backoffice.ticket.detail', "Ticket", [$user->ticket->ticket_id], []) }}
+        @else
+            <p>Deze gebruiker heeft geen ticket</p>
+        @endif
+
     </div>
 </div>
 @stop
