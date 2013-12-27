@@ -402,15 +402,11 @@ body { padding-bottom: 70px; }
 * MAP STYLES
 * ============================== */
 
-#view.hasmap{
-    
-}
-
-.map{
-    margin-top: 20px;
-    width: 100%;
-    height: 250px;
-    background-color: #666;
+.leaflet-holder{
+    min-height:260px;
+    display:block;
+    box-sizing:border-box;
+    border:6px solid #aaa;
 }
 
 /* =============================

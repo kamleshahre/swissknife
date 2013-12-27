@@ -10,9 +10,11 @@
     <h2>User profile</h2>
     <p>{{user["user_mail"]}}</p>
     {{data.status}}
-    <div id="map" ng-if="{{user['tent'] !== null}}" class="map map-fs">
-
-    </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <leafletoneplace lfl-place="lflplace" class="map map-fs"></leafletoneplace>
+            </div>
+        </div>
     <hr/>
     <ul class="pager">
         <li class="previous"><a href="#friends">&larr; Back to Friends</a></li>

@@ -64,6 +64,7 @@ var app = angular
     });
     $routeProvider.when('/you', {
         templateUrl:'views/profile.html',
+        controller: 'swissKnifeApp.controllers.ProfileCtrl',
         resolve: {
         }
     });
