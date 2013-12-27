@@ -26,6 +26,20 @@
                     .success(function(returned_data){
                         $scope.friend = returned_data;
                         console.log(returned_data);
+                        if($scope.friend['tent'] !== null){
+                            $scope.lflplace = {
+                                lat:$scope.friend['tent']['location']['location_lat'],
+                                lng:$scope.friend['tent']['location']['location_long'],
+                                dsc:'<strong>' + $scope.friend['user_username'] + '\'s tent</strong>'
+                            };
+                        }else
+                        {
+                            $scope.lflplace = {
+                                lat:51.086849,
+                                lng:3.669939,
+                                dsc:'<strong>' + $scope.friend['user_username'] + '\'s tent is not set</strong>'
+                            };
+                        }
                         $scope.isBusy = false;
                     })
                     .error(function(status, headers, config){

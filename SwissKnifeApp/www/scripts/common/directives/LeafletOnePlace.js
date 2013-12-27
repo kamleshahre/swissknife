@@ -37,7 +37,7 @@
                             val = newVal;
                         }
                         if(val){
-                            scope.map.setView(new L.LatLng(val.lat, val.lng), val.zoom || 10);
+                            scope.map.setView(new L.LatLng(val.lat, val.lng), val.zoom || 15);
                             scope.marker = new L.marker(new L.LatLng(val.lat, val.lng), {icon:schoolIcon}).addTo(scope.map)
                                 .bindPopup(val.dsc)
                                 .openPopup();
