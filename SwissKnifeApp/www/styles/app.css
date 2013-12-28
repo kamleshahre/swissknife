@@ -409,6 +409,9 @@ body { padding-bottom: 70px; }
     border:6px solid #aaa;
 }
 
+.hidden{
+    display:none;
+}
 /* =============================
 * MEDIA QUERIES
 * ============================== */

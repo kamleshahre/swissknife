@@ -10,7 +10,10 @@
     </div>
 </div>
         <div class="row">
-            <div class="col-xs-12">
-                <leafletoneplace lfl-place="lflplace" class="map map-fs"></leafletoneplace>
+            <div class="col-xs-12" ng-if="connection">
+                <leafletoneplace class="{{hidden}}" lfl-place="lflplace" class="map map-fs"></leafletoneplace>
+            </div>
+            <div class="col-xs-12" ng-if="!connection">
+                <p>geen verbinding</p>
             </div>
         </div>
