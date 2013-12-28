@@ -38,7 +38,11 @@
                 @endforeach
             </tbody>
         </table>
+        
+        {{ HTML::linkRoute('backoffice.stage.create', 'Create new stage', [], ['class' => 'button']) }}
+        
         {{$stages->links()}}
+        
     </div>
 </div>
 @stop

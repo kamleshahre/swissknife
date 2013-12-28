@@ -123,6 +123,11 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.stage.create',
         'uses' => 'StageController@create'
     ]);
+    
+    Route::post('/create/stage', [
+        'as'   => 'backoffice.stage.store',
+        'uses' => 'StageController@store'
+    ]);
 
     Route::get('/stage/delete/{id}', [
         'as'   => 'backoffice.stage.delete',
