@@ -35,21 +35,17 @@ class StageController extends \BaseController {
 	 */
 	public function store()
 	{
-            
             // Form validation
-            
             $rules = array(
                 'name'          =>  'required',
                 'description'   =>  'required'
             );
             $validator = Validator::make(Input::all(), $rules);
-            
             // Process validation
-            
             if ($validator->fails()){
-                return Redirect::to('create/stage')
+                return Redirect::route('backoffice.stage.create')
                         ->withErrors($validator)
-                        ->withInput(Input::except('password'));
+                        ->withInput();
             }else{
                 // STORE
                 // create new stage
@@ -59,15 +55,14 @@ class StageController extends \BaseController {
                 $stage['stage_description'] = Input::get('description');
                 // get location
                 $location = new Location;
-                $stage['location_id'] = 1;
-                // save stage
+                $location['location_lat'] = Input::get('lat');
+                $location['location_long'] = Input::get('long');
+                $location->save();
+                $stage->location_id = $location->location_id;
                 $stage->save();
                 Session::flash('message', 'Het aanmaken van een stage is gelukt!');
                 return Redirect::route('backoffice.stage.index');
             }
-            
-            
-            
 	}
 
 	/**

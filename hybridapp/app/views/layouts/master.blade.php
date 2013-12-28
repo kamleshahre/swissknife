@@ -11,6 +11,7 @@ $version = [
     {{ HTML::style("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/css/foundation.min.css") }}
     {{ HTML::style("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css") }}
     {{ HTML::style("./_styles/main.css") }}
+    {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/js/vendor/jquery.min.js") }}
 </head>
 <body>
 <nav class="top-bar" data-topbar>
@@ -45,7 +46,6 @@ $version = [
     </section>
 </nav>
 @yield('content')
-{{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/js/vendor/jquery.min.js") }}
 {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/js/foundation.min.js") }}
 <script>
     $(document).foundation();
