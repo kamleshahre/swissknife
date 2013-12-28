@@ -55,6 +55,11 @@ class UserRestController extends \BaseController {
         }
     }
 
+    public function logout(){
+        Auth::logout();
+        return Response::make('{"message" : "User is logged out."}', 200);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

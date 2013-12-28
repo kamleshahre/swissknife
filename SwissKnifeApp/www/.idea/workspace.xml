@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapCtrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MapCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/MapCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="32" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.7282378" vertical-offset="99" max-vertical-offset="816">
+            <state line="39" column="9" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="218" max-vertical-offset="816">
               <folding />
             </state>
           </provider>
@@ -44,16 +44,16 @@
       <file leaf-file-name="map.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="514" selection-end="514" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="408">
+            <state line="13" column="73" selection-start="554" selection-end="554" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeafletOnePlace.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LeafletOnePlace.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="61" selection-start="68" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+            <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.9384289" vertical-offset="0" max-vertical-offset="1071">
               <folding />
             </state>
           </provider>
@@ -91,7 +91,6 @@
         <option value="$PROJECT_DIR$/views/profile.html" />
         <option value="$PROJECT_DIR$/views/friend_detail.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/UserDetailCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js" />
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/ProfileCtrl.js" />
@@ -101,8 +100,9 @@
         <option value="$PROJECT_DIR$/scripts/app.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles/app.css" />
-        <option value="$PROJECT_DIR$/views/map.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/MapCtrl.js" />
+        <option value="$PROJECT_DIR$/views/map.html" />
+        <option value="$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js" />
       </list>
     </option>
   </component>
@@ -342,7 +342,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33109018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -351,7 +351,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25125" sideWeight="0.66890985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25125" sideWeight="0.66890985" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -455,13 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="409" column="1" selection-start="6210" selection-end="6210" vertical-scroll-proportion="0.0" vertical-offset="6630" max-vertical-offset="7820">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="23" selection-start="505" selection-end="505" vertical-scroll-proportion="-4.576923" vertical-offset="34" max-vertical-offset="2346">
@@ -469,23 +462,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/MapCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="61" selection-start="68" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+        <state line="39" column="9" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="218" max-vertical-offset="816">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="514" selection-end="514" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="408">
+        <state line="13" column="73" selection-start="554" selection-end="554" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/MapCtrl.js">
+    <entry file="file://$PROJECT_DIR$/styles/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.7282378" vertical-offset="99" max-vertical-offset="816">
+        <state line="409" column="1" selection-start="6210" selection-end="6210" vertical-scroll-proportion="0.0" vertical-offset="6630" max-vertical-offset="7820">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.9384289" vertical-offset="0" max-vertical-offset="1071">
           <folding />
         </state>
       </provider>

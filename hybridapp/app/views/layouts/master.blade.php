@@ -10,6 +10,7 @@ $version = [
     {{ HTML::style("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/css/normalize.min.css") }}
     {{ HTML::style("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/css/foundation.min.css") }}
     {{ HTML::style("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css") }}
+    {{ HTML::style("./_js/datepicker/jquery.simple-dtpicker.css") }}
     {{ HTML::style("./_styles/main.css") }}
     {{ HTML::script("//cdnjs.cloudflare.com/ajax/libs/foundation/{$version['foundation']}/js/vendor/jquery.min.js") }}
 </head>
@@ -39,6 +40,7 @@ $version = [
             <li>{{ HTML::linkRoute('backoffice.user.index', 'Users', [], []) }}</li>
             <li>{{ HTML::linkRoute('backoffice.ticket.index', 'Tickets', [], []) }}</li>
             <li>{{ HTML::linkRoute('backoffice.stage.index', 'Stages', [], []) }}</li>
+            <li>{{ HTML::linkRoute('backoffice.artist.index', 'Artists', [], []) }}</li>
             <li>{{ HTML::linkRoute('backoffice.photo.index', 'Photos', [], []) }}</li>
             <li>{{ HTML::linkRoute('backoffice.comment.index', 'Comments', [], []) }}</li>
         </ul>
