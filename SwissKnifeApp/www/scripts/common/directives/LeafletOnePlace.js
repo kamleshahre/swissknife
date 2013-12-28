@@ -28,7 +28,7 @@
                         scrollWheelZoom: false
                     });
                     new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: 'Map data Â© OpenStreetMap contributors'
+                        attribution: 'Map data (c) OpenStreetMap contributors'
                     }).addTo(scope.map);
 
                     scope.$watch('lflPlace', function(oldVal, newVal) {
