@@ -119,6 +119,11 @@ Route::group(array('prefix' => 'backoffice'), function()
     ]);
 
     Route::post('/artist/edit/{id}', [
+        'as'   => 'backoffice.artist.update',
+        'uses' => 'ArtistController@update'
+    ]);
+
+    Route::get('/artist/edit/{id}', [
         'as'   => 'backoffice.artist.edit',
         'uses' => 'ArtistController@edit'
     ]);
@@ -131,6 +136,16 @@ Route::group(array('prefix' => 'backoffice'), function()
     Route::get('/artist/destroy/{id}', [
         'as'   => 'backoffice.artist.destroy',
         'uses' => 'ArtistController@destroy'
+    ]);
+
+    Route::get('/create/artist', [
+        'as'   => 'backoffice.artist.create',
+        'uses' => 'ArtistController@create'
+    ]);
+
+    Route::post('/create/artist', [
+        'as'   => 'backoffice.artist.store',
+        'uses' => 'ArtistController@store'
     ]);
 
     //Stages Routes

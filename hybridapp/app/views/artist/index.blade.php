@@ -41,7 +41,7 @@
             </tbody>
         </table>
         
-        {{ HTML::linkRoute('backoffice.stage.create', 'Create new stage', [], ['class' => 'button']) }}
+        {{ HTML::linkRoute('backoffice.artist.create', 'Create new artist', [], ['class' => 'button']) }}
         
         {{$artists->links()}}
         
