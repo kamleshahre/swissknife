@@ -7,9 +7,11 @@
     <hr>
     <h1><i class="fa fa-user"></i> {{user["user_username"]}}</h1>
     <hr>
-    <h2>User profile</h2>
+    <h2>Your Profile</h2>
     <p>{{user["user_mail"]}}</p>
     {{data.status}}
+    <hr/>
+    <h2>Your Tent</h2>
         <div class="row">
             <div class="col-xs-12">
                 <leafletoneplace lfl-place="lflplace" class="map map-fs"></leafletoneplace>
@@ -17,13 +19,20 @@
         </div>
     <hr/>
     <ul class="pager">
-        <li class="btn"><a href="#friends">&larr; Back to Friends</a></li>
-        <li class="btn"><a ng-click="logout()">Logout</a></li>
+        <li><a href="#friends"><i class="fa fa-user"></i>  Your Friends</a></li>
+        <li><a href="" ng-click="logout()">Logout</a></li>
     </ul>
     </div>
 </div>
 <div class="row" ng-hide="userLoggedIn">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <p>You are not logged in. Please login to continue.</p>
+    <h1><i class="fa fa-user"></i> Profile</h1>
+    <hr>
+    <h2>Your Profile</h2>
+    <p>You are not logged in, so your profile is not available.</p>
+    <hr/>
+    <h2>Your Tent</h2>
+    <p>You cannot see the location of your tent if you are not logged in.</p>
+    <hr/>
     </div>
 </div>

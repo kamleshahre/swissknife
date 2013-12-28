@@ -51,18 +51,19 @@
               <ul class="dropdown-menu">
                 <li><a href="#lineup"><i class="fa fa-clock-o"></i> Festival Lineup</a></li>
                 <li><a href="#map"><i class="fa fa-map-marker"></i> Festival Map</a></li>
+                <li><a href="#you"><i class="fa fa-location-arrow"></i> Tent Finder</a></li>
                 <li class="divider"></li>
                 <li><a href="#friends"><i class="fa fa-user"></i> Friends</a></li>
                 <li><a href="#photo"><i class="fa fa-camera-retro"></i> Photos</a></li>
                 <li class="divider"></li>
-                <li><a href="#tickets"><i class="fa fa-qrcode"></i> Tickets</a></li>
+                <li><a href="#tickets"><i class="fa fa-qrcode"></i> My Ticket QR</a></li>
                 <li class="divider"></li>
                 <li><a href="#twitterwall"><i class="fa fa-twitter"></i> Twitterwall</a></li>
               </ul>
             </li>
             <li ng-hide="userLoggedIn" ng-class="{ active: isRouteActive('/login')}"><a href="#login">Log In</a></li>
             <li ng-show="userLoggedIn" ng-class="{ active: isRouteActive('/you')}"><a href="#you">{{user["user_username"]}}</a></li>
-            <li ng-class="{ active: isRouteActive('/about')}"><a href="#about">About Swiss Knife</a></li>
+            <li ng-class="{ active: isRouteActive('/about')}"><a href="#about">Info</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
     </nav>

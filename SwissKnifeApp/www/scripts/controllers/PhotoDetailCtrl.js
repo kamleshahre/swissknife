@@ -10,7 +10,5 @@
             // Loads the owner of the photo
             $scope.username = $routeParams.photoOwner;
             $scope.image = "content/PhotoFeed/werchter.jpg";
-            
-            
     }]);
 })();

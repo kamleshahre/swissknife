@@ -91,6 +91,12 @@ var app = angular
             resolve: {
             }
     });
+    $routeProvider.when('/photo/upload', {
+            templateUrl:'views/photo_upload.html',
+            controller: 'swissKnifeApp.controllers.PhotoUploadCtrl',
+            resolve: {
+            }
+    });
     $routeProvider.when('/photo', {
             templateUrl:'views/photo.html',
             controller: 'swissKnifeApp.controllers.PhotoFeedCtrl',
