@@ -67,7 +67,8 @@ class LineupController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+            $lineups = Stage::find($id)->lineups()->with('Artist')->with('Stage')->get();
+            return Response::json($lineups)->setCallback(Input::get('callback'));
 	}
 
 	/**
