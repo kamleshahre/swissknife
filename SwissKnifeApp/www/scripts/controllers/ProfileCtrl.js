@@ -5,7 +5,8 @@
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
     controllers.controller('swissKnifeApp.controllers.ProfileCtrl',['$scope','$rootScope', function($scope, $rootScope){
-        if($rootScope.user['tent'] !== null){
+        try{
+            if($rootScope.user['tent'] !== null){
             $scope.lflplace = {
                 lat:$rootScope.user['tent']['location']['location_lat'],
                 lng:$rootScope.user['tent']['location']['location_long'],
@@ -18,5 +19,8 @@
                 dsc:'<strong>' + $scope.user['user_username'] + '\'s tent is not set</strong>'
             };
         }
+    }catch(ex){
+        $scope.no_user = true;
+    }
     }]);
 })();

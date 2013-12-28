@@ -2,7 +2,7 @@
   <li><a href="#">Home</a></li>
   <li class="active">{{user["user_username"]}}</li>
 </ol>
-<div class='row'>
+<div class='row' ng-hide="no_user">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <hr>
     <h1><i class="fa fa-user"></i> {{user["user_username"]}}</h1>
@@ -17,8 +17,11 @@
         </div>
     <hr/>
     <ul class="pager">
-        <li class="previous"><a href="#friends">&larr; Back to Friends</a></li>
+        <li class="btn"><a href="#friends">&larr; Back to Friends</a></li>
+        <li class="btn"><a href="#logout">Logout</a></li>
     </ul>
     </div>
-    
+</div>
+<div class="row" ng-show="no_user">
+    <p>You are not logged in. Please login to continue.</p>
 </div>

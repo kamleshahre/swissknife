@@ -11,33 +11,6 @@
     // SET MAIN CONTROLLER
     controllers.controller('swissKnifeApp.controllers.MapCtrl',['$scope', function($scope){
 
-        checkConnection();
-        function checkConnection() {
-            var networkState = navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.CELL]     = 'Cell generic connection';
-            states[Connection.NONE]     = false;
-            alert(networkState);
-            $scope.connection = states[networkState];
-
-            if(!$scope.connection){
-                $scope.lflplace = {
-                    lat:51.086849,
-                    lng:3.669939,
-                    dsc:'<strong>' + 'test' + '</strong>'
-                };
-                $scope.hidden='show';
-            }else{
-                $scope.hidden='hidden';
-            }
-        }
-
     }]);
 })();
+    
