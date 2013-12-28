@@ -202,6 +202,26 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'LineupController@store'
     ]);
 
+    Route::get('/lineup/delete/{id}', [
+        'as'   => 'backoffice.lineup.delete',
+        'uses' => 'LineupController@delete'
+    ]);
+
+    Route::get('/lineup/destroy/{id}', [
+        'as'   => 'backoffice.lineup.destroy',
+        'uses' => 'LineupController@destroy'
+    ]);
+
+    Route::post('/lineup/edit/{id}', [
+        'as'   => 'backoffice.lineup.update',
+        'uses' => 'LineupController@update'
+    ]);
+
+    Route::get('/lineup/edit/{id}', [
+        'as'   => 'backoffice.lineup.edit',
+        'uses' => 'LineupController@edit'
+    ]);
+
     //Photo Routes
     Route::get('/photos', [
         'as'   => 'backoffice.photo.index',
