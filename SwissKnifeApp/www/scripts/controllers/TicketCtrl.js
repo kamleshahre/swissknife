@@ -22,8 +22,6 @@
                 "email" : $rootScope.user["user_mail"],
                 "price" : "25 EUR"
             };
-
-            $('#qrcode').qrcode($scope.ticket["username"] + "|" + $scope.ticket["ticket_id"]);
         }else{
             $scope.ticket = null;
         }

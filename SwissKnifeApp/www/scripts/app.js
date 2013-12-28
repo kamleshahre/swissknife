@@ -5,6 +5,7 @@ angular.module('LocalStorageModule').value('prefix', 'swissKnifeApp');
 angular.module('swissKnifeApp.controllers', []);
 angular.module('swissKnifeApp.services', []);
 angular.module('swissKnifeApp.directives', []);
+angular.module('monospaced.qrcode', []);
 
 var app = angular
 .module('swissKnifeApp',
@@ -14,7 +15,8 @@ var app = angular
     'swissKnifeApp.controllers',
     'swissKnifeApp.services',
     'swissKnifeApp.directives',
-    'LocalStorageModule'
+    'LocalStorageModule',
+    'monospaced.qrcode'
     ]
 ).config(
     ['$routeProvider','$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider){
