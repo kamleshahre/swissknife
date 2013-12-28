@@ -22,7 +22,7 @@
                     <td>{{ HTML::linkRoute('backoffice.stage.detail', $stage->stage_name, [ $stage->stage_id], []) }}</td>
                     <td>
                         <ul class="inline-list">
-                            <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
+                            <li><a href="{{route('backoffice.stage.edit', $stage->stage_id)}}"><i  class="fa fa-pencil"></i></a></li>
                             <li><a href="{{route('backoffice.stage.delete', $stage->stage_id)}}">
                                     @if($stage->trashed())
                                     <i class="fa fa-check"></i>

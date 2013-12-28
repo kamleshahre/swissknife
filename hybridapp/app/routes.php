@@ -128,6 +128,11 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.stage.store',
         'uses' => 'StageController@store'
     ]);
+    
+    Route::post('/stage/edit/{id}', [
+        'as'   => 'backoffice.stage.update',
+        'uses' => 'StageController@update'
+    ]);
 
     Route::get('/stage/delete/{id}', [
         'as'   => 'backoffice.stage.delete',
