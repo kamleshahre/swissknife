@@ -119,6 +119,11 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'StageController@show'
     ]);
 
+    Route::get('/create/stage', [
+        'as'   => 'backoffice.stage.create',
+        'uses' => 'StageController@create'
+    ]);
+
     Route::get('/stage/delete/{id}', [
         'as'   => 'backoffice.stage.delete',
         'uses' => 'StageController@delete'

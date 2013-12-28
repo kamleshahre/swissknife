@@ -25,7 +25,7 @@ class StageController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        $this->layout->content = View::make('stage.create');
 	}
 
 	/**
