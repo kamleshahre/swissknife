@@ -24,7 +24,7 @@
             states[Connection.CELL_4G]  = 'Cell 4G connection';
             states[Connection.CELL]     = 'Cell generic connection';
             states[Connection.NONE]     = false;
-            alert(networkState);
+            alert(states[networkState]);
             $scope.connection = states[networkState];
 
             if(!$scope.connection){

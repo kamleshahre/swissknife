@@ -62,7 +62,6 @@ Route::group(array('prefix' => 'backoffice'), function()
         'as'   => 'backoffice.user.logout',
         function () {
             Auth::logout();
-
             return Redirect::route('backoffice.index');
         }
     ])->before('auth');
@@ -108,6 +107,32 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'TicketController@destroy'
     ]);
 
+    //Artist Routes
+    Route::get('/artists', [
+        'as'   => 'backoffice.artist.index',
+        'uses' => 'ArtistController@index'
+    ]);
+
+    Route::get('/artist/{id}', [
+        'as'   => 'backoffice.artist.detail',
+        'uses' => 'ArtistController@show'
+    ]);
+
+    Route::post('/artist/edit/{id}', [
+        'as'   => 'backoffice.artist.edit',
+        'uses' => 'ArtistController@edit'
+    ]);
+
+    Route::get('/artist/delete/{id}', [
+        'as'   => 'backoffice.artist.delete',
+        'uses' => 'ArtistController@delete'
+    ]);
+
+    Route::get('/artist/destroy/{id}', [
+        'as'   => 'backoffice.artist.destroy',
+        'uses' => 'ArtistController@destroy'
+    ]);
+
     //Stages Routes
     Route::get('/stages', [
         'as'   => 'backoffice.stage.index',
@@ -134,19 +159,32 @@ Route::group(array('prefix' => 'backoffice'), function()
         'uses' => 'StageController@update'
     ]);
 
+    Route::get('/stage/edit/{id}', [
+        'as'   => 'backoffice.stage.edit',
+        'uses' => 'StageController@edit'
+    ]);
+
     Route::get('/stage/delete/{id}', [
         'as'   => 'backoffice.stage.delete',
         'uses' => 'StageController@delete'
     ]);
     
-    Route::get('/stage/edit/{id}', [
-        'as'   => 'backoffice.stage.edit',
-        'uses' => 'StageController@edit'
-    ]);
-    
     Route::get('/stage/destroy/{id}', [
         'as'   => 'backoffice.stage.destroy',
         'uses' => 'StageController@destroy'
+    ]);
+
+    //Lineup Routes
+
+
+    Route::get('/create/lineup/{id}', [
+        'as'   => 'backoffice.lineup.create',
+        'uses' => 'LineupController@create'
+    ]);
+
+    Route::post('/create/lineup/{id}', [
+        'as'   => 'backoffice.lineup.store',
+        'uses' => 'LineupController@store'
     ]);
 
     //Photo Routes
@@ -189,7 +227,7 @@ Route::group(array('prefix' => 'backoffice'), function()
 });
 
 /*
-| API routes
+| api routes
 | visiting _host/public/api
 */
 
@@ -198,6 +236,7 @@ Route::group(array('prefix' => 'api'), function()
     ///User routes
     Route::resource('/user','UserRestController');
     Route::post('/user/login','UserRestController@auth');
+    Route::post('/user/logout','UserRestController@logout');
     Route::post('/user/create','UserRestController@create');
     ///Photo routes
     Route::resource('/photo','PhotoRestController',array('only' => array('index', 'show')));

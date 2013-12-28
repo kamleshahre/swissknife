@@ -1,7 +1,7 @@
 <?php
 
 class ArtistController extends \BaseController {
-
+    protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,10 +9,13 @@ class ArtistController extends \BaseController {
 	 */
 	public function index()
 	{
-        $artists = Artist::all();
-        $artists->load('likes');
-        $artists->load('lineups');
-        return Response::json($artists)->setCallback(Input::get('callback'));
+        if (Auth::check())
+        {
+            $artists = Artist::withTrashed()->paginate(8);
+            $this->layout->content = View::make('artist.index')->with('artists',$artists);
+        }else{
+            return Redirect::route('backoffice.user.login');
+        }
 	}
 
 	/**

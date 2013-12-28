@@ -25,7 +25,7 @@
                     });
                     element.addClass('leaflet-holder');
                     scope.map = new L.Map(element[0], {
-                        scrollWheelZoom: false
+                        scrollWheelZoom: true
                     });
                     new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: 'Map data Â© OpenStreetMap contributors'

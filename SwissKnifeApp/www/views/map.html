@@ -11,7 +11,7 @@
 </div>
         <div class="row">
             <div class="col-xs-12" ng-if="connection">
-                <leafletoneplace lfl-place="lflplace" class="map map-fs"></leafletoneplace>
+                <leafletoneplace lfl-place="lflplace" class="map {{hidden}} map-fs"></leafletoneplace>
             </div>
             <div class="col-xs-12" ng-if="!connection">
                 <p>geen verbinding</p>

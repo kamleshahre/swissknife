@@ -1,7 +1,7 @@
 <?php
 
 class LineupController extends \BaseController {
-
+    protected $layout = 'layouts.master';
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -17,22 +17,46 @@ class LineupController extends \BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 *
+     * @param  int  $id
 	 * @return Response
 	 */
-	public function create()
+	public function create($id)
 	{
-		//
+        $stage = Stage::find($id);
+        $artists = Artist::all()->lists('artist_name','artist_id');;
+        $this->layout->content = View::make('lineup.create')->with('artists',$artists)->with('stage',$stage);
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 *
+     * @param  int  $id
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
-		//
+        // Form validation
+        $rules = array(
+            'artist'          =>  'required',
+            'starttime'   =>  'required|date_format:Y-m-d H:i'
+        );
+        $validator = Validator::make(Input::all(), $rules);
+        // Process validation
+        if ($validator->fails()){
+            return Redirect::route('backoffice.lineup.create', array($id))
+                ->withErrors($validator)
+                ->withInput();
+        }else{
+            // STORE
+            // create new lineup
+            $lineup = new Lineup;
+            // fill in stage name + description
+            $lineup['artist_id'] = Input::get('artist');
+            $lineup['stage_id'] = $id;
+            $lineup['lineup_start'] = Input::get('starttime');
+            $lineup->save();
+            Session::flash('message', 'Het aanmaken van de lineup is gelukt!');
+            return Redirect::route('backoffice.stage.detail', array($id));
+        }
 	}
 
 	/**
