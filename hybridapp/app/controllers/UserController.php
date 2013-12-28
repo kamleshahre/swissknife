@@ -91,6 +91,7 @@ class UserController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
 	public function show($id)
 	{
         if (Auth::check())
