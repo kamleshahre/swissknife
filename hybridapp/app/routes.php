@@ -235,7 +235,7 @@ Route::group(array('prefix' => 'backoffice'), function()
 
     Route::get('/photo/delete/{id}', [
         'as'   => 'backoffice.photo.delete',
-        'uses' => 'PhotoController@destroy'
+        'uses' => 'PhotoController@delete'
     ]);
 
     Route::get('/photo/destroy/{id}', [

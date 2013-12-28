@@ -24,7 +24,6 @@
                     <td>{{ HTML::linkRoute('backoffice.user.detail', $photo->user->user_username, [ $photo->user->user_id], []) }}</td>
                     <td>
                         <ul class="inline-list">
-                            <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
                             <li>
                                 <a href="{{route('backoffice.photo.delete', $photo->photo_id)}}">
                                     @if($photo->trashed())

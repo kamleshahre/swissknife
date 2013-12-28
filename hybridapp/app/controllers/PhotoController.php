@@ -58,44 +58,6 @@ class PhotoController extends \BaseController {
         }
 	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showuser($id)
-    {
-        $photos = User::find($id)->photos()->with('Stage')->get();
-        $photos->load('tags');
-        return Response::json($photos)->setCallback(Input::get('callback'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showstage($id)
-    {
-        $photos = Stage::find($id)->photos()->with('User')->get();
-        $photos->load('tags');
-        return Response::json($photos)->setCallback(Input::get('callback'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function showtag($id)
-    {
-        $photos = Tag::find($id)->photos()->with('User')->with('Stage')->get();
-        return Response::json($photos)->setCallback(Input::get('callback'));
-    }
-
 	/**
 	 * Show the form for editing the specified resource.
 	 *
