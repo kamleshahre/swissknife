@@ -3,4 +3,18 @@
     max-height:150px;
 }
 
-.gllpMap	{ width: 500px; height: 250px; }
+.gllpMap{
+    width: 500px;
+    height: 250px;
+}
+
+.panel{
+    position: relative;
+}
+
+.delete-icon
+{
+    position: absolute;
+    top:5px;
+    right:5px;
+}

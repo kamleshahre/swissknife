@@ -82,7 +82,7 @@ class CommentController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function delete($id)
 	{
         if (Auth::check())
         {
@@ -105,7 +105,7 @@ class CommentController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function delete($id)
+    public function destroy($id)
     {
         if (Auth::check())
         {

@@ -33,6 +33,7 @@
             @foreach($photo->comments as $comment)
             <li>
                 <article class="panel">
+                    <a href="{{route('backoffice.comment.destroy', $comment->comment_id)}}" class="delete-icon"><i  class="fa fa-times"></i></a>
                     <h6>
                         comment by : {{$comment->user->user_username}}
                     </h6>

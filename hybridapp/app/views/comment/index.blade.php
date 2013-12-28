@@ -26,7 +26,6 @@
                     <td>{{$comment->comment_body}}</td>
                     <td>
                         <ul class="inline-list">
-                            <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
                             <li>
                                 <a href="{{route('backoffice.comment.delete', $comment->comment_id)}}">
                                     @if($comment->trashed())
