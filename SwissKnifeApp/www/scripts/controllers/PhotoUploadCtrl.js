@@ -17,6 +17,7 @@ $scope.onFileSelect = function($files) {
         $scope.uploadStatus = true;
         $scope.uploadDeclined = false;
         $scope.uploadFailed = false;
+        $(".progress").addClass("active");
          //$files: an array of files selected, each file has name, size, and type.
         for (var i = 0; i < $files.length; i++) {
           var file = $files[i];
@@ -33,8 +34,8 @@ $scope.onFileSelect = function($files) {
             //formDataAppender: function(formData, key, val){} 
           }).progress(function(evt) {
                 $("#progress").removeClass("progress-bar-danger");
-                console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
                 $("#progress").attr("aria-valuenow", (parseInt(100.0 * evt.loaded / evt.total)));
+                $("#progress").css("width", parseInt(100.0 * evt.loaded / evt.total) + "%");
           }).success(function(data, status, headers, config) {
             // file is uploaded successfully
                 console.log(data);
@@ -42,6 +43,7 @@ $scope.onFileSelect = function($files) {
           .error(function(object, code){
               $scope.uploadFailed = true;
               $("#progress").addClass("progress-bar-danger");
+              $(".progress").removeClass("active");
               $("#progress").css("width", "100%");
               switch(code){
                   case 500:
