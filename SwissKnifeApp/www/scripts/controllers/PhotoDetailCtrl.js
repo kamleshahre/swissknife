@@ -13,6 +13,12 @@
                     $scope.image = returned_data.photo_url;
                     $scope.username = returned_data.user.user_username;
                 });
+                
+                
+            $scope.postComment = function(body){
+                // 
+            };
+            
             /*
             $http.jsonp(requestPath)
             .success(function(returned_data){
