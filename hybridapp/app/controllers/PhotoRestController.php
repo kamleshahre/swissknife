@@ -24,15 +24,18 @@ class PhotoRestController extends \BaseController {
      */
     public function upload(){
         $file = Input::file('file');
+        var_dump($file);
         $destinationPath = 'upload/';
         // Base64 encode of current date + file
         $filename = base64_encode(date("Y-m-d H:i:s") . $file);
         $file->move($destinationPath, $filename);
-        $data = array(
-            'path' => $destinationPath,
-            'filename' => $filename
-             );
-        return Response::json($data);
+
+        $photo = new Photo();
+        $photo->user_id = Auth::user()->user_id;
+        $photo->photo_url = $filename;
+        $photo->stage_id = null;
+        $photo->load('user');
+        return Response::json($photo)->setCallback(Input::get('callback'));
     }
 
     /**
