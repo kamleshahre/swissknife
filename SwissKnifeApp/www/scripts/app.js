@@ -87,7 +87,7 @@ var app = angular
             resolve: {
             }
     });
-    $routeProvider.when('/photo/:photoOwner/:photoID', {
+    $routeProvider.when('/photo/:photoID', {
             templateUrl:'views/photo_detail.html',
             controller: 'swissKnifeApp.controllers.PhotoDetailCtrl',
             resolve: {
