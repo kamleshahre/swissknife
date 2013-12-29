@@ -19,8 +19,8 @@
             <tbody>
                 @foreach ($photos as $photo)
                 <tr>
-                    <td>{{ HTML::linkRoute('backoffice.photo.detail', $photo->photo_id, [ $photo->photo_id], []) }}</td>
-                    <td>{{ HTML::image('upload/'.$photo->photo_url, 'thumbnail', array('class' => 'thumbnail')) }}</td>
+                    <td>{{$photo->photo_id}}</td>
+                    <td><a href="{{route('backoffice.photo.detail', $photo->photo_id)}}">{{ HTML::image('upload/'.$photo->photo_url, 'thumbnail', array('class' => 'thumbnail')) }}</a></td>
                     <td>{{ HTML::linkRoute('backoffice.user.detail', $photo->user->user_username, [ $photo->user->user_id], []) }}</td>
                     <td>
                         <ul class="inline-list">

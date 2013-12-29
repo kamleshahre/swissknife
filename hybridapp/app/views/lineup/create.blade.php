@@ -4,12 +4,15 @@
 <div class="row">
     <div class="large-12 columns">
         <hr/>
-        <h1>Lineup's</h1>
+        <h1>Lineups</h1>
     </div>
 </div>
 <div class="row">
     <div class="large-12 columns">
-        <h2 class="subheader">Create a new lineup</h2><a href="{{ URL::previous() }}">Go Back</a>
+        <hr/>
+        <h2 class="subheader">Add to lineup</h2>
+        <hr/>
+        <a href="{{ URL::previous() }}">&larr; Go Back</a>
         <hr/>
     </div>
 </div>

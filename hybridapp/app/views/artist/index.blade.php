@@ -21,7 +21,7 @@
                 <tr>
                     <td>{{$artist->artist_id}}</td>
                     <td>{{ HTML::linkRoute('backoffice.artist.detail', $artist->artist_name, [ $artist->artist_id], []) }}</td>
-                    <td>{{ HTML::link($artist->artist_url,$artist->artist_url, [], []) }}</td>
+                    <td><a href="{{$artist->artist_url}}">{{$artist->artist_url}}</a></td>
                     <td>
                         <ul class="inline-list">
                             <li><a href="{{route('backoffice.artist.edit', $artist->artist_id)}}"><i  class="fa fa-pencil"></i></a></li>

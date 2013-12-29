@@ -117,7 +117,7 @@ class LineupController extends \BaseController {
             $lineup['lineup_start'] = Input::get('starttime');
             $lineup->save();
             Session::flash('message', 'Het updaten van de lineup is gelukt!');
-            return Redirect::route('backoffice.stage.detail', array($id));
+            return Redirect::route('backoffice.stage.detail', array($lineup->stage->stage_id));
         }
     }
 

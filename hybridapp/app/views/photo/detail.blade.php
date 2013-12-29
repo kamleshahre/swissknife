@@ -2,31 +2,23 @@
 @section('content')
 <div class="row">
     <div class="large-12 columns">
-        <h1 class="subheader">Photo : {{ $photo->photo_id }}</h1><a href="{{ URL::previous() }}">Go Back</a>
+        <hr/>
+        <h1 class="subheader">Photo: {{ $photo->photo_id }}</h1>
+        <hr/>
+        <a href="{{ URL::previous() }}">&larr; Go Back</a>
+        <hr/>
     </div>
 </div>
 <div class="row">
     <div class="large-6 columns">
         {{ HTML::image('upload/'.$photo->photo_url) }}
     </div>
-    <div class="large-6 columns">
-        <div class="row">
-            <div class="large-12 columns">
-                <h2 class="subheader">Tags</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @foreach($photo->tags as $tag)
-                <span class="secondary round label">{{$tag->tag_name}}</span>
-                @endforeach
-            </div>
-        </div>
-    </div>
 </div>
 <div class="row">
     <div class="large-12 columns">
+        <hr/>
         <h2 class="subheader">Comments</h2>
+        <hr/>
     </div>
     <div class="large-12 columns">
         <ul class="small-block-grid-3">
