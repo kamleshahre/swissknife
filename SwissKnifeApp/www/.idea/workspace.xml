@@ -23,64 +23,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LeafletOnePlace.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1071">
+            <state line="129" column="49" selection-start="4316" selection-end="4316" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2788">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendsCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/FriendsCtrl.js">
+      <file leaf-file-name="friends.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/friends.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoDetailCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/PhotoDetailCtrl.js">
+      <file leaf-file-name="add_a_friend.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/add_a_friend.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state line="10" column="46" selection-start="338" selection-end="338" vertical-scroll-proportion="0.39443156" vertical-offset="0" max-vertical-offset="578">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoFeedCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/PhotoFeedCtrl.js">
+      <file leaf-file-name="register.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="8" selection-start="478" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+            <state line="19" column="24" selection-start="897" selection-end="1015" vertical-scroll-proportion="-8.5" vertical-offset="102" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/ProfileCtrl.js">
+      <file leaf-file-name="LoginCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="29" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="748">
+            <state line="11" column="159" selection-start="331" selection-end="425" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegisterCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js">
+      <file leaf-file-name="LineupCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/LineupCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="12" selection-start="560" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="901">
+            <state line="44" column="10" selection-start="406" selection-end="1777" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="901">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TicketCtrl.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/TicketCtrl.js">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="14" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0" vertical-offset="141" max-vertical-offset="612">
+            <state line="114" column="63" selection-start="6611" selection-end="6611" vertical-scroll-proportion="-5.8846154" vertical-offset="1785" max-vertical-offset="2346">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="UserDetailCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/controllers/UserDetailCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="37" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1207">
+            <state line="6" column="168" selection-start="257" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -104,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WelcomeCtrl.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/controllers/WelcomeCtrl.js">
+      <file leaf-file-name="AddFriendCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/AddFriendCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+            <state line="2" column="17" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -123,22 +123,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/register.html" />
-        <option value="$PROJECT_DIR$/scripts/controllers/ProfileCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/TicketCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/common/directives/QRcode.js" />
         <option value="$PROJECT_DIR$/views/tickets.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/styles/app.css" />
         <option value="$PROJECT_DIR$/scripts/controllers/MapCtrl.js" />
         <option value="$PROJECT_DIR$/views/map.html" />
         <option value="$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/LoginCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/app.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/LineupCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/PhotoFeedCtrl.js" />
-        <option value="$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js" />
         <option value="$PROJECT_DIR$/scripts/controllers/UserDetailCtrl.js" />
+        <option value="$PROJECT_DIR$/scripts/app.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/scripts/controllers/AddFriendCtrl.js" />
+        <option value="$PROJECT_DIR$/views/add_a_friend.html" />
       </list>
     </option>
   </component>
@@ -343,8 +343,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Bjorn\Documents\School\2013-2014\NewMediaEnDesignIII\project\SwissKnifeApp\www\content" />
       <recent name="C:\Users\Bjorn\Documents\School\2013-2014\NewMediaEnDesignIII\project\SwissKnifeApp\www\scripts\controllers" />
+      <recent name="C:\Users\Bjorn\Documents\School\2013-2014\NewMediaEnDesignIII\project\SwissKnifeApp\www\content" />
       <recent name="C:\Users\Bjorn\Documents\School\2013-2014\NewMediaEnDesignIII\project\SwissKnifeApp\www\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -380,14 +380,14 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33109018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3499327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25125" sideWeight="0.66890985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25125" sideWeight="0.65006727" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -414,66 +414,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="413" column="1" selection-start="6243" selection-end="6243" vertical-scroll-proportion="0.0" vertical-offset="6698" max-vertical-offset="7888">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="4448" selection-end="4448" vertical-scroll-proportion="0.0" vertical-offset="1994" max-vertical-offset="2771">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="64" selection-start="631" selection-end="683" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <folding>
-            <marker date="1388308548309" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1388308548309" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1388308548309" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/LineupCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="7" selection-start="470" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/MapCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="9" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="49" selection-start="217" selection-end="217" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/FriendsCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="471">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/PhotoDetailCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="471">
@@ -495,9 +435,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js">
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/WelcomeCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="560" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="901">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
@@ -509,9 +449,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/LineupCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="10" selection-start="406" selection-end="1777" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/controllers/UserDetailCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="37" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1207">
+        <state line="6" column="168" selection-start="257" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/RegisterCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="26" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="901">
           <folding />
         </state>
       </provider>
@@ -523,9 +477,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/controllers/WelcomeCtrl.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+        <state line="114" column="63" selection-start="6611" selection-end="6611" vertical-scroll-proportion="-5.8846154" vertical-offset="1785" max-vertical-offset="2346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="49" selection-start="4316" selection-end="4316" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2788">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="159" selection-start="331" selection-end="425" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/AddFriendCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/friends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="24" selection-start="897" selection-end="1015" vertical-scroll-proportion="-8.5" vertical-offset="102" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/add_a_friend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="46" selection-start="338" selection-end="338" vertical-scroll-proportion="0.39443156" vertical-offset="0" max-vertical-offset="578">
           <folding />
         </state>
       </provider>

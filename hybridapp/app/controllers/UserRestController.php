@@ -117,6 +117,28 @@ class UserRestController extends \BaseController {
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $username
+     * @return Response
+     */
+    public function addfriend($username)
+    {
+        if (Auth::check())
+        {
+            $friend = User::where('user_username', '=' ,$username)->first();
+            $user = Auth::user();
+            $user->friends()->attach($friend->user_id);
+            $user->load("friends")->load("photos")->load("notifications")->load("tent")->load('ticket');
+            if($user->tent !== null){
+                $user->tent->load('location');
+            }
+            return Response::json($user)->setCallback(Input::get('callback'));
+        }
+        return Response::make('You have to be logged in', 401);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

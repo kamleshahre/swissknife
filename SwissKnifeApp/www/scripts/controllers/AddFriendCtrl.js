@@ -1,26 +1,24 @@
-/**
- * Created by nicoverbruggen on 05/12/13.
- * Register controller of app.
- */
-
 (function(){
     // USE STRICT
     'use strict';
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.RegisterCtrl',['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-        $scope.DoRegisterAction = function(){
+    controllers.controller('swissKnifeApp.controllers.AddFriendCtrl',['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+// Get data from providers
+        $scope.isBusy = true;
+        var username = $scope.username;
+        var requestPath = $rootScope.apipath + '/user/friend/'+username+'?callback=JSON_CALLBACK';
+        $scope.DoAddFriendAction = function(username){
             $scope.isBusy = true;
             $scope.isAlert = false;
-            var requestPath = $rootScope.apipath + 'user/create';
-            var data = {"email" : $scope.email, "password" : $scope.password,"username" : $scope.username};
-            $http.post(requestPath, data)
+            $http.get(requestPath)
                 .success(function(returned_data){
                     if (returned_data.status !== ""){
                         // Fix the navigation glitch
                         $("nav").show();
-                        $location.path( "/login" );
+                        $rootScope.user = returned_data;
+                        $location.path( "/friends" );
                     }else{
                         console.log = "I have no idea.";
                     }

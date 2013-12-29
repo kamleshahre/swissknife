@@ -273,6 +273,7 @@ Route::group(array('prefix' => 'api'), function()
     Route::post('/user/login','UserRestController@auth');
     Route::post('/user/logout','UserRestController@logout');
     Route::post('/user/create','UserRestController@create');
+    Route::get('/user/friend/{username}','UserRestController@addfriend');
     ///Photo routes
     Route::resource('/photo','PhotoRestController',array('only' => array('index', 'show')));
     ///Tag routes
