@@ -5,17 +5,19 @@
 <div class='row'>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h1><i class="fa fa-camera-retro"></i> Photos</h1>
-    <hr/>
-        <div class="row">
-            <a ng-repeat="photo in photos" href="#photo/{{photo['photo_id']}}">
-            <img class="col-xs-12 col-sm-6 col-md-3 col-lg-3" ng-src="{{publicpath}}upload/{{photo['photo_url']}}"/>
-            </a>
-        </div>
-    <hr/>
+    
     <ul class="pager">
         <div ng-show="userLoggedIn">
+        <hr/>
         <li class="previous"><a href="#upload/photo">Upload your own photo</a></li>
         </div>
     </ul>
+    
+        <div class="row">
+            <a ng-repeat="photo in photos" href="#photo/{{photo['photo_id']}}">
+            <img class="col-xs-12 col-sm-6 col-md-3 col-lg-3 bmar" ng-src="{{publicpath}}upload/{{photo['photo_url']}}"/>
+            </a>
+        </div>
+    <hr/>
     </div>
 </div>

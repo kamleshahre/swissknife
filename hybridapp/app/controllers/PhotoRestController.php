@@ -9,12 +9,12 @@ class PhotoRestController extends \BaseController {
      */
     public function index()
     {
-        $photos = Photo::all();
+        $photos = Photo::orderBy('photo_id', 'DESC')->get();
         $photos->load('tags');
         $photos->load('user');
         $photos->load('stage');
-
-        return Response::json($photos)->setCallback(Input::get('callback'));
+        return Response::json($photos)
+                ->setCallback(Input::get('callback'));
     }
     
     /**

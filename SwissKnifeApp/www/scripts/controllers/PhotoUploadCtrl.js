@@ -4,7 +4,7 @@
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.PhotoUploadCtrl',['$scope', '$rootScope', '$routeParams', '$upload', function($scope, $rootScope, $routeParams, $upload){
+    controllers.controller('swissKnifeApp.controllers.PhotoUploadCtrl',['$scope', '$rootScope', '$routeParams', '$upload', '$location', function($scope, $rootScope, $routeParams, $upload, $location){
 
     $scope.uploadStatus = false; // Bool to check if uploading right now
     $scope.uploadDeclined = false;
@@ -42,6 +42,8 @@ $scope.onFileSelect = function($files) {
               $scope.uploadDeclined = false;
               $scope.uploadFailed = false;
               $scope.uploadSuccess = true;
+              var id = data.photo_id;
+              $location.path("photo");
           })
           .error(function(object, code){
               $scope.uploadFailed = true;

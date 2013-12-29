@@ -86,6 +86,10 @@ span.sender{
 * BOOTSTRAP OVERRIDES
 * ============================== */
 
+.bmar{
+    margin-bottom: 15px;
+}
+
 #fileUpload{
     width: 100%;
     padding: 15px;
