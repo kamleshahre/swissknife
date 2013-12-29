@@ -6,14 +6,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h1><i class="fa fa-map-marker"></i> Map</h1>
     <hr>
-    <p>Below you'll find the festival map. You can scroll, zoom and pan around. If you have GPS on your device, your location will be visible as well.</p>
-    </div>
 </div>
-        <div class="row">
-            <div class="col-xs-12" ng-if="connection">
-                <leafletoneplace lfl-place="lflplace" class="map {{hidden}} map-fs"></leafletoneplace>
+        <div class="col-xs-12">
+                <leafletoneplace lfl-place="lflplace" class="map map-fs"></leafletoneplace>
             </div>
-            <div class="col-xs-12" ng-if="!connection">
-                <p>geen verbinding</p>
-            </div>
-        </div>

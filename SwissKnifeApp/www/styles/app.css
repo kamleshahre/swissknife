@@ -86,6 +86,10 @@ span.sender{
 * BOOTSTRAP OVERRIDES
 * ============================== */
 
+#twitterdiv{
+    width: 100%;
+}
+
 span.loading-text{
     text-transform: uppercase;
     color: #777;

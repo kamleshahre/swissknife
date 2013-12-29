@@ -22,7 +22,7 @@
                 $scope.data = {"status":"This user is not your friend."};
             }else{
                 $scope.isBusy = true;
-                $http.jsonp('http://localhost/HybridAPI/public/API/user/'+ friend["user_id"]+'?callback=JSON_CALLBACK')
+                $http.jsonp($rootScope.apipath + '/user/'+ friend["user_id"]+'?callback=JSON_CALLBACK')
                     .success(function(returned_data){
                         $scope.friend = returned_data;
                         console.log(returned_data);

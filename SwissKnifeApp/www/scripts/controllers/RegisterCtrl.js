@@ -13,9 +13,9 @@
         $scope.DoRegisterAction = function(){
             $scope.isBusy = true;
             $scope.isAlert = false;
-            console.log("register?");
+            var requestPath = $rootScope.apipath + 'create';
             var data = {"email" : $scope.email, "password" : $scope.password,"username" : $scope.username};
-            $http.post('http://localhost/HybridAPI/public/API/user/create', data)
+            $http.post(requestPath, data)
                 .success(function(returned_data){
                     if (returned_data.status !== ""){
                         // Fix the navigation glitch

@@ -28,6 +28,10 @@ var app = angular
     $routeProvider.when('/', {templateUrl:'views/welcome.html', controller:'swissKnifeApp.controllers.WelcomeCtrl'});
     // /login
     $routeProvider.when('/login', {templateUrl:'views/login.html', controller:'swissKnifeApp.controllers.LoginCtrl'});
+    $routeProvider.when('/logout', 
+    {templateUrl:'views/login.html', 
+        controller:'swissKnifeApp.controllers.LoginCtrl',
+        });
     // /app
     $routeProvider.when('/app', {
             templateUrl:'views/main.html',
@@ -87,6 +91,12 @@ var app = angular
             resolve: {
             }
     });
+    $routeProvider.when('/photo/upload', {
+            templateUrl:'views/photo_upload.html',
+            controller: 'swissKnifeApp.controllers.PhotoUploadCtrl',
+            resolve: {
+            }
+    });
     $routeProvider.when('/photo', {
             templateUrl:'views/photo.html',
             controller: 'swissKnifeApp.controllers.PhotoFeedCtrl',
@@ -114,16 +124,13 @@ var app = angular
 }]
 ).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.KnifeSrvc',function($rootScope, $timeout, $location, KnifeSrvc){
     // APP INIT
-    
     $rootScope.pageInitialized = true;
-    
+    // API PATH
+    $rootScope.apipath = "http://localhost/HybridAPI/public/api/";
     // Check if logged in, if you are, set name & login status
-    
     // If not, empty
-    
     $rootScope.userLoggedIn = false;
     $rootScope.user = {"user_username" : "anonymous"};
-    
 }]);
 
 /*
