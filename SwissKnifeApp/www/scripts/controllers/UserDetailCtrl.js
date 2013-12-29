@@ -22,16 +22,16 @@
                 $scope.data = {"status":"This user is not your friend."};
             }else{
                 $scope.isBusy = true;
-                $http.jsonp($rootScope.apipath + '/user/'+ friend["user_id"]+'?callback=JSON_CALLBACK')
+                $http.jsonp($rootScope.apipath + 'user/'+ friend["user_id"]+'?callback=JSON_CALLBACK')
                     .success(function(returned_data){
                         $scope.friend = returned_data;
                         console.log(returned_data);
                         if($scope.friend['tent'] !== null){
-                            $scope.lflplace = {
+                            lflPlaces.push({
                                 lat:$scope.friend['tent']['location']['location_lat'],
                                 lng:$scope.friend['tent']['location']['location_long'],
                                 dsc:'<strong>' + $scope.friend['user_username'] + '\'s tent</strong>'
-                            };
+                            });
                         }else
                         {
                             $scope.lflplace = {
@@ -40,23 +40,6 @@
                                 dsc:'<strong>' + $scope.friend['user_username'] + '\'s tent is not set</strong>'
                             };
                         }
-                        $scope.isBusy = false;
-                    })
-                    .error(function(status, headers, config){
-                        console.log("error");
-                        // This will usually be called when we have no internets.
-                        console.log(status);
-                        if (status === 401){
-                            $scope.alertMessage = data.error;
-                        }
-                        else if(status === 0){
-                            console.log(data + status + headers + config);
-                            $scope.alertMessage = "You seem to be offline.";
-                        }else{
-                            $scope.alertMessage = "Oops. Something went wrong. Please contact our space gnomes with the following information: <info>STATUS: " + status + " / HEADERS: " + headers + " / CONFIG: " + config + ".</info>";
-                        }
-                        // Show alert message
-                        $scope.isAlert = true;
                         $scope.isBusy = false;
                     });
                 $scope.data = {"status":"We're just putting sample information here."};
@@ -71,22 +54,8 @@
 
         navigator.geolocation.getCurrentPosition(onSuccess);
 
-        if ($rootScope.userLoggedIn === true){
-            if($rootScope.user['tent'] !== null){
-                lflPlaces.push({
-                    lat:$rootScope.user['tent']['location']['location_lat'],
-                    lng:$rootScope.user['tent']['location']['location_long'],
-                    dsc:'<strong>' + $rootScope.user['user_username'] + '\'s tent</strong>'
-                });
-        }else{
-            lflPlaces.push({
-                lat:"51.086849",
-                lng:"3.669939",
-                dsc:'<strong>' + $scope.user['user_username'] + '\'s tent is not set</strong>'
-            });
-        }
-
-        if($rootScope.position != null){
+        if ($rootScope.userLoggedIn === true) {
+            if($rootScope.position != null){
             lflPlaces.push({
                 lat:$rootScope.position.coords.latitude,
                 lng:$rootScope.position.coords.longitude,
