@@ -127,8 +127,12 @@ var app = angular
 ).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.KnifeSrvc',function($rootScope, $timeout, $location, KnifeSrvc){
     // APP INIT
     $rootScope.pageInitialized = true;
-    // API PATH
+    
+    /* API PATH ---------------------------------
+     * SET THIS CORRECTLY OR THE APP WON'T WORK! */
     $rootScope.apipath = "http://localhost:8080/HybridAPI/public/api/";
+    /* ------------------------------------------*/
+    
     // Check if logged in, if you are, set name & login status
     // If not, empty
     $rootScope.userLoggedIn = false;

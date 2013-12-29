@@ -9,6 +9,7 @@
     $scope.uploadStatus = false; // Bool to check if uploading right now
     $scope.uploadDeclined = false;
     $scope.uploadFailed = false;
+    $scope.uploadSuccess = false;
     $scope.message = "";
 
 $scope.onFileSelect = function($files) {
@@ -18,6 +19,7 @@ $scope.onFileSelect = function($files) {
         $scope.uploadDeclined = false;
         $scope.uploadFailed = false;
         $(".progress").addClass("active");
+        $("#progress").removeClass("progress-bar-danger");
          //$files: an array of files selected, each file has name, size, and type.
         for (var i = 0; i < $files.length; i++) {
           var file = $files[i];
@@ -25,20 +27,21 @@ $scope.onFileSelect = function($files) {
             url: $rootScope.apipath + 'upload/image', //upload.php script, node.js route, or servlet url
             // method: POST or PUT,
             // headers: {'headerKey': 'headerValue'}, withCredential: true,
-            data: {myObj: $scope.myImg},
-            file: file,
+            data: {},
+            file: file
             // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
             /* set file formData name for 'Content-Desposition' header. Default: 'file' */
             //fileFormDataName: myFile,
             /* customize how data is added to formData. See #40#issuecomment-28612000 for example */
             //formDataAppender: function(formData, key, val){} 
           }).progress(function(evt) {
-                $("#progress").removeClass("progress-bar-danger");
                 $("#progress").attr("aria-valuenow", (parseInt(100.0 * evt.loaded / evt.total)));
                 $("#progress").css("width", parseInt(100.0 * evt.loaded / evt.total) + "%");
           }).success(function(data, status, headers, config) {
-            // file is uploaded successfully
-                console.log(data);
+              $scope.uploadStatus = false; // Bool to check if uploading right now
+              $scope.uploadDeclined = false;
+              $scope.uploadFailed = false;
+              $scope.uploadSuccess = true;
           })
           .error(function(object, code){
               $scope.uploadFailed = true;
@@ -55,7 +58,6 @@ $scope.onFileSelect = function($files) {
                     $scope.message = "Upload failed. Error code " + code + ".";
                     break;
               }
-              
           });
           //.then(success, error, progress); 
         }

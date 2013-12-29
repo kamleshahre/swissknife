@@ -8,7 +8,7 @@
     <h1><i class="fa fa-camera-retro"></i> Upload a Photo</h1>
         <hr/>
         <h2>Pick a photo</h2>
-        <input id="fileUpload" type="file" accept="image/*" ng-file-select="onFileSelect($files)" />
+        <input id="fileUpload" name="image" type="file" accept="image/*" ng-file-select="onFileSelect($files)" />
         <div ng-show="uploadDeclined">
             <hr/>
             <p>If you declined to upload the file but want to upload it anyway, select the image again.</p>
@@ -18,10 +18,10 @@
             <h4>Upload progress</h4>
             <div class="progress progress-striped">
                 <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                    <p ng-show="uploadFailed">{{message}}</p>
+                    <p ng-show="showMessage">{{message}}</p>
                 </div>
             </div>
-            <button ng-hide="uploadFailed" ng-click="upload.abort()">Cancel Upload</button>
+            <button class="btn btn-default" ng-hide="uploadFailed" ng-click="upload.abort()">Cancel Upload</button>
             <hr/>
             </div>
         
