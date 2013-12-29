@@ -1,10 +1,14 @@
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
+
 (function(){
     // USE STRICT
     'use strict';
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.PhotoDetailCtrl',['$scope', '$rootScope', '$routeParams', '$http', function($scope, $rootScope, $routeParams, $http){
+    controllers.controller('swissKnifeApp.controllers.PhotoDetailCtrl',['$scope', '$rootScope', '$routeParams', '$http', '$route', function($scope, $rootScope, $routeParams, $http, $route){
             // Loads the photo ID
             $scope.id = $routeParams.photoID;
             var requestPath = $rootScope.apipath + 'photo/' + $scope.id + "?callback=JSON_CALLBACK";
@@ -12,11 +16,28 @@
                 .success(function(returned_data){
                     $scope.image = returned_data.photo_url;
                     $scope.username = returned_data.user.user_username;
+                    $scope.comments = returned_data.comments;
                 });
                 
                 
-            $scope.postComment = function(body){
-                // 
+            $scope.postComment = function(){
+                $scope.body = $("#comment_area").val();
+                if (!isBlank($scope.body)){
+                    var requestPath = $rootScope.apipath + 'comment/create';
+                    var data = {"body" : $scope.body, "parrent" : null,"photo":$scope.id};
+                    $http.post(requestPath, data)
+                        .success(function(returned_data){
+                            if (returned_data.status !== ""){
+                                // Fix the navigation glitch
+                                $route.reload();
+                            }else{
+                                console.log = "I have no idea.";
+                            }
+                            $scope.isBusy = false;
+                        });
+
+                    $route.reload();
+                }
             };
             
             /*

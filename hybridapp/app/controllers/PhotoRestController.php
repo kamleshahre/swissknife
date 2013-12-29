@@ -71,6 +71,7 @@ class PhotoRestController extends \BaseController {
         $photo->load('user');
         $photo->load('tags');
         $photo->load('stage');
+        $photo->load('comments.user');
         return Response::json($photo)->setCallback(Input::get('callback'));
     }
 
