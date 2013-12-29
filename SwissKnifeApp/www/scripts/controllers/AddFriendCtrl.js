@@ -1,3 +1,8 @@
+/**
+ * Created by nicoverbruggen on 05/12/13.
+ * Register controller of app.
+ */
+
 (function(){
     // USE STRICT
     'use strict';
@@ -5,18 +10,16 @@
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
     controllers.controller('swissKnifeApp.controllers.AddFriendCtrl',['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-// Get data from providers
-        $scope.isBusy = true;
-        var username = $scope.username;
-        var requestPath = $rootScope.apipath + '/user/friend/'+username+'?callback=JSON_CALLBACK';
-        $scope.DoAddFriendAction = function(username){
+        $scope.DoAddFriendAction = function(){
             $scope.isBusy = true;
             $scope.isAlert = false;
-            $http.get(requestPath)
+            var requestPath = $rootScope.apipath + 'user/friend/'+$scope.username+'?callback=JSON_CALLBACK';
+            $http.jsonp(requestPath)
                 .success(function(returned_data){
                     if (returned_data.status !== ""){
                         // Fix the navigation glitch
                         $("nav").show();
+                        console.log(returned_data);
                         $rootScope.user = returned_data;
                         $location.path( "/friends" );
                     }else{
