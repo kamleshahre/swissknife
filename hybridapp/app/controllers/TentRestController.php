@@ -22,7 +22,35 @@ class TentRestController extends \BaseController {
      */
     public function create()
     {
-        //
+        if (Auth::check())
+        {
+            $user = Auth::user()->load('tent');
+
+            $tent = $user->tent;
+            if($tent == null){
+                $tent = new Tent();
+                $location = new Location();
+                $location->location_lat = Input::get('lat');
+                $location->location_long = Input::get('long');
+                $location->save();
+                $tent['location_id'] = $location->location_id;
+                $tent['user_id'] = $user->user_id;
+                $tent['tent_description'] = $user->username .'\'s tent';
+                $tent->save();
+            }else{
+                $tent->load('location');
+                $location = $tent->location;
+                $location->location_lat = Input::get('lat');
+                $location->location_long = Input::get('long');
+                $location->save();
+            }
+            $user = Auth::user()->load("friends")->load("photos")->load("notifications")->load("tent")->load('ticket');
+            if($user->tent !== null){
+                $user->tent->load('location');
+            }
+            return  Response::json($user)->setCallback(Input::get('callback'));
+        }
+        return Response::make('You have to be logged in', 401);
     }
 
     /**

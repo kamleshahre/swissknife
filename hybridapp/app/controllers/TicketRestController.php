@@ -21,7 +21,7 @@ class TicketRestController extends \BaseController {
      */
     public function create()
     {
-        //
+
     }
 
     /**

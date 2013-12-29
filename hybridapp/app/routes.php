@@ -268,7 +268,6 @@ Route::group(array('prefix' => 'backoffice'), function()
 
 Route::group(array('prefix' => 'api'), function()
 {
-    Route::post('/upload/image', 'PhotoRestController@upload');
     ///User routes
     Route::resource('/user','UserRestController');
     Route::post('/user/login','UserRestController@auth');
@@ -277,6 +276,7 @@ Route::group(array('prefix' => 'api'), function()
     Route::get('/user/friend/{username}','UserRestController@addfriend');
     ///Photo routes
     Route::resource('/photo','PhotoRestController',array('only' => array('index', 'show')));
+    Route::post('/upload/image', 'PhotoRestController@upload');
     ///Tag routes
     Route::resource('/tag','TagRestController',array('only' => array('index', 'show')));
     ///Location routes
@@ -300,4 +300,5 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('/ticket','TicketRestController',array('only' => array('index', 'show')));
     //Ten routes
     Route::resource('/tent','TentRestController',array('only' => array('index', 'show')));
+    Route::post('/create/tent', 'TentRestController@create');
 });
