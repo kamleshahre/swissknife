@@ -4,26 +4,17 @@
     // SET UP CONTROLLERS AS ANGULAR MODULE
     var controllers = angular.module('swissKnifeApp.controllers');
     // SET MAIN CONTROLLER
-    controllers.controller('swissKnifeApp.controllers.ProfileCtrl',['$scope','$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+    controllers.controller('swissKnifeApp.controllers.ProfileCtrl',['$scope','$rootScope','$route', function($scope, $rootScope,$route){
+        $scope.Reload = function(){
+            $route.reload();
+        }
         var lflPlaces = [];
-        $scope.lflplacesbasisscholen = lflPlaces;
-        $scope.lflrefresh = true;
+
         var onSuccess = function(position) {
-            lflPlaces.push({
-                lat:position.coords.latitude+'',
-                lng:position.coords.longitude+'',
-                dsc:'<strong>' + 'U bevind zich hier' + '</strong>'
-            });
+            $rootScope.position = position;
         };
 
-        // onError Callback receives a PositionError object
-        //
-        function onError(error) {
-            alert('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
-        }
-
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        navigator.geolocation.getCurrentPosition(onSuccess);
 
         if ($rootScope.userLoggedIn === true){
             if($rootScope.user['tent'] !== null){
@@ -39,9 +30,18 @@
                 dsc:'<strong>' + $scope.user['user_username'] + '\'s tent is not set</strong>'
             });
         }
-            $scope.lflplacesbasisscholen = lflPlaces;
-            $scope.lflrefresh = true;
-            console.log($scope.lflplacesbasisscholen);
+
+        if($rootScope.position != null){
+            lflPlaces.push({
+                lat:$rootScope.position.coords.latitude,
+                lng:$rootScope.position.coords.longitude,
+                dsc:'<strong>' + 'U bevind zich hier' + '</strong>'
+            });
+        }
+
+        $scope.lflplacesbasisscholen = lflPlaces;
+        $scope.lflrefresh = true;
+        console.log($scope.lflplacesbasisscholen);
 
     }
     
