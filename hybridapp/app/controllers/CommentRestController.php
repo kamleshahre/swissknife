@@ -24,7 +24,18 @@ class CommentRestController extends \BaseController {
      */
     public function create()
     {
-        //
+        if (Auth::check())
+        {
+            $comment = new Comment();
+            $comment->user_id = Auth::user()->user_id;
+            $comment->comment_body = Input::get('body');
+            $comment->comment_parrent = Input::get('parrent');
+            $comment->photo_id = Input::get('photo');
+            $comment->save();
+            $comment->load('photo')->load('user');
+            return  Response::json($comment)->setCallback(Input::get('callback'));
+        }
+        return Response::make('You have to be logged in', 401);
     }
 
     /**
@@ -34,7 +45,7 @@ class CommentRestController extends \BaseController {
      */
     public function store()
     {
-        //
+
     }
 
     /**

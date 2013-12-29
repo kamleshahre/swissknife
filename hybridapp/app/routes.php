@@ -294,6 +294,7 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('/notification','NotificationRestController',array('only' => array('index', 'show')));
     ///Comment routes
     Route::resource('/comment','CommentRestController',array('only' => array('index', 'show')));
+    Route::post('/comment/create','CommentRestController@create');
     ///Ticket routes
     Route::resource('/ticket','TicketRestController',array('only' => array('index', 'show')));
     //Ten routes
