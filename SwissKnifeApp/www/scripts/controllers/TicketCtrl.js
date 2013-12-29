@@ -16,7 +16,7 @@
     if ($rootScope.userLoggedIn === true){
         if($rootScope.user["ticket"] !== null){
             $scope.ticket = {
-                "username" :$rootScope.user["user_username"],
+                "username" : $rootScope.user["user_username"],
                 "event" : "Festivalitis",
                 "ticket_id" : $rootScope.user["ticket"]["ticket_body"],
                 "email" : $rootScope.user["user_mail"],
@@ -24,6 +24,7 @@
             };
         }else{
             $scope.ticket = null;
+            $scope.noTicket = true;
         }
     }else{
         $scope.ticket = null;

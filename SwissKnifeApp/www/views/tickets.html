@@ -7,7 +7,8 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h1><i class="fa fa-qrcode"></i> Tickets</h1>
         <hr>
-        <div ng-if="ticket !== null" class='row virtual_ticket'>
+        <div ng-hide="noTicket">
+        <div ng-show="userLoggedIn" class='row virtual_ticket'>
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <h1>{{ticket.event}}</h1>
                 <hr/>
@@ -24,6 +25,12 @@
                 <qrcode size="200" data="{{ticket.ticket_id}}"></qrcode>
             </div>
         </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="noTicket">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <p>You have no ticket available or it has been used.</p>
     </div>
 </div>
 <div class="row" ng-hide="userLoggedIn">

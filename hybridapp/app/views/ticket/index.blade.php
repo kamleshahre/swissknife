@@ -2,7 +2,9 @@
 @section('content')
 <div class="row">
     <div class="large-12 columns">
+        <hr/>
         <h1 class="subheader">Tickets</h1>
+        <hr/>
     </div>
 </div>
 <div class="row">
@@ -33,7 +35,7 @@
                     <td>
                         <ul class="inline-list">
                             <li><a href="#"><i  class="fa fa-pencil"></i></a></li>
-                            <li><a href="{{route('backoffice.ticket.delete', $ticket->ticket_id)}}">
+                            <li><a href="{{route('backoffice.ticket.destroy', $ticket->ticket_id)}}">
                                     @if($ticket->trashed())
                                     <i class="fa fa-check"></i>
                                     @else
@@ -41,7 +43,7 @@
                                     @endif
                                 </a>
                             </li>
-                            <li><a href="{{route('backoffice.ticket.destroy', $ticket->ticket_id)}}"><i  class="fa fa-trash-o"></i></a></li>
+                            <li><a href="{{route('backoffice.ticket.delete', $ticket->ticket_id)}}"><i  class="fa fa-trash-o"></i></a></li>
                         </ul>
                     </td>
                 </tr>

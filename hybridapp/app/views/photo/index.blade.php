@@ -2,7 +2,9 @@
 @section('content')
 <div class="row">
     <div class="large-12 columns">
-        <h1 class="subheader">Photo's</h1>
+        <hr/>
+        <h1 class="subheader">Photos</h1>
+        <hr/>
     </div>
 </div>
 <div class="row">
