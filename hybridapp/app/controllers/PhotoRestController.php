@@ -34,6 +34,7 @@ class PhotoRestController extends \BaseController {
         $photo->user_id = Auth::user()->user_id;
         $photo->photo_url = $filename;
         $photo->stage_id = null;
+        $photo->save();
         $photo->load('user');
         return Response::json($photo)->setCallback(Input::get('callback'));
     }
