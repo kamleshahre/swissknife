@@ -132,6 +132,8 @@ var app = angular
     // If not, empty
     $rootScope.userLoggedIn = false;
     $rootScope.user = {"user_username" : "anonymous"};
+    // Position
+    $rootScope.location = null;
 }]);
 
 /*
