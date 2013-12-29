@@ -7,10 +7,11 @@
     controllers.controller('swissKnifeApp.controllers.PhotoDetailCtrl',['$scope', '$rootScope', '$routeParams', '$http', function($scope, $rootScope, $routeParams, $http){
             // Loads the photo ID
             $scope.id = $routeParams.photoID;
-            var requestPath = $rootScope.apipath + 'photo/' + $scope.id;
+            var requestPath = $rootScope.apipath + 'photo/' + $scope.id + "?callback=JSON_CALLBACK";
             $http.jsonp(requestPath)
                 .success(function(returned_data){
-                    console.log(returned_data);
+                    $scope.image = returned_data.photo_url;
+                    $scope.username = returned_data.user.user_username;
                 });
             /*
             $http.jsonp(requestPath)
