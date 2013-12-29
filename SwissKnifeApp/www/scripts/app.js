@@ -93,7 +93,7 @@ var app = angular
             resolve: {
             }
     });
-    $routeProvider.when('/photo/upload', {
+    $routeProvider.when('/upload/photo', {
             templateUrl:'views/photo_upload.html',
             controller: 'swissKnifeApp.controllers.PhotoUploadCtrl',
             resolve: {
