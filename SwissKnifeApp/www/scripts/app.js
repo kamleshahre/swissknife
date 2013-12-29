@@ -82,6 +82,7 @@ var app = angular
     });
     $routeProvider.when('/find/friends', {
             templateUrl:'views/add_a_friend.html',
+            controller: 'swissKnifeApp.controllers.AddFriendCtrl',
             resolve: {
             }
     });
