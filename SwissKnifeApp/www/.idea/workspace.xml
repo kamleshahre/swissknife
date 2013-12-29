@@ -50,10 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeafletOnePlace.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LeafletOnePlace.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.9384289" vertical-offset="0" max-vertical-offset="1071">
+            <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginCtrl.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="41" selection-start="889" selection-end="889" vertical-scroll-proportion="0.779476" vertical-offset="0" max-vertical-offset="952">
               <folding />
             </state>
           </provider>
@@ -87,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/common/directives/LeafletManyPlaces.js" />
         <option value="$PROJECT_DIR$/views/profile.html" />
         <option value="$PROJECT_DIR$/views/friend_detail.html" />
         <option value="$PROJECT_DIR$/scripts/controllers/UserDetailCtrl.js" />
@@ -103,6 +111,7 @@
         <option value="$PROJECT_DIR$/scripts/controllers/MapCtrl.js" />
         <option value="$PROJECT_DIR$/views/map.html" />
         <option value="$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js" />
+        <option value="$PROJECT_DIR$/scripts/controllers/LoginCtrl.js" />
       </list>
     </option>
   </component>
@@ -378,11 +387,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/services/KnifeSrvc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="717" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/qrcode-generator/js/qrcode_SJIS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
@@ -485,7 +489,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/common/directives/LeafletOnePlace.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.9384289" vertical-offset="0" max-vertical-offset="1071">
+        <state line="26" column="20" selection-start="1095" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/controllers/LoginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="41" selection-start="889" selection-end="889" vertical-scroll-proportion="0.779476" vertical-offset="0" max-vertical-offset="952">
           <folding />
         </state>
       </provider>

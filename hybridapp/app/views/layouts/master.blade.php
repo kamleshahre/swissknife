@@ -18,7 +18,7 @@ $version = [
 <nav class="top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-            <h1><a href="#">SwissKnifeApp</a></h1>
+            <h1>{{ HTML::linkRoute('backoffice.index', 'SwissKnifeApp', [], []) }}</h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>

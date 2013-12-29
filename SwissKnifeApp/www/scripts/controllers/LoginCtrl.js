@@ -15,7 +15,7 @@
             $scope.isBusy = true;
             $scope.isAlert = false;
             var data = {"email" : $scope.email, "password" : $scope.password};
-            $http.post('http://localhost/HybridAPI/public/API/user/login', data)
+            $http.post('http://localhost/HybridAPI/public/api/user/login', data)
     		.success(function(returned_data){
                     if (returned_data.status !== ""){
                          // Fix the navigation glitch
