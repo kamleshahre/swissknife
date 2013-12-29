@@ -27,9 +27,17 @@ class TicketController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create($id)
 	{
-		//
+            if (Auth::check()){
+            $ticket = new Ticket();
+            $user = User::find($id);
+            $ticket->user_id = $user->user_id;
+            $ticket->ticket_body = sha1($user->user_username);
+            $ticket->save();
+            return Redirect::back();
+            }
+
 	}
 
 	/**

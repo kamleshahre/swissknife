@@ -2,12 +2,12 @@
 @section('content')
 <div class="row">
     <div class="large-12 columns">
-        <h1 class="subheader">{{ $artist->artist_name }}</h1><a href="{{ URL::previous() }}">Go Back</a>
-    </div>
-</div>
-<div class="row">
-    <div class="large-12 columns">
-        <p>Placeholder tekst</p>
+        <hr/>
+        <h1 class="subheader">{{ $artist->artist_name }}</h1>
+        <h3><a>{{$artist->artist_url}}</a></h3>
+        <hr/>
+        <a href="{{ URL::previous() }}">&larr; Go Back</a>
+        <hr/>
     </div>
 </div>
 

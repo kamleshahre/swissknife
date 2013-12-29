@@ -62,5 +62,43 @@
                 $scope.data = {"status":"We're just putting sample information here."};
             }
         }
+        
+        var lflPlaces = [];
+
+        var onSuccess = function(position) {
+            $rootScope.position = position;
+        };
+
+        navigator.geolocation.getCurrentPosition(onSuccess);
+
+        if ($rootScope.userLoggedIn === true){
+            if($rootScope.user['tent'] !== null){
+                lflPlaces.push({
+                    lat:$rootScope.user['tent']['location']['location_lat'],
+                    lng:$rootScope.user['tent']['location']['location_long'],
+                    dsc:'<strong>' + $rootScope.user['user_username'] + '\'s tent</strong>'
+                });
+        }else{
+            lflPlaces.push({
+                lat:"51.086849",
+                lng:"3.669939",
+                dsc:'<strong>' + $scope.user['user_username'] + '\'s tent is not set</strong>'
+            });
+        }
+
+        if($rootScope.position != null){
+            lflPlaces.push({
+                lat:$rootScope.position.coords.latitude,
+                lng:$rootScope.position.coords.longitude,
+                dsc:'<strong>' + 'U bevind zich hier' + '</strong>'
+            });
+        }
+
+        $scope.lflplacesbasisscholen = lflPlaces;
+        $scope.lflrefresh = true;
+        console.log($scope.lflplacesbasisscholen);
+
+    }
+        
     }]);
 })();

@@ -18,12 +18,11 @@
         @if($user->ticket != null)
             {{ HTML::linkRoute('backoffice.ticket.detail', "View this user's ticket", [$user->ticket->ticket_id], []) }}
         @else
-            <p>Deze gebruiker heeft geen ticket.</p>
+        <p>This user has no ticket. {{ HTML::linkRoute('backoffice.ticket.create', "Give a ticket", [$user->user_id], []) }}</p>
         @endif
         <hr/>
         <h3>Friends</h3>
         <div>
-
                 <table width="100%">
                     <thead>
                         <tr>

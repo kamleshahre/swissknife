@@ -52,6 +52,11 @@ Route::group(array('prefix' => 'backoffice'), function()
             return View::make('user.login');
         }
     ]);
+    
+    Route::get('/create/ticket/{id}', [
+        'as'   => 'backoffice.ticket.create',
+        'uses' => 'TicketController@create'
+    ]);
 
     Route::post('/login', [
         'as'   => 'backoffice.user.auth',
