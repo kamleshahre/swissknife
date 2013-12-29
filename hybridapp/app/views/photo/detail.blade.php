@@ -7,7 +7,7 @@
 </div>
 <div class="row">
     <div class="large-6 columns">
-        <img src="{{$photo->photo_url}}" alt=""/>
+        {{ HTML::image('upload/'.$photo->photo_url) }}
     </div>
     <div class="large-6 columns">
         <div class="row">

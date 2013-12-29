@@ -60,7 +60,7 @@
     <div class="large-12 columns">
         <ul class="small-block-grid-3">
             @foreach ($stage->photos as $photo)
-            <li><img src="{{$photo->photo_url}}" alt=""/></li>
+            <li>{{ HTML::image('upload/'.$photo->photo_url, 'thumbnail', array('class' => 'thumbnail')) }}</li>
             @endforeach
         </ul>
     </div>
