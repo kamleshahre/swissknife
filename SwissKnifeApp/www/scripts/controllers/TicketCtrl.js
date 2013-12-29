@@ -13,8 +13,8 @@
     // Defining the controller
     controllers.controller('swissKnifeApp.controllers.TicketCtrl',['$scope','$rootScope', function($scope,$rootScope){
 
+    if ($rootScope.userLoggedIn === true){
         if($rootScope.user["ticket"] !== null){
-            console.log($rootScope.user["ticket"]["ticket_body"]);
             $scope.ticket = {
                 "username" :$rootScope.user["user_username"],
                 "event" : "Festivalitis",
@@ -25,6 +25,9 @@
         }else{
             $scope.ticket = null;
         }
+    }else{
+        $scope.ticket = null;
+    }
             
     }]);
 })();

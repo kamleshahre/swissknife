@@ -268,6 +268,7 @@ Route::group(array('prefix' => 'backoffice'), function()
 
 Route::group(array('prefix' => 'api'), function()
 {
+    Route::post('/upload/image', 'PhotoRestController@upload');
     ///User routes
     Route::resource('/user','UserRestController');
     Route::post('/user/login','UserRestController@auth');

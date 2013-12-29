@@ -1,13 +1,29 @@
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
-  <li class="active">Photos</li>
+  <li><a href="#photo">Photos</a></li>
+  <li class="active">Upload</li>
 </ol>
 <div class='row'>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h1><i class="fa fa-camera-retro"></i> Upload a Photo</h1>
         <hr/>
         <h2>Pick a photo</h2>
-        <input type="file" />
+        <input id="fileUpload" name="image" type="file" accept="image/*" ng-file-select="onFileSelect($files)" />
+        <div ng-show="uploadDeclined">
+            <hr/>
+            <p>If you declined to upload the file but want to upload it anyway, select the image again.</p>
+        </div>
         <hr/>
+            <div ng-show="uploadStatus">
+            <h4>Upload progress</h4>
+            <div class="progress progress-striped">
+                <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                    <p ng-show="showMessage">{{message}}</p>
+                </div>
+            </div>
+            <button class="btn btn-default" ng-hide="uploadFailed" ng-click="upload.abort()">Cancel Upload</button>
+            <hr/>
+            </div>
+        
     </div>
 </div>

@@ -16,6 +16,24 @@ class PhotoRestController extends \BaseController {
 
         return Response::json($photos)->setCallback(Input::get('callback'));
     }
+    
+    /**
+     * Upload the resource.
+     *
+     * @return Response
+     */
+    public function upload(){
+        $file = Input::file('file');
+        $destinationPath = 'upload/';
+        // Base64 encode of current date + file
+        $filename = base64_encode(date("Y-m-d H:i:s") . $file);
+        $file->move($destinationPath, $filename);
+        $data = array(
+            'path' => $destinationPath,
+            'filename' => $filename
+             );
+        return Response::json($data);
+    }
 
     /**
      * Show the form for creating a new resource.

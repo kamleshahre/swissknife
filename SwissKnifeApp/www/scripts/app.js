@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('LocalStorageModule').value('prefix', 'swissKnifeApp');
-
+angular.module('angularFileUpload').value('prefix', 'swissKnifeApp');
 angular.module('swissKnifeApp.controllers', []);
 angular.module('swissKnifeApp.services', []);
 angular.module('swissKnifeApp.directives', []);
@@ -16,7 +16,8 @@ var app = angular
     'swissKnifeApp.services',
     'swissKnifeApp.directives',
     'LocalStorageModule',
-    'monospaced.qrcode'
+    'monospaced.qrcode',
+    'angularFileUpload'
     ]
 ).config(
     ['$routeProvider','$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider){
@@ -126,8 +127,12 @@ var app = angular
 ).run(['$rootScope', '$timeout', '$location', 'swissKnifeApp.services.KnifeSrvc',function($rootScope, $timeout, $location, KnifeSrvc){
     // APP INIT
     $rootScope.pageInitialized = true;
-    // API PATH
-    $rootScope.apipath = "http://localhost/HybridAPI/public/api/";
+    
+    /* API PATH ---------------------------------
+     * SET THIS CORRECTLY OR THE APP WON'T WORK! */
+    $rootScope.apipath = "http://localhost:8080/HybridAPI/public/api/";
+    /* ------------------------------------------*/
+    
     // Check if logged in, if you are, set name & login status
     // If not, empty
     $rootScope.userLoggedIn = false;
