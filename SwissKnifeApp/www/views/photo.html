@@ -8,7 +8,7 @@
     <hr/>
         <div class="row">
             <a ng-repeat="photo in photos" href="#photo/{{photo['photo_id']}}">
-            <img class="col-xs-4" ng-src="http://localhost/HybridAPI/public/upload/{{photo['photo_url']}}"/>
+            <img class="col-xs-4" ng-src="{{publicpath}}upload/{{photo['photo_url']}}"/>
             </a>
         </div>
     <hr/>

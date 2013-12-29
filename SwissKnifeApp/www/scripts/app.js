@@ -130,7 +130,9 @@ var app = angular
     
     /* API PATH ---------------------------------
      * SET THIS CORRECTLY OR THE APP WON'T WORK! */
-    $rootScope.apipath = "http://localhost/HybridAPI/public/api/";
+    
+    $rootScope.publicpath = "http://localhost:8080/HybridAPI/public/";
+    $rootScope.apipath = $rootScope.publicpath + "api/";
     /* ------------------------------------------*/
     
     // Check if logged in, if you are, set name & login status
